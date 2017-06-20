@@ -5,6 +5,9 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+        <dependent-module archiveName="EvolBackEnd-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/EvolBackEnd/EvolBackEnd">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="EvolFrontEnd"/>
         <property name="java-output-path" value="/EvolFrontEnd/target/classes"/>
     </wb-module>

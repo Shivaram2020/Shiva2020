@@ -3,7 +3,6 @@ package dao;
 
 import model.*;
 
-
 import java.sql.*;
 public class LoginDAO 
 {
@@ -16,7 +15,7 @@ public class LoginDAO
 	
 	public boolean isValid(Login loginobj)throws Exception
 	{
-		PreparedStatement psmt=conn.prepareStatement("select * from myt where name=? and password=?");
+		PreparedStatement psmt=conn.prepareStatement("select * from UserDetails where username=? and password=?");
 		
 		psmt.setString(1,loginobj.getLogin().trim());
 		psmt.setString(2, loginobj.getPassword().trim());

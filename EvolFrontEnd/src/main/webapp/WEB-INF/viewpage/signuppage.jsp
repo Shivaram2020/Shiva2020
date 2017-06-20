@@ -127,10 +127,13 @@
 <div class="container" >
     <div class="col-md-6" >
         <div id="logbox"  >
-            <form id="signup" method="post" action="/signup" >
+            <form id="signup" method="post" action="AddUser" >
             <div>              
             <h1>Create an Account</h1>
-		 <input class="form-control" required type="text" name="email" id = "email" placeholder="Email" onchange="email_validate(this.value);"/>
+		 <input class="form-control" required type="text" name="username" id = "username" placeholder="username";"/>
+		 
+		 
+		 
            </div>
   
                 <div>
@@ -139,7 +142,7 @@
 </div>
                 <div>
                 
-                    <input required name="password" type="password" placeholder="Confirm Password" class="form-control inputpass" minlength="4" maxlength="16" placeholder="Enter again to validate"  id="pass2" onkeyup="checkPass(); return false;" />
+                    <input required name="pass" type="password" placeholder="Confirm Password" class="form-control inputpass" minlength="4" maxlength="16" placeholder="Enter again to validate"  id="pass2" onkeyup="checkPass(); return false;" />
                        
     </div>
                 <input type="submit" value="Sign me up!" class="inputButton"/>

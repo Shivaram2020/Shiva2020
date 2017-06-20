@@ -1,4 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+
+	@RequestMapping(value="/AddUser",method=RequestMethod.POST)
+    public String addUser(@RequestParam("username") String username , @RequestParam("password") String password)
+    {
+    System.out.println("add user to db");
+    System.out.println(username+";;;"+password);
+    UserDetails user=new UserDetails();
+    user.setUsername("username");
+    user.setPassword("password");
+    
+    userDAO.insertUpdateUser(user);
+    System.out.println("UserAdded");
+    return "signupage";
+    }
+    @Autowired
+	UserDAO userDAO;<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
