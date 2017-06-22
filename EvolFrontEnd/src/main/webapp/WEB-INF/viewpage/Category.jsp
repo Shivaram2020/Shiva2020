@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-
 <html>
 <head>
 <title> category </title>
@@ -20,24 +19,40 @@ tr:nth-child(even){background-color: #f2f2f2}
 </head>
 <body>
 <!-- Category Form Started -->
+<c:if test="${flag}">
+<form action="UpdateCategory" method="post">
+</c:if>
+<c:if test="${!flag }">
 <form action="AddCategory" method="post">
-
+</c:if>
 	
 	<h1 align="center"> Details</h1>
 	
-	
+	<c:if test="${flag}">
+	<h1 align="center">Category Name: <input type="text" type="hidden" name="catname" value="${category.catname}"/></h1>
+	</c:if>
+	<c:if test="${!flag }">
 	<h1 align="center">Category Name: <input type="text" name="catname"/></h1>
-	
+	</c:if>
+	<c:if test="${flag}">
+	<h1 align="center">Category Description <input type="text" type="hidden" name="catname" value="${category.catdesc}"/></h1>
+	</c:if>
+	<c:if test="${!flag }">
 	<h1 align="center">Category Description<input type="text" name="catdesc"/></h1>
+	</c:if>
 	
 	
-	
-
+    <c:if test="${!flag }">
 		<h1 align="center"><input type="submit" value="AddCategory"/></h1>
+		</c:if>
+		<c:if test="${flag}">
+		<h1 align="center"><input type="submit" type="hidden" value="UpdateCategory"/></h1>
+	</c:if>
 	
 	
 
 </form>
+
 <!-- Category Form Completed -->
 <table align="center" cellspacing="2">
 <tr>
@@ -46,19 +61,25 @@ tr:nth-child(even){background-color: #f2f2f2}
 <td>Category id</td>
 <td>Category name</td>
 <td>Category description</td>
+<td>Operation<td>
 </tr>
 
 
 
-<c:forEach items="${catdetails}" var="category">
+<c:forEach items="${catdetails}" var="category"  >
 <tr>
 <td>${category.catid}</td>
  <td>${category.catname}</td>  
- <td>${category.catdesc}</td> </tr>
+ <td>${category.catdesc}</td> 
+ 
+  <c:set var = "delete"  value = "deleteCategory"/>
+  <c:set var = "update"  value = "updateCategory"/>
+ <td><a href="<c:url value="${delete}/${category.catid}"/>">delete</a></td>
+ <td><a href="<c:url value="${update}/${category.catid}"/>">Update</a></td></tr>
+  
+
 </c:forEach>
 
-
 </table>
-
 </body>
 </html>
