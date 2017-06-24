@@ -22,20 +22,21 @@ public class ProductControl {
 	@Autowired
 	ProductDAO productDAO;
 	
-	@RequestMapping("/product")
+	@RequestMapping(value="/product",method = RequestMethod.GET)
 	public String showProductPage(Model m)
 	{
 		List<Category> list=categoryDAO.getCategoryDetails();
 		
 		LinkedHashMap<Integer,String> catlist=new LinkedHashMap<Integer,String>();
-		
+		System.out.println("working 1");
 		for(Category cate:list)
 		{
 			catlist.put(cate.getCatid(),cate.getCatname());
 		}
 		Product product=new Product();
-		m.addAttribute("catlist", catlist);
 		m.addAttribute("product", product);
+		m.addAttribute("catlist", catlist);
+		System.out.println("working");
 		return "Product";
 	}
 	
