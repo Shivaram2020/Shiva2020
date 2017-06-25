@@ -18,9 +18,10 @@
     <tr>
     <td>Category id:</td>
     <td><form:select path="catid">
-    <td><form:option value="0" label="--------select--------">
-    <td> <form:options items="${catlist}"/><td></form:option>
+    <form:option value="0" label="--------select--------"/>
+     <form:options items="${catlist}"/>
     </form:select>
+    </td>
     <tr>
         <td>Supplier:</td>
         <td><form:input path="suppid" /></td>
