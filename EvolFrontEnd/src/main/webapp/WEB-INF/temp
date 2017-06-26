@@ -19,7 +19,7 @@ public class CategoryControl {
 	@Autowired
 	CategoryDAO categoryDAO;
 	
-	@RequestMapping("/Category")
+	@RequestMapping("/category")
 	public String showCategoryPage(Model m)
 	{
 		System.out.println("---Category Page Displaying-----");
@@ -67,12 +67,26 @@ public class CategoryControl {
 		boolean flag=false;
 		m.addAttribute("flag",flag);
 	
-		return "redirect:/Category";
+		return "Category";
+	}
+	@RequestMapping(value="deleteCategory/deleteCategory/{catid}")
+	public String deleteCategory1(@PathVariable("catid") int catid,Model m)
+	{
+		System.out.println("---Category Deleted----");
+		Category category=categoryDAO.getCategory(catid);
+		categoryDAO.deleteCategory(category);
+		
+		System.out.println("---Category Page Displaying-----");
+		List<Category> list=categoryDAO.getCategoryDetails();
+		m.addAttribute("catdetails",list);
+		boolean flag=false;
+		m.addAttribute("flag",flag);
+	
+		return "Category";
 	}
 	
 	
-	
-	@RequestMapping(value="updateCategory/{catid}")
+	@RequestMapping(value="/updateCategory/{catid}")
 	public String getUpdateCategory(@PathVariable("catid") int catid,Model m)
 	{
 		System.out.println("--- Getting Category Object to be Updated ---");
@@ -85,32 +99,28 @@ public class CategoryControl {
 		boolean flag=true;
 		m.addAttribute("flag",flag);
 	
-		return "/Category";
+		return "Category";
 	}
 	
 	@RequestMapping(value="updateCategory/UpdateCategory",method=RequestMethod.POST)
 	public String updateCategory(@RequestParam("catid") int catid,@RequestParam("catname") String catname,@RequestParam("catdesc") String catdesc,Model m)
 	{
-System.out.println("---Add Category Starting-----");
-		
-		System.out.println(catname+":::"+catdesc);
-		
+		System.out.println("--Updating the Category----");
+
 		Category category=new Category();
 		category.setCatid(catid);
 		category.setCatname(catname);
 		category.setCatdesc(catdesc);
 		
 		categoryDAO.insertUpdateCategory(category);
-		System.out.println("---Category Added----");
 		
 		List<Category> list=categoryDAO.getCategoryDetails();
 		m.addAttribute("catdetails",list);
 		boolean flag=false;
 		m.addAttribute("flag",flag);
-		System.out.println("---Category Added----");
-		
-		return "redirect:/Category";
-}
+	
+		return "Category";
+	}
 
 
 

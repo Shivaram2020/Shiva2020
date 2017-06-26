@@ -11,8 +11,9 @@
 
 	<center>
 		<h2>Evol</h2>
-		<a href="category">Add category</a>
-		<a href="product">Add Product</a>
+		<a href="Category">Add category</a>
+		<a href="Product">Add Product</a>
+		<a href="Supplier">Add Supplier</a>
 	</center>
 </body>
 </html>
