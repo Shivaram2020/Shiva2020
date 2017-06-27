@@ -1,14 +1,17 @@
 package com.pro.Evol.model;
 
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table
-public class Product {
+public class Product<MultipartFile> {
 	@Id
 	@GeneratedValue
 	@Column (columnDefinition="integer(10)")
@@ -21,6 +24,15 @@ public class Product {
 	private String prodname;
 	@Column (columnDefinition="varchar(80)")
 	private String proddesc;
+	public MultipartFile getPimage() {
+		return pimage;
+	}
+	public void setPimage(MultipartFile pimage) {
+		this.pimage = pimage;
+	}
+	@Transient
+	MultipartFile pimage;
+	
 	
 	
 	public String getProddesc() {
