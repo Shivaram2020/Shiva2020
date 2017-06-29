@@ -70,6 +70,21 @@ public class SupplierControl {
 		return "redirect:/Supplier";
 	}
 	
+	@RequestMapping(value="updateSupplier/deleteSupplier/{suppid}")
+	public String deleteCategory1(@PathVariable("suppid") int suppid,Model m)
+	{
+		System.out.println("---Supplier Deleted----");
+		Supplier supplier=supplierDAO.getSupplier(suppid);
+		supplierDAO.deleteSupplier(supplier);
+		
+		System.out.println("---Category Page Displaying-----");
+		List<Supplier> list=supplierDAO.getSupplierDetails();
+		m.addAttribute("suppdetails",list);
+		boolean flag=false;
+		m.addAttribute("flag",flag);
+	
+		return "redirect:/Supplier";
+	}
 	
 	
 	@RequestMapping(value="updateSupplier/{suppid}")

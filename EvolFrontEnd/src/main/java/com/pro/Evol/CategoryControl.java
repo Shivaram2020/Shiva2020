@@ -70,6 +70,21 @@ public class CategoryControl {
 		return "redirect:/Category";
 	}
 	
+	@RequestMapping(value="/updateCategory/deleteCategory/{catid}")
+	public String deleteCategory1(@PathVariable("catid") int catid,Model m)
+	{
+		System.out.println("---Category Deleted----");
+		Category category=categoryDAO.getCategory(catid);
+		categoryDAO.deleteCategory(category);
+		
+		System.out.println("---Category Page Displaying-----");
+		List<Category> list=categoryDAO.getCategoryDetails();
+		m.addAttribute("catdetails",list);
+		boolean flag=false;
+		m.addAttribute("flag",flag);
+	
+		return "redirect:/Category";
+	}
 	
 	
 	@RequestMapping(value="updateCategory/{catid}")

@@ -38,7 +38,7 @@ public class ProductControl
 	@Autowired
 	ProductDAO productDAO;
 	
-	
+	//show page
 	@RequestMapping("/Product")
 	public String showProduct(Model m)
 	{
@@ -56,6 +56,9 @@ public class ProductControl
 		
 		return "Product";
 	}
+	
+	
+	//insert page
 	
 	@RequestMapping(value="/InsertProduct",method=RequestMethod.POST)
 	public String insertProduct(@ModelAttribute("product") Product product, Model m,@RequestParam("pimage") MultipartFile filedet,BindingResult result)
@@ -104,6 +107,9 @@ public class ProductControl
 	      return "redirect:/Product";
 	}
 	
+	
+	//pass the respective id
+	
 	@RequestMapping(value="/updateProduct/{prodid}")
 	public String updateProduct(@PathVariable("prodid")int prodid,Model m)
 	{
@@ -114,9 +120,15 @@ public class ProductControl
 		m.addAttribute("supplist",this.getSuppList());
 		List<Product> prodlist=productDAO.getProductDetails();
 		m.addAttribute("prodlist",prodlist);
-		
+		boolean flag=true;
+		m.addAttribute("flag",flag);
+	
 		return "Product";
 	}
+	
+	
+	
+	//update the respective id
 	@RequestMapping(value="/updateProduct/InsertProduct",method=RequestMethod.POST)
 	public String updateProductred(@ModelAttribute("product") Product product, Model m,@RequestParam("pimage") MultipartFile filedet,BindingResult result)
 	{
@@ -127,7 +139,7 @@ public class ProductControl
 		System.out.println("image starting upload");
 		
 		
-		String path="E:\\EVOL\\EvolFrontEnd\\src\\main\\webapp\\WEB-INF\\resources\\images\\";
+		String path="E:\\EVOL\\EvolFrontEnd\\src\\main\\webapp\\resources\\images\\";
 		String fileinfo=path+product.getProdid()+".jpg";
 		
 		File f=new File(fileinfo);
@@ -165,8 +177,8 @@ public class ProductControl
 		return "redirect:/Product";
 	}
 
-	
-	@RequestMapping(value="/deleteProduct/{prodid}")
+	//delete 
+	@RequestMapping(value="/updateProduct/deleteProduct/{prodid}")
 	public String deleteProduct(@PathVariable("prodid")int prodid,Model m)
 	{
 		
@@ -183,6 +195,27 @@ public class ProductControl
 		return "redirect:/Product";
 	}
 	
+	
+	// update and try to delete 
+		@RequestMapping(value="/deleteProduct/{prodid}")
+		public String deleteProductup(@PathVariable("prodid")int prodid,Model m)
+		{
+			
+			Product product=productDAO.getProduct(prodid);
+			productDAO.deleteProduct(product);
+			
+			Product product1=new Product();
+			m.addAttribute("product",product1);
+			m.addAttribute("catlist",this.getCatList());
+			m.addAttribute("supplist",this.getSuppList());
+			List<Product> prodlist=productDAO.getProductDetails();
+			m.addAttribute("prodlist",prodlist);
+			
+			return "redirect:/Product";
+		}
+	
+	
+	// category collection
 	public LinkedHashMap<Integer,String> getCatList()
 	{
 		List<Category> list=categoryDAO.getCategoryDetails();
@@ -196,6 +229,9 @@ public class ProductControl
 		
 		return catlist;
 	}
+	
+	
+	//supplier collection
 	
 	public LinkedHashMap<Integer,String> getSuppList()
 	{
@@ -216,7 +252,7 @@ public class ProductControl
 	{
 		
 		
-		Product product=new Product();
+		Product<MultipartFile> product=new Product<MultipartFile>();
 		
 		m.addAttribute("catlist",this.getCatList());
 		m.addAttribute("supplist",this.getSuppList());

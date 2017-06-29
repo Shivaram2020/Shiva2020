@@ -24,10 +24,12 @@ th, td {
 			<tr>
 				<td colspan="2"><center>Product Details</center></td>
 			</tr>
+			<c:if test="${flag}">
 			<tr>
 				<td>Product ID</td>
-				<td><form:input path="prodid" /></td>
+				<td><form:input  path="prodid" /></td>
 			</tr>
+			</c:if>
 			<tr>
 				<td>Product Name</td>
 				<td><form:input path="prodname" /></td>
