@@ -16,7 +16,7 @@
 		<a href="Product">Add Product</a>
 		<a href="Supplier">Add Supplier</a>
 	   <a href="ProductPage">open</a>
-	   
+	     <a href="Login">login</a>
 	</center>
 	
 	<img src="<c:url value="/resources/images/wall.jpg"/>" alt="New York">

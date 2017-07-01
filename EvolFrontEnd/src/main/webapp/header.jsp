@@ -19,6 +19,7 @@
      
       <li><a href="signin">signin</a></li>
       <li><a href="signup">signup</a></li>
+     <li><a href="ProductPage">product page</a></li>
      
     </ul>
   </div>

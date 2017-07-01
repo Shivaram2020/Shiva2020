@@ -20,7 +20,13 @@ public class UserDetails {
 	private String mobileno;
 	@Column(columnDefinition = "varchar(100)")
 	private String address;
-	
+	private boolean enabled;
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
 	public String getUsername() {
 		return username;
 	}

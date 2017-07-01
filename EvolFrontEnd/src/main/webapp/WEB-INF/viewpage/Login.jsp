@@ -22,10 +22,10 @@
 
 <div class="container">
 
-	<form action="LoginControl" method="post">
+	<form action="/perform_login" method="post">
 		<h1 class="form-signin-heading text-muted">Sign In</h1>
-		<input type="text" class="form-control" placeholder="Username" required="" autofocus="" name="uname">
-		<input type="password" class="form-control" placeholder="Password" required="" name="passwd">
+		<input type="text" class="form-control" placeholder="Username" required="" autofocus="" name="username">
+		<input type="password" class="form-control" placeholder="Password" required="" name="password">
 		<input type="submit"value="submit">
 			
 	</form>
