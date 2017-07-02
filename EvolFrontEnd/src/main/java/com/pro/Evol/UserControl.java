@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class UserControl {
-	@RequestMapping("/Login")
+	@RequestMapping("/login")
 	public String Login()
 	{
-		return "Login";
+		return "UserHome";
 	}
 	
 	@RequestMapping("/login-success")

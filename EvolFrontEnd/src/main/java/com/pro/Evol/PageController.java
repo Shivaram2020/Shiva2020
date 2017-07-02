@@ -20,18 +20,18 @@ public class PageController {
 	
 	
 	@RequestMapping("/signin")
-	public ModelAndView signin(
-			@RequestParam(value = "signin", required = false) String a) {
+	public String signin()
+	{
 		
-		ModelAndView signin = new ModelAndView("signinpage");
-		return signin;
+		
+		return "signinpage";
 }
 	@RequestMapping("/signup")
-	public ModelAndView signup(
-			@RequestParam(value = "signup", required = false) String a) {
+	public String signup()
+	{
 		
-		ModelAndView signup = new ModelAndView("signuppage");
-		return signup;
+		
+		return "signuppage";
 	}
 	
 

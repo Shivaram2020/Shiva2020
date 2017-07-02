@@ -9,18 +9,45 @@
 <jsp:include page="header.jsp"/>
 </head>
 <body>
-
-	<center>
+ <div>
+<center>
 		<h2>Evol</h2>
 		<a href="Category">Add category</a>
 		<a href="Product">Add Product</a>
 		<a href="Supplier">Add Supplier</a>
 	   <a href="ProductPage">open</a>
-	     <a href="Login">login</a>
+	     <a href="login">login</a>
 	</center>
+</div>
+	<p>
 	
-	<img src="<c:url value="/resources/images/wall.jpg"/>" alt="New York">
- 
+	asf</p>
+	<p>asf
+	asf
+	asf
+	asdf
+	
+	asdf</p>
+	asdf
+	asdfasdf
+	asdf
+	<p>as
+	dfa
+	sdf
+	adsf
+	asdf
+	asdf
+	asdf
+	asdf<p>
+	asdf
+	asdf
+	
+	asdf
+	asdf
+	asdf
+	
+	
+	</p>
 	
 </body>
 </html>
