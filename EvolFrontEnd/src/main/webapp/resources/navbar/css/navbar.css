@@ -3,7 +3,7 @@
 .navbar-custom {
     background-color:#10081C ;
       box-shadow: 10px 10px 5px #888888;
-    height:80px
+    
 }
 
 /* change the brand and text color */
@@ -25,6 +25,20 @@
 
 .parallax {
     /* The image used */
+    background-image:url('https://imgix.ttcdn.co/i/wallpaper/original/0/315672-64b1d0b08a194dbcb6fa14e9e612368b.png?size=900&crop=0,123,2836,741');
+
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover 1980px 1536px;;
+}
+
+.parallax1 {
+    /* The image used */
     background-image:url('https://www.xhostel.com/wp-content/uploads/2017/03/best-shopping-in-Bucharest.jpg');
 
     /* Set a specific height */
@@ -34,7 +48,5 @@
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover 1980px 1536px;;
 }
-
-

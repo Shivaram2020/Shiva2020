@@ -18,14 +18,10 @@
 <nav class="navbar navbar-custom  ">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="index.jsp"><img src="<c:url value="/resources/images/Icon.gif"/>"height="60" width="60"></a>
+      <a class="navbar-brand" href="index.jsp"><img src="<c:url value="/resources/images/Icon.gif"/>"height="100" width="100"></a>
     </div>
     
-     <ul class="nav navbar-nav ">
-    <li> <a href="index.jsp" >
-          <span class="glyphicon glyphicon-home"></span> home
-        </a></li>
-        </ul>
+  
         
         
        

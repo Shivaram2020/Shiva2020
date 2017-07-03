@@ -35,20 +35,7 @@ public class PageController {
 	}
 	
 
-	@RequestMapping(value="/AddUser",method=RequestMethod.POST)
-    public String addUser(@RequestParam("username") String username , @RequestParam("password") String password)
-    {
-    System.out.println("add user to db");
-    System.out.println(username+";;;"+password);
-    UserDetails user=new UserDetails();
-    user.setUsername(username);
-    user.setPassword(password);
-    
-    userDAO.insertUpdateUser(user);
-    System.out.println("UserAdded");
-   return "signuppage";
-   
-    }
+	
     }
 
 

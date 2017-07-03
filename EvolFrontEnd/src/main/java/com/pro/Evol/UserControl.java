@@ -1,23 +1,55 @@
 package com.pro.Evol;
 
 import java.util.Collection;
+import java.util.List;
 
+import javax.persistence.metamodel.Metamodel;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.pro.Evol.dao.UserDAO;
+import com.pro.Evol.model.UserDetails;
 
 @Controller
 public class UserControl {
-	@RequestMapping("/login")
-	public String Login()
+	
+	@Autowired
+	UserDAO userDAO;
+	@RequestMapping("/UserHome")
+	public String Login(Model m)
 	{
+		
+		List<UserDetails> list=userDAO.getUserDetails();
+		m.addAttribute("userdetails",list);
+		
 		return "UserHome";
 	}
 	
-	@RequestMapping("/login-success")
+	@RequestMapping(value="/AddUser",method=RequestMethod.POST)
+    public String addUser(@RequestParam("username") String username , @RequestParam("password") String password)
+    {
+    System.out.println("add user to db");
+    System.out.println(username+";;;"+password);
+    UserDetails user=new UserDetails();
+    user.setUsername(username);
+    user.setPassword(password);
+    
+    userDAO.insertUpdateUser(user);
+    System.out.println("UserAdded");
+   return "signuppage";
+   
+    }
+	
+	
+	@RequestMapping("/login_success")
 	public String loginsuccess(HttpSession session)
 	{
 		System.out.println("loded successfully");
@@ -35,7 +67,7 @@ public class UserControl {
 	  System.out.println("Role:"+role.getAuthority()+"username"+username);
 		
 	  
-	if(role.equals("ROLE_ADMIN"))
+	if(role.getAuthority().equals("admin"))
 	{
 		
 	return "AdminHome";
@@ -51,6 +83,14 @@ public class UserControl {
    return "page";
 	}
 	
+	@RequestMapping("/Login1")
+	public String Login1()
+	{
+		
+		
+		
+		return "Login";
+	}
 	
 
 }

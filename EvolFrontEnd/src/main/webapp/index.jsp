@@ -6,6 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Evol</title>
+<link href="<c:url value="/resources/navbar/css/navbar.css" />" rel="stylesheet">
+
 <jsp:include page="header.jsp"/>
 </head>
 <body>
@@ -16,9 +18,10 @@
 		<a href="Product">Add Product</a>
 		<a href="Supplier">Add Supplier</a>
 	   <a href="ProductPage">open</a>
-	     <a href="login">login</a>
+	     <a href="Login1">login</a>
 	</center>
 </div>
+<div class="parallax1">
 	<p>
 	
 	asf</p>
@@ -49,5 +52,7 @@
 	
 	</p>
 	
+</div>
+
 </body>
 </html>

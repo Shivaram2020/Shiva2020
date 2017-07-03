@@ -13,8 +13,8 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
         
         
         <security:http auto-config="true" use-expressions="true">
-        <security:intercept-url pattern="/UserHome" access="hasRole('USER_ROLE')"/>
-        <security:intercept-url pattern="/AdminHome" access="hasRole('USER_ADMIN')"/>
+        <security:intercept-url pattern="/UserHome" access="hasRole('user')"/>
+        <security:intercept-url pattern="/AdminHome" access="hasRole('admin')"/>
         
         
 <security:form-login login-page="/login" default-target-url="/"
@@ -30,9 +30,9 @@ authentication-success-forward-url="/login_success"/>
 	  <authentication-provider>
 		<jdbc-user-service data-source-ref="dataSource"
 		  users-by-username-query=
-		    "select username,password, enabled from users where username=?"
+		    "select username,password, enabled from userdetails where username=?"
 		  authorities-by-username-query=
-		    "select username, role from user_roles where username =?  " />
+		    "select username, role from userdetails where username =?  " />
 	  </authentication-provider>
 	</authentication-manager>
         

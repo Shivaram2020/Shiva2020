@@ -22,7 +22,7 @@
 
 <div class="container">
 
-	<form action="/perform_login" method="post">
+	<form action="<c:url value="/perform_login"/>" method="post">
 		<h1 class="form-signin-heading text-muted">Sign In</h1>
 		<input type="text" class="form-control" placeholder="Username" required="" autofocus="" name="username">
 		<input type="password" class="form-control" placeholder="Password" required="" name="password">
