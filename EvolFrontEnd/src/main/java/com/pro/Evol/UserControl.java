@@ -54,11 +54,13 @@ public class UserControl {
 	{
 		System.out.println("loded successfully");
 		
+String page=null;
 
+boolean loggedIn=true;
    String username= SecurityContextHolder.getContext().getAuthentication().getName();
 
    session.setAttribute("username",username);
-   
+   session.setAttribute("loggedIn",loggedIn);
 
 	@SuppressWarnings("unchecked")
 	Collection<GrantedAuthority> authorities =(Collection<GrantedAuthority>) SecurityContextHolder.getContext().getAuthentication().getAuthorities();
@@ -83,14 +85,7 @@ public class UserControl {
    return "page";
 	}
 	
-	@RequestMapping("/Login1")
-	public String Login1()
-	{
-		
-		
-		
-		return "Login";
-	}
+	
 	
 
 }

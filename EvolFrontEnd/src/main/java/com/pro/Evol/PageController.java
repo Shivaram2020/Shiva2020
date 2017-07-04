@@ -19,12 +19,12 @@ public class PageController {
 	
 	
 	
-	@RequestMapping("/signin")
+	@RequestMapping("/Login")
 	public String signin()
 	{
 		
 		
-		return "signinpage";
+		return "Login";
 }
 	@RequestMapping("/signup")
 	public String signup()

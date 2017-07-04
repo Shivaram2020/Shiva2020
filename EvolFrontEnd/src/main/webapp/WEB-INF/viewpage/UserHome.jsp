@@ -19,7 +19,7 @@
   
    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
    
-
+<jsp:include page="header.jsp"/>
 <link href="<c:url value="/resources/theme2/css/style.css" />"  rel="stylesheet">
 
 </head>
@@ -233,17 +233,29 @@
 		
 <div class="container">
 		
-<div class="product" data-id="id19" data-price="159.00" data-title="Lampadina Table Lamp"
-			data-img="https://www.momastore.org/wcsstore/MOMASTORE1/images/products/98696_A2_Lamp_Lampadina.jpg"
-			data-url="https://www.momastore.org/museum/moma/ProductDisplay_Lampadina%20Table%20Lamp_10451_10001_144905_-1_11476_11600_144920"
-			style="background: url(https://www.momastore.org/wcsstore/MOMASTORE1/images/products/98696_A2_Lamp_Lampadina.jpg);background-size: cover;">
-			<span>Lampadina Table Lamp</span>
+<div class="product" data-id="id19" data-price="159.00" data-title="Lampadina Table Lamp">
+<img src="<c:url value="/resources/images/wall.jpg"/>" height="200" width="200">
+				<span>Lampadina Table Lamp</span>
 		</div>
 
 		<span class="add-to-cart">Add to cart</span>
 		<span class="add-to-wish">Add to wish</span>
 		</div>
-		<div class="container">
+		
+		
+				
+<div class="container">
+		
+<div class="product" data-id="id20" data-price="159.00" data-title="Lampadina Table Lamp">
+<img src="<c:url value="/resources/images/wall.jpg"/>" height="200" width="200">
+				<span>Lampadina Table Lamp</span>
+		</div>
+
+		<span class="add-to-cart">Add to cart</span>
+		<span class="add-to-wish">Add to wish</span>
+		</div>
+		
+		
 		
 
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
