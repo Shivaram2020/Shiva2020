@@ -18,7 +18,8 @@
 </head>
 <body>
 
-<div id="fullscreen_bg" class="fullscreen_bg"/>
+<div id="fullscreen_bg" class="fullscreen_bg">
+
 
 <div class="container">
 
@@ -31,6 +32,9 @@
 	</form>
 
 </div>
+
+</div>
+
 
 
 

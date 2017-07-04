@@ -16,8 +16,9 @@ public class UserDetails {
 	private String password,role;
 	@Column(columnDefinition = "varchar(50)")
 	private String Email;
-	@Column(columnDefinition = "varchar(10)")
-	private String mobileno;
+	@Column(columnDefinition = "integer(10)")
+	private int mobileno;
+	
 	@Column(columnDefinition = "varchar(100)")
 	private String address;
 	private boolean enabled;
@@ -51,19 +52,19 @@ public class UserDetails {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getMobileno() {
-		return mobileno;
-	}
-	public void setMobileno(String mobileno) {
-		this.mobileno = mobileno;
-	}
+	
 	public String getRole() {
 		return role;
 	}
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
+	public int getMobileno() {
+		return mobileno;
+	}
+	public void setMobileno(int mobileno) {
+		this.mobileno = mobileno;
+	}
 	
 
 }

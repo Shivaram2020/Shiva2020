@@ -34,14 +34,17 @@ public class UserControl {
 	}
 	
 	@RequestMapping(value="/AddUser",method=RequestMethod.POST)
-    public String addUser(@RequestParam("username") String username , @RequestParam("password") String password)
+    public String addUser(@RequestParam("username") String username , @RequestParam("password") String password,@RequestParam("email") String email,@RequestParam("phonenumber") Integer mobileno ,@RequestParam("role") String role,@RequestParam("address") String address)
     {
     System.out.println("add user to db");
     System.out.println(username+";;;"+password);
     UserDetails user=new UserDetails();
     user.setUsername(username);
     user.setPassword(password);
-    
+    user.setEmail(email);
+    user.setMobileno(mobileno);
+    user.setRole(role);
+    user.setAddress(address);
     userDAO.insertUpdateUser(user);
     System.out.println("UserAdded");
    return "signuppage";

@@ -15,63 +15,86 @@
 
 </head>
 <body>
-<div id="fullscreen_bg" class="fullscreen_bg"/>
-<div class="container" >
-    <div class="col-md-6" >
-        <div id="logbox"  >
-            <form id="signup" method="post" action="AddUser" >
-            <div>              
-            <h1>Create an Account</h1>
-		 <input class="form-control" required type="text" name="username" id = "username" placeholder="username";"/></p>
-		           </div>
-   
-<div><label for="address">Address:</label>
-<input type="text" name="address" size="50" /> </div>
-<div><label for="country">Country:</label>  
-<select name="country">  
-<option selected="" value="Default">(Please select a country)</option>  
-<option value="AF">Australia</option>  
-<option value="AL">Canada</option>  
-<option value="DZ">India</option>  
-<option value="AS">Russia</option>  
-<option value="AD">USA</option>  
-</select></li>  </div>
-<div><label for="zip">ZIP Code:</label>
-<input type="text" name="zip" /></div> 
-<div><label for="email">Email:</label>
-<input type="text" name="email" size="50" /></div>  
-<div><label id="gender">Sex:</label>
-<input type="radio" name="msex" value="Male" /><span>Male</span>
-<input type="radio" name="fsex" value="Female" /><span>Female</span></div>
-<div><label>Language:</label></li>  
-<input type="checkbox" name="en" value="en" checked /><span>English</span>  
-<input type="checkbox" name="nonen" value="noen" /><span>Non English</span> </div>
-<div><label for="desc">About:</label></li>  
-<textarea name="desc" id="desc"></textarea></li> </div> 
 
-                <div>
-                
-                    <input required name="password" type="password" placeholder="Password" class="form-control inputpass" minlength="4" maxlength="16"  id="pass1" /> </p>
-</div>
-                <div>
-                
-                    <input required name="pass" type="password" placeholder="Confirm Password" class="form-control inputpass" minlength="4" maxlength="16" placeholder="Enter again to validate"  id="pass2" onkeyup="checkPass(); return false;" />
-                       
-    </div>
-                <input type="submit" value="Sign me up!" class="inputButton"/>
-</form>
-        </div>
-        </div>
-        </div>
-        
+
+<div class="container">
+	<div class="row">
+        <div class="col-md-6">
+            <form action="AddUser" method="post">
             
+            
+     
+<div id="fullscreen_bg" class="fullscreen_bg">
+            
+            <fieldset><legend class="text-center">Valid information is required to register. <span class="req"><small> required *</small></span></legend>
+  
+  
+  
+  <div class="form-group">
+                <label for="username"><span class="req">* </span> User name:  <small>This will be your login user name</small> </label> 
+                    <input class="form-control" type="text" name="username" id = "txt" onkeyup = "Validate(this)" placeholder="minimum 6 letters" required />  
+                        <div id="errLast"></div>
+            </div>
+
+           
 
 
-<script>
+            <div class="form-group">
+                <label for="email"><span class="req">* </span> Email Address: </label> 
+                    <input class="form-control" required type="text" name="email" id = "email"  onchange="email_validate(this.value);" />   
+                        <div class="status" id="status"></div>
+            </div>
+
+          
+ <div class="form-group">
+            <label for="phonenumber"><span class="req">* </span> Phone Number: </label>
+                    <input required type="text" name="phonenumber" id="phone" class="form-control phone" maxlength="28" onkeyup="validatephone(this);" placeholder="not used for marketing"/> 
+            </div>
+
+            <div class="form-group">
+                <label for="password"><span class="req">* </span> Password: </label>
+                    <input required name="password" type="password" class="form-control inputpass" minlength="4" maxlength="16"  id="pass1" /> </p>
+
+                <label for="password"><span class="req">* </span> Password Confirm: </label>
+                    <input required name="password" type="password" class="form-control inputpass" minlength="4" maxlength="16" placeholder="Enter again to validate"  id="pass2" onkeyup="checkPass(); return false;" />
+                        <span id="confirmMessage" class="confirmMessage"></span>
+            </div>
+               
+              <div> 
+              
+                <label for="password"><span class="req">* </span> Role </label>
+             
+              <input type="radio" name="role" value="user" checked>user
+                 <input type="radio" name="role" value="admin"> admin<br>
+           </div> 
+           
+           
+           
+            <div class="form-group">
+                <label for="address"><span class="req">* </span> address:  <small>address</small> </label> 
+                    <input class="form-control" type="text" name="address" id = "txt" onkeyup = "Validate(this)" placeholder="address" required />  
+                       
+            </div>
+           
+           
+           
+            <div class="form-group">
+                <input class="btn btn-success" type="submit" name="submit_reg" value="Register">
+            </div>
+                     
 
 
-</script>
-      
+ 
+ 
+
+            </fieldset>
+            </form><!-- ends register form -->
+
+	</div>
+    </div>      
+    </div>
+    </div>
+    </form>
       
 </body>
 </html>
