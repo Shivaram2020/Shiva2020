@@ -14,8 +14,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.pro.Evol.dao.ProductDAO;
 import com.pro.Evol.dao.UserDAO;
+import com.pro.Evol.model.Product;
 import com.pro.Evol.model.UserDetails;
 
 @Controller
@@ -23,15 +26,11 @@ public class UserControl {
 	
 	@Autowired
 	UserDAO userDAO;
-	@RequestMapping("/UserHome")
-	public String Login(Model m)
-	{
-		
-		List<UserDetails> list=userDAO.getUserDetails();
-		m.addAttribute("userdetails",list);
-		
-		return "UserHome";
-	}
+	
+	@Autowired
+	ProductDAO productDAO;
+	
+	
 	
 	@RequestMapping(value="/AddUser",method=RequestMethod.POST)
     public String addUser(@RequestParam("username") String username , @RequestParam("password") String password,@RequestParam("email") String email,@RequestParam("phonenumber") Integer mobileno ,@RequestParam("role") String role,@RequestParam("address") String address)
@@ -47,13 +46,13 @@ public class UserControl {
     user.setAddress(address);
     userDAO.insertUpdateUser(user);
     System.out.println("UserAdded");
-   return "signuppage";
+   return "index.jsp";
    
     }
 	
 	
 	@RequestMapping("/login_success")
-	public String loginsuccess(HttpSession session)
+	public String loginsuccess(HttpSession session,Model m)
 	{
 		System.out.println("loded successfully");
 		
@@ -79,6 +78,12 @@ boolean loggedIn=true;
 	}
 	else
 	{
+		
+		Product<MultipartFile> product=new Product<MultipartFile>();
+		List<Product> prodlist=productDAO.getProductDetails();
+		m.addAttribute("prodlist",prodlist);
+		
+		
 	return "UserHome";
 	}
 	}

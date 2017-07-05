@@ -3,7 +3,7 @@
 <html>
 <head>
 <title> category </title>
-<jsp:include page="header.jsp"/>
+<jsp:include page="header1.jsp"/>
 <style>
 table {
     border-collapse: collapse;

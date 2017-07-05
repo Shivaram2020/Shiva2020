@@ -14,10 +14,12 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.pro.Evol.dao.CartDAO;
 import com.pro.Evol.dao.CategoryDAO;
 import com.pro.Evol.dao.ProductDAO;
 import com.pro.Evol.dao.SupplierDAO;
 import com.pro.Evol.dao.UserDAO;
+import com.pro.Evol.model.Cart;
 import com.pro.Evol.model.Category;
 import com.pro.Evol.model.Product;
 import com.pro.Evol.model.Supplier;
@@ -62,6 +64,7 @@ public class DBConfig
 		sessionBuilder.addAnnotatedClass(Supplier.class);
 		sessionBuilder.addAnnotatedClass(UserDetails.class);
 		sessionBuilder.addAnnotatedClass(Product.class);
+		sessionBuilder.addAnnotatedClass(Cart.class);
 		System.out.println("Session Factory Object Creation");
 		SessionFactory sessionFactory=sessionBuilder.buildSessionFactory();
 		System.out.println("Session Factory Object Created");
@@ -109,7 +112,14 @@ public class DBConfig
 			return new ProductDAO(sessionFactory);
 		}
 
-		
+		@Autowired
+		@Bean(name="cartDAO")
+		public CartDAO getCartDAO(SessionFactory sessionFactory)
+		{
+			System.out.println("-- CartDAO Object Creation--");
+			return new CartDAO(sessionFactory);
+		}
+
 }
 
 

@@ -22,7 +22,7 @@
       <a class="navbar-brand active" href="index.jsp">Evol</a>
     </div>
     <ul class="nav navbar-nav">
-     <li><a class="active" href="AdminHome">AdminHome</a></li>
+    
       <li><a href="Product">product</a></li>
       <li><a href="Supplier">supplier</a></li>
      <li><a href="Category">category</a></li>
@@ -31,9 +31,29 @@
      <ul class="nav navbar-nav nav navbar-right">
      
      <a href="#">${sessionScope.username}</a>
+     <a href="index.jsp"> logout</a>
      </ul>
   </div>
 </nav>
 </c:if>
+
+<c:if test="${!sessionScope.loggedIn }">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.jsp">Evol</a>
+    </div>
+    <ul class="nav navbar-nav nav navbar-right">
+     <li><a href="AdminHome">Adminhome</a></li>
+      <li><a href="Product">product</a></li>
+      <li><a href="Supplier">supplier</a></li>
+     <li><a href="Category">category</a></li>
+     
+    </ul>
+  </div>
+</nav>
+</c:if>
+
 </body>
 </html>

@@ -14,7 +14,7 @@
 <jsp:include page="header.jsp"/>
 </head>
 <body>
- 
+ <a href="ProductPage">product</a>
 <div class="parallax">
 <div class="container-fluid">
   

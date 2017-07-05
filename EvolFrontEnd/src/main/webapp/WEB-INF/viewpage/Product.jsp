@@ -4,7 +4,7 @@
 <html>
 <head>
 <title>Product</title>
-<jsp:include page="header.jsp"/>
+<jsp:include page="header1.jsp"/>
 <style class="t">
 table {
     border-collapse: collapse;

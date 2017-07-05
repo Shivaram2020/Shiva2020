@@ -20,10 +20,13 @@
     <div class="navbar-header">
       <a class="navbar-brand active" href="index.jsp">Evol</a>
     </div>
-    <ul class="nav navbar-nav">
-     <li><a class="active" href="UserHome">UserHome</a></li>
+     <a  href="Book">book</a>
+      <a  href="Music">music</a>
+      <a href="Photography">photography</a>
+      <a href="Painting">painting</a>
+      <a href="Games">games</a>
     
-    </ul>
+    
      <ul class="nav navbar-nav nav navbar-right">
      
      <a href="#">${sessionScope.username}</a>

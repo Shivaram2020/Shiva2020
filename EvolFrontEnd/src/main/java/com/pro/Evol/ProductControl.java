@@ -247,24 +247,15 @@ public class ProductControl
 		return supplist;
 	}
 	
-	@RequestMapping("/ProductPage")
-	public String showProductPage(Model m)
+	
+	
+	@RequestMapping(value="/ProductDescription/{prodid}")
+	public String showProductDescription(@PathVariable("prodid") int prodid,Model m)
 	{
+		Product product=productDAO.getProduct(prodid);
+		m.addAttribute("prodinfo",product);
 		
-		
-		Product<MultipartFile> product=new Product<MultipartFile>();
-		
-		m.addAttribute("catlist",this.getCatList());
-		m.addAttribute("supplist",this.getSuppList());
-		m.addAttribute("product",product);
-		
-		List<Product> prodlist=productDAO.getProductDetails();
-		m.addAttribute("prodlist",prodlist);
-		
-		
-		return "ProductPage";
+		return "ProductDescription";
 	}
-	
-	
 }
 
