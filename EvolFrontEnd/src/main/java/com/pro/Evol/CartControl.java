@@ -26,6 +26,20 @@ public class CartControl {
 	@Autowired
 	CartDAO cartDAO;
 	
+	@RequestMapping(value="/CartPage")
+	public String Cartpage(Model m,HttpSession session)
+	{
+		
+		String username=(String) session.getAttribute("username");
+
+		
+		List<Cart> cartlist=cartDAO.getCartDetails(username);
+		m.addAttribute("cartlist",cartlist);
+		
+		return "CartPage";
+	}
+	
+	
 	@RequestMapping(value="/AddCart/{prodid}")
 	public String AddCart(@PathVariable("prodid") int prodid,@RequestParam("quantity") int quantity,HttpSession session,Model m)
 	{
@@ -49,9 +63,9 @@ public class CartControl {
 		cartDAO.insertUpdateCart(cart);	
 		if(quantity<=product.getQuantity())
 		{
+			
 			List<Cart> cartlist=cartDAO.getCartDetails(username);
 			m.addAttribute("cartlist",cartlist);
-		
 		return "CartPage";
 		}
 		else
@@ -59,9 +73,62 @@ public class CartControl {
 		{
 		return "WarningPage";	
 		}
-		}
-	}
-	
+
 	
 
 
+}
+	
+
+
+@RequestMapping(value="/update/{citemid}")
+public String updateCart(@PathVariable("citemid") int citemid,@RequestParam("quantity") int quantity,HttpSession session,Model m)
+{
+	
+
+	
+
+	
+	Cart cart=(Cart)cartDAO.getCart(citemid);
+	cart.setQuantity(quantity);
+	cartDAO.insertUpdateCart(cart);
+	
+String username=(String) session.getAttribute("username");
+	
+	List<Cart> cartlist=cartDAO.getCartDetails(username);
+	m.addAttribute("cartlist",cartlist);
+	
+	
+	
+	return "CartPage";
+	
+}
+
+
+
+@RequestMapping(value="/delete/{citemid}")
+public String deleteCart(@PathVariable("citemid") int citemid,HttpSession session,Model m)
+{
+	
+
+	
+
+	
+	Cart cart=(Cart)cartDAO.getCart(citemid);
+	
+	cartDAO.deleteCart(cart);
+	
+String username=(String) session.getAttribute("username");
+	
+	List<Cart> cartlist=cartDAO.getCartDetails(username);
+	m.addAttribute("cartlist",cartlist);
+	
+	
+	
+	return "CartPage";
+	
+}
+
+
+
+}

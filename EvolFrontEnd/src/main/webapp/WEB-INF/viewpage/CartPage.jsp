@@ -7,6 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+
 </head>
 <body>
 
@@ -25,7 +26,21 @@ ${cartlist.prodid}
 ${cartlist.price * cartlist.quantity}
 
 ${cartlist.productname}
+<form action="<c:url value="/update/${cartlist.cartitemid}"/>" method="get" >
 
+
+<input type="text" value="${ cartlist.quantity }" name="quantity"/>
+
+
+
+
+
+<input type="submit" value="update">
+
+
+<a href="<c:url value="/delete/${cartlist.cartitemid}"/>">delete</a>
+
+</form>
 
 
 
@@ -33,7 +48,9 @@ ${cartlist.productname}
 
 
 </c:forEach>
+<form action="<c:url value="UserHome1"/>" method="get" >
 
-
+<input type="submit" value="ContinueShopping">
+</form>
 </body>
 </html>

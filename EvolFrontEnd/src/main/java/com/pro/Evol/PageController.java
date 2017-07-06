@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
+
 import com.pro.Evol.dao.CategoryDAO;
 import com.pro.Evol.dao.ProductDAO;
 import com.pro.Evol.model.Category;
@@ -21,6 +23,7 @@ public class PageController {
 		CategoryDAO categoryDAO;
 	@Autowired
 	ProductDAO productDAO;
+	
 	
 	
 	@RequestMapping("/Login")
@@ -42,6 +45,9 @@ public class PageController {
 	public String Book(Model m)
 	{
 		String str="Book";
+
+		Product<MultipartFile> product=new Product<MultipartFile>();
+		
 		List<Product> prodlist=productDAO.getProductDetails();
 		m.addAttribute("prodlist",prodlist);
 		m.addAttribute("catlist",this.getCatList());
@@ -53,14 +59,68 @@ public class PageController {
 	@RequestMapping("/Music")
 	public String category(Model m)
 	{
-		String str="Book";
+	
+		Product<MultipartFile> product=new Product<MultipartFile>();
+		
 		List<Product> prodlist=productDAO.getProductDetails();
 		m.addAttribute("prodlist",prodlist);
 		m.addAttribute("catlist",this.getCatList());
 		m.addAttribute("catlist1",this. getCateList1());
-		m.addAttribute("Book",str);
+	
 		return "Music";
 	}
+	
+	
+	@RequestMapping("/Painting")
+	public String Painting(Model m)
+	{
+	
+		Product<MultipartFile> product=new Product<MultipartFile>();
+		
+		List<Product> prodlist=productDAO.getProductDetails();
+		m.addAttribute("prodlist",prodlist);
+		m.addAttribute("catlist",this.getCatList());
+		m.addAttribute("catlist1",this. getCateList1());
+		
+		return "Painting";
+	}
+	
+	
+	@RequestMapping("/Photography")
+	public String Photography(Model m)
+	{
+		
+
+		Product<MultipartFile> product=new Product<MultipartFile>();
+		
+		List<Product> prodlist=productDAO.getProductDetails();
+		m.addAttribute("prodlist",prodlist);
+		m.addAttribute("catlist",this.getCatList());
+		m.addAttribute("catlist1",this. getCateList1());
+	
+		return "Photography";
+	}
+	
+	
+	
+	@RequestMapping("/Game")
+	public String Game(Model m)
+	{
+		
+
+		Product<MultipartFile> product=new Product<MultipartFile>();
+		
+		List<Product> prodlist=productDAO.getProductDetails();
+		m.addAttribute("prodlist",prodlist);
+		m.addAttribute("catlist",this.getCatList());
+		m.addAttribute("catlist1",this. getCateList1());
+	
+		return "Game";
+	}
+	
+	
+	
+	
 	
 	public LinkedHashSet<Integer> getCatList()
 	{

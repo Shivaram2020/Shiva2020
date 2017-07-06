@@ -11,7 +11,7 @@
 </head>
 <body>
 <div>
-
+<jsp:include page="header.jsp"/>
 <img src="<c:url value="/resources/images/${prodinfo.prodid}.jpg"/>">
 </div>
 

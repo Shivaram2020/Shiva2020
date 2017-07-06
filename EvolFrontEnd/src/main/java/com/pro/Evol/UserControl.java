@@ -93,7 +93,26 @@ boolean loggedIn=true;
    return "page";
 	}
 	
+	/*@RequestMapping("/AddCart/UserHome1")
+	public String UserHome1(Model m)
+	{
+
+		Product<MultipartFile> product=new Product<MultipartFile>();
+		List<Product> prodlist=productDAO.getProductDetails();
+		m.addAttribute("prodlist",prodlist);
+		
+	return "User";
+	}*/
 	
-	
+	@RequestMapping("UserHome1")
+	public String UserHome(Model m)
+	{
+
+		Product<MultipartFile> product=new Product<MultipartFile>();
+		List<Product> prodlist=productDAO.getProductDetails();
+		m.addAttribute("prodlist",prodlist);
+		
+	return "User";
+	}
 
 }
