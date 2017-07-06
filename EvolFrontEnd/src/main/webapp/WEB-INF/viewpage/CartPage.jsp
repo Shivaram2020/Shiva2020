@@ -26,7 +26,7 @@ ${cartlist.prodid}
 ${cartlist.price * cartlist.quantity}
 
 ${cartlist.productname}
-<form action="<c:url value="/update/${cartlist.cartitemid}"/>" method="get" >
+<form action="<c:url value="/update/${cartlist.cartitemid}/${prodinfo.prodid}"/>" method="get" >
 
 
 <input type="text" value="${ cartlist.quantity }" name="quantity"/>
