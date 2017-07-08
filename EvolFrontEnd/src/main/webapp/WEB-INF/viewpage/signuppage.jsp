@@ -14,24 +14,29 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 </head>
-<body>
+<body class="cl">
 
+<div class="left left1 cl">
+ 
+
+<div class="selection">
 
 <div class="container">
-	<div class="row">
+	<div class="row cl">
         <div class="col-md-6">
+        
+        
+        style=color:white;
+        
+        
             <form action="AddUser" method="post">
             
-            
-     
-<div id="fullscreen_bg" class="fullscreen_bg">
-            
-            <fieldset><legend class="text-center">Valid information is required to register. <span class="req"><small> required *</small></span></legend>
-  
+             
+           <fieldset class="cl"><legend class="text-center "style=color:red;>Valid information is required to register. <span class="req"><small> required *</small></span></legend> 
   
   
   <div class="form-group">
-                <label for="username"><span class="req">* </span> User name:  <small>This will be your login user name</small> </label> 
+                <label for="username"   style=color:white;><span class="req">* </span> User name:  <small>This will be your login user name</small> </label> 
                     <input class="form-control" type="text" name="username" id = "txt" onkeyup = "Validate(this)" placeholder="minimum 6 letters" required />  
                         <div id="errLast"></div>
             </div>
@@ -40,39 +45,39 @@
 
 
             <div class="form-group">
-                <label for="email"><span class="req">* </span> Email Address: </label> 
+                <label for="email"   style=color:white;><span class="req">* </span> Email Address: </label> 
                     <input class="form-control" required type="text" name="email" id = "email"  onchange="email_validate(this.value);" />   
                         <div class="status" id="status"></div>
             </div>
 
           
  <div class="form-group">
-            <label for="phonenumber"><span class="req">* </span> Phone Number: </label>
+            <label for="phonenumber"   style=color:white;><span class="req">* </span> Phone Number: </label>
                     <input required type="text" name="phonenumber" id="phone" class="form-control phone" maxlength="28" onkeyup="validatephone(this);" placeholder="not used for marketing"/> 
             </div>
 
             <div class="form-group">
-                <label for="password"><span class="req">* </span> Password: </label>
+                <label for="password"   style=color:white;><span class="req">* </span> Password: </label>
                     <input required name="password" type="password" class="form-control inputpass" minlength="4" maxlength="16"  id="pass1" /> </p>
 
-                <label for="password"><span class="req">* </span> Password Confirm: </label>
-                    <input required name="password" type="password" class="form-control inputpass" minlength="4" maxlength="16" placeholder="Enter again to validate"  id="pass2" onkeyup="checkPass(); return false;" />
+                <label for="password"   style=color:white;><span class="req">* </span> Password Confirm: </label>
+                    <input required name="pass" type="password" class="form-control inputpass" minlength="4" maxlength="16" placeholder="Enter again to validate"  id="pass2" onkeyup="checkPass(); return false;" />
                         <span id="confirmMessage" class="confirmMessage"></span>
             </div>
                
-              <div> 
+         <!-- -     <div> 
               
                 <label for="password"><span class="req">* </span> Role </label>
              
               <input type="radio" name="role" value="user" checked>user
                  <input type="radio" name="role" value="admin"> admin<br>
-           </div> 
+           </div> --> 
            
            
            
             <div class="form-group">
-                <label for="address"><span class="req">* </span> address:  <small>address</small> </label> 
-                    <input class="form-control" type="text" name="address" id = "txt" onkeyup = "Validate(this)" placeholder="address" required />  
+                <label for="address"   style=color:white;><span class="req">* </span> address:  <small>address</small> </label> 
+                    <input class="form-control" type="text" name="address" id = "txt"  placeholder="address" required />  
                        
             </div>
            
@@ -88,13 +93,20 @@
  
 
             </fieldset>
-            </form><!-- ends register form -->
+         </form><!-- ends register form --> 
 
 	</div>
     </div>      
     </div>
     </div>
-    </form>
+   
+    
+    
+     </div>
+      <div class="imp">
       
+      <img src="<c:url value="/resources/images/imp.gif"/> " height="700" width="800" >
+      
+      </div>
 </body>
 </html>

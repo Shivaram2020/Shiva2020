@@ -21,13 +21,13 @@ public class UserTestCase {
 	
 	//Insertion TestCase
 	
-	/*UserDetails userdetails=new UserDetails();
+	UserDetails userdetails=new UserDetails();
 	
-	userdetails.setUsername("Shivaram");
+	/*userdetails.setUsername("Shivaram");
 	userdetails.setPassword("SwS-2020");
 	userdetails.setEmail("sajdk");
 	userdetails.setRole("king");
-	userdetails.setMobileno("973294923");
+	userdetails.setMobileno(973294923);
 	userdetails.setAddress("This Mobile is WIFI Enabled. You can Enjoy");
 	userDAO.insertUpdateUser(userdetails);		
 	System.out.println("userdetails Inserted");*/

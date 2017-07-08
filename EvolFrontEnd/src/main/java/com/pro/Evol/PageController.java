@@ -27,11 +27,18 @@ public class PageController {
 	
 	
 	@RequestMapping("/Login")
-	public String signin()
+	public String Login()
 	{
 		
 		
 		return "Login";
+}
+	@RequestMapping("/LoginError")
+	public String LoginError()
+	{
+		
+		
+		return "LoginError";
 }
 	@RequestMapping("/signup")
 	public String signup()

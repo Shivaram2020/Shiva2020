@@ -6,8 +6,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-
+<title>Cart</title>
+<jsp:include page="header.jsp"/>
 </head>
 <body>
 
@@ -52,5 +52,7 @@ ${cartlist.productname}
 
 <input type="submit" value="ContinueShopping">
 </form>
+
+<a href="CheckOut">checkout</a>
 </body>
 </html>

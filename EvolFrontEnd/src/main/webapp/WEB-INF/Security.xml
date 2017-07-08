@@ -18,7 +18,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
         
         
 <security:form-login login-page="/Login" default-target-url="/"
-login-processing-url="/perform_login" authentication-failure-url="/Login"
+login-processing-url="/perform_login" authentication-failure-url="/LoginError"
 authentication-success-forward-url="/login_success"/>
          <security:csrf disabled="true"/>
        

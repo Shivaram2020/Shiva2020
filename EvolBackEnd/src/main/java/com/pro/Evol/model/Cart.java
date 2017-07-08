@@ -15,11 +15,21 @@ public class Cart {
 	@Column(columnDefinition = "integer(10)")
 	private int cartid, prodid,quantity,price,catid;
 	
+	@Column(columnDefinition = "varchar(30)")
+	private String username;
+	
 	
 	@Column(columnDefinition = "varchar(30)")
-	private String username,productname,status;
+	private String productname,status;
 
-	
+	public int getCartid() {
+		return cartid;
+	}
+
+	public void setCartid(int cartid) {
+		this.cartid = cartid;
+	}
+
 	public int getCatid() {
 		return catid;
 	}
@@ -37,14 +47,7 @@ public class Cart {
 		this.cartitemid = cartitemid;
 	}
 
-	public int getCartid() {
-		return cartid;
-	}
-
-	public void setCartid(int cartid) {
-		this.cartid = cartid;
-	}
-
+	
 	public int getProdid() {
 		return prodid;
 	}

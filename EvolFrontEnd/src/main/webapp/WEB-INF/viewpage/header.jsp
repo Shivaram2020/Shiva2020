@@ -51,11 +51,12 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="index.jsp">Evol</a>
     </div>
-    <ul class="nav navbar-nav nav navbar-right">
-     <li><a href="AdminHome">Adminhome</a></li>
-      <li><a href="Product">product</a></li>
-      <li><a href="Supplier">supplier</a></li>
-     <li><a href="Category">category</a></li>
+    <a class="navbar-brand " href="UserHome1">Home</a>
+     <a  href="Book">book</a>
+      <a  href="Music">music</a>
+      <a href="Photography">photography</a>
+      <a href="Painting">painting</a>
+      <a href="Game">games</a>
      
     </ul>
   </div>

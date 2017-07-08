@@ -52,7 +52,7 @@ public class CartTestCase
 		
 		//Update the Cart
 		/*Cart cart=cartDAO.getCart(2);
-		cart.setCartid(1001);
+		cart.setCartid(1003);
 		cartDAO.insertUpdateCart(cart);
 		System.out.println("The Cart Updated");*/
 		

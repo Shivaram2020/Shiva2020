@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.pro.Evol.model.Cart;
+import com.pro.Evol.model.UserDetails;
 
 
 
@@ -41,7 +42,7 @@ public class CartDAO {
 		session.close();
 		return cart;
 	}
-	
+
 	@Transactional
 	public void deleteCart(Cart cart)
 	{

@@ -14,8 +14,10 @@
 <jsp:include page="header.jsp"/>
 </head>
 <body>
- <a href="ProductPage">product</a>
+ 
 <div class="parallax">
+</div>
+<div class="parallax3">
 <div class="container-fluid">
   
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -30,15 +32,31 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="<c:url value="/resources/caurosel/music.jpg"/>" height="1000" width="600" alt="music" style="width:100%;">
+       <a href="Music"> <img src="<c:url value="/resources/caurosel/album.jpg"/>" height="315" width="850" alt="music" style="width:100%;"></a>
+      <div class="carousel-caption">
+        <h3>Evol Music</h3>
+        <p>New PoP albums Coming Soon </p>
+      </div>
+     
       </div>
 
       <div class="item">
-        <img src="<c:url value="/resources/caurosel/book.jpg"/>"  height="1000" width="600" alt="book" style="width:100%;">
+         <a href="Game">  <img src="<c:url value="/resources/caurosel/gam.jpg"/>"  height="315" width="850" alt="book" style="width:100%;"></a>
+      <div class="carousel-caption">
+        <h3>Evol Game</h3>
+        <p>50% Offer! for New Arrivals </p>
+      </div>
+      
+      
       </div>
     
       <div class="item">
-        <img src="<c:url value="/resources/caurosel/photo.jpg"/>" height="1000" width="600" alt="photo" style="width:100%;">
+       <a href="Photography">  <img src="<c:url value="/resources/caurosel/cam.jpg"/>" height="315" width="850" alt="photo" style="width:100%;"></a>
+      <div class="carousel-caption">
+        <h3>Evol Photography</h3>
+        <p>Good Deal for Lenses Exciting Offer!</p>
+      </div>
+      
       </div>
     </div>
  
@@ -69,8 +87,8 @@
 	
 </div>
 
-
-
 </div>
+
+
 </body>
 </html>

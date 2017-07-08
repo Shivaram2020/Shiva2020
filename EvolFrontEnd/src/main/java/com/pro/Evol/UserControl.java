@@ -43,10 +43,11 @@ public class UserControl {
     user.setEmail(email);
     user.setMobileno(mobileno);
     user.setRole(role);
+    user.setEnabled(true);
     user.setAddress(address);
     userDAO.insertUpdateUser(user);
     System.out.println("UserAdded");
-   return "index.jsp";
+   return "redirect:/UserHome1";
    
     }
 	
@@ -104,7 +105,7 @@ boolean loggedIn=true;
 	return "User";
 	}*/
 	
-	@RequestMapping("UserHome1")
+	@RequestMapping("/UserHome1")
 	public String UserHome(Model m)
 	{
 

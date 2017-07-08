@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Music</title>
+<title>Book</title>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="header.jsp"/>
 </head>
@@ -16,9 +16,9 @@
 <c:forEach items="${prodlist}" var="prodlist"  >
 <c:if test="${2==prodlist.catid }">
 
-success
 
-<a href="ProductDescription/${product.prodid}" class=" thumbnail">
+
+<a href="ProductDescription/${prodlist.prodid}" class=" thumbnail">
 <img src="<c:url value="/resources/images/${prodlist.prodid}.jpg"/>"></a>
 
 </c:if>

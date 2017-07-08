@@ -43,11 +43,12 @@ public class CartControl {
 	@RequestMapping(value="/AddCart/{prodid}")
 	public String AddCart(@PathVariable("prodid") int prodid,@RequestParam("quantity") int quantity,HttpSession session,Model m)
 	{
+		int count=1001;
 		Cart cart=new Cart();
 		
 		String username=(String) session.getAttribute("username");
 		
-		cart.setCartid(1001);
+	
 		cart.setQuantity(quantity);
 		cart.setStatus("N");
 		cart.setUsername(username);

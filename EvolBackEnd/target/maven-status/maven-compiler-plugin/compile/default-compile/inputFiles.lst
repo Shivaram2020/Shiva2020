@@ -1,9 +1,11 @@
 E:\EVOL\EvolBackEnd\src\main\java\com\pro\Evol\dao\SupplierDAO.java
 E:\EVOL\EvolBackEnd\src\main\java\com\pro\Evol\model\Product.java
 E:\EVOL\EvolBackEnd\src\main\java\com\pro\Evol\model\Supplier.java
+E:\EVOL\EvolBackEnd\src\main\java\com\pro\Evol\dao\CartDAO.java
 E:\EVOL\EvolBackEnd\src\main\java\com\pro\Evol\dao\CategoryDAO.java
 E:\EVOL\EvolBackEnd\src\main\java\com\pro\Evol\model\UserDetails.java
 E:\EVOL\EvolBackEnd\src\main\java\com\pro\Evol\model\Category.java
 E:\EVOL\EvolBackEnd\src\main\java\com\pro\Evol\config\DBConfig.java
 E:\EVOL\EvolBackEnd\src\main\java\com\pro\Evol\dao\UserDAO.java
 E:\EVOL\EvolBackEnd\src\main\java\com\pro\Evol\dao\ProductDAO.java
+E:\EVOL\EvolBackEnd\src\main\java\com\pro\Evol\model\Cart.java
