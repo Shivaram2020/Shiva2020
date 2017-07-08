@@ -16,11 +16,13 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.pro.Evol.dao.CartDAO;
 import com.pro.Evol.dao.CategoryDAO;
+import com.pro.Evol.dao.OrdersDAO;
 import com.pro.Evol.dao.ProductDAO;
 import com.pro.Evol.dao.SupplierDAO;
 import com.pro.Evol.dao.UserDAO;
 import com.pro.Evol.model.Cart;
 import com.pro.Evol.model.Category;
+import com.pro.Evol.model.Orders;
 import com.pro.Evol.model.Product;
 import com.pro.Evol.model.Supplier;
 import com.pro.Evol.model.UserDetails;
@@ -51,7 +53,7 @@ public class DBConfig
 	{
 		System.out.println("---Hibernate Properties----");
 		Properties prop=new Properties();
-		prop.setProperty("hibernate.hbm2ddl.auto", "create");
+		prop.setProperty("hibernate.hbm2ddl.auto", "update");
 		prop.put("hibernate.show_sql", "true"); //optional
 		prop.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 		System.out.println("---Hibernate Properties Created");
@@ -65,6 +67,7 @@ public class DBConfig
 		sessionBuilder.addAnnotatedClass(UserDetails.class);
 		sessionBuilder.addAnnotatedClass(Product.class);
 		sessionBuilder.addAnnotatedClass(Cart.class);
+		sessionBuilder.addAnnotatedClass(Orders.class);
 		System.out.println("Session Factory Object Creation");
 		SessionFactory sessionFactory=sessionBuilder.buildSessionFactory();
 		System.out.println("Session Factory Object Created");
@@ -118,6 +121,13 @@ public class DBConfig
 		{
 			System.out.println("-- CartDAO Object Creation--");
 			return new CartDAO(sessionFactory);
+		}
+		@Autowired
+		@Bean(name="ordersDAO")
+		public OrdersDAO getOrderDAO(SessionFactory sessionFactory)
+		{
+			System.out.println("-- OrdersDAO Object Creation--");
+			return new OrdersDAO(sessionFactory);
 		}
 
 }

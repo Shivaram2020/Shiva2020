@@ -48,6 +48,7 @@ public class CategoryDAO
 	{
 		Session session=sessionFactory.openSession();
 		Query query=session.createQuery("from Category");
+		@SuppressWarnings("unchecked")
 		List<Category> list=query.list();
 		session.close();
 		return list;

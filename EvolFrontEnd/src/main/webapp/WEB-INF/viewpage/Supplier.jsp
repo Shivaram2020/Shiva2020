@@ -34,16 +34,16 @@ tr:nth-child(even){background-color: #f2f2f2}
 	
 	
 	<c:if test="${flag}">
-	<h1 align="center">Supplier Name: <input type="text" type="hidden" name="suppname" value="${category.suppname}"/></h1>
+	<h1 align="center">Supplier Name: <input type="text" required type="hidden" name="suppname" value="${category.suppname}"/></h1>
 	</c:if>
 	<c:if test="${!flag }">
-	<h1 align="center">Supplier Name: <input type="text" name="suppname"/></h1>
+	<h1 align="center">Supplier Name: <input type="text" required name="suppname"/></h1>
 	</c:if>
 	<c:if test="${flag}">
-	<h1 align="center">Supplier Address <input type="text" type="hidden" name="address" value="${category.address}"/></h1>
+	<h1 align="center">Supplier Address <input type="text" required type="hidden" name="address" value="${category.address}"/></h1>
 	</c:if>
 	<c:if test="${!flag }">
-	<h1 align="center">Supplier Address<input type="text" name="address"/></h1>
+	<h1 align="center">Supplier Address<input type="text" required name="address"/></h1>
 	</c:if>
 	
 	

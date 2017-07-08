@@ -43,29 +43,26 @@ public class CartControl {
 	@RequestMapping(value="/AddCart/{prodid}")
 	public String AddCart(@PathVariable("prodid") int prodid,@RequestParam("quantity") int quantity,HttpSession session,Model m)
 	{
-		int count=1001;
-		Cart cart=new Cart();
-		
-		String username=(String) session.getAttribute("username");
-		
-	
-		cart.setQuantity(quantity);
-		cart.setStatus("N");
-		cart.setUsername(username);
-		cart.setProdid(prodid);
-		
-		
-	
 		
 		Product product=productDAO.getProduct(prodid);
-		cart.setProductname(product.getProdname());
-		cart.setPrice(product.getPrice());
-		cart.setCatid(product.getCatid());
-		cartDAO.insertUpdateCart(cart);	
-		if(quantity<=product.getQuantity())
+		
+		
+		if(quantity<=product.getQuantity()&&quantity>0)
 		{
 			
-		
+			int count=1000;
+			Cart cart=new Cart(); 
+			String username=(String) session.getAttribute("username");	
+			cart.setQuantity(quantity);
+			cart.setStatus("N");
+			cart.setUsername(username);
+			cart.setProdid(prodid);
+			
+			cart.setProductname(product.getProdname());
+			cart.setPrice(product.getPrice());
+			
+			cartDAO.insertUpdateCart(cart);	
+			
 		return "redirect:/CartPage";
 		}
 		else
@@ -73,7 +70,7 @@ public class CartControl {
 		{
 			
 		
-		return "WarningPage";	
+		return "Warning";	
 		}
 
 	
@@ -90,6 +87,9 @@ public String updateCart(@PathVariable("citemid") int citemid,@RequestParam("qua
 
 	
 
+
+	if(quantity>0)
+	{
 	
 	Cart cart=(Cart)cartDAO.getCart(citemid);
 	cart.setQuantity(quantity);
@@ -104,6 +104,11 @@ String username=(String) session.getAttribute("username");
 	
 	return "redirect:/CartPage";
 	
+	}
+	else
+	{
+		return "Warning";
+	}
 }
 
 

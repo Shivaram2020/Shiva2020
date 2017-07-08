@@ -15,8 +15,7 @@
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto+Slab'>
 
       <style>
-      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
-      * {
+     {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -150,7 +149,7 @@ footer {
     </div>
     <div class='login--password-container'>
       <label>Password</label>
-      <input placeholder='Password' name="password" type='password' requried>
+      <input placeholder='Password' name="password" type='password' requried >
       <button class='js-toggle-login login--login-submit'>Login</button>
     </div>
   </div>

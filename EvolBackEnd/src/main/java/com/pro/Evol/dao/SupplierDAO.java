@@ -47,6 +47,7 @@ public class SupplierDAO {
 	{
 		Session session=sessionFactory.openSession();
 		Query query=session.createQuery("from Supplier");
+		@SuppressWarnings("unchecked")
 		List<Supplier> list=query.list();
 		session.close();
 		return list;

@@ -254,9 +254,13 @@ public class ProductControl
 	{
 		Product product=productDAO.getProduct(prodid);
 		m.addAttribute("prodinfo",product);
+	
 		
-		return "ProductDescription";
+			return "ProductDescription";
+		
 	}
+	
+
 	
 }
 

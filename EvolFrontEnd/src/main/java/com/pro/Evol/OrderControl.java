@@ -8,15 +8,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.pro.Evol.dao.CartDAO;
+import com.pro.Evol.dao.OrdersDAO;
 import com.pro.Evol.dao.ProductDAO;
 import com.pro.Evol.model.Cart;
+import com.pro.Evol.model.Orders;
 
 
 @Controller
 public class OrderControl {
-	
+	@Autowired
+	OrdersDAO ordersDAO;
 	
 
 	@Autowired
@@ -50,8 +54,28 @@ public class OrderControl {
 	@RequestMapping("/pay")
 	public String Confirmation(Model m,HttpSession session)
 	{
+		String username=(String) session.getAttribute("username");
+		List<Orders> orderlist=ordersDAO.getOrdersDetails(username);
+		
+		m.addAttribute("orderlist",orderlist);
+		
+		
+		return "ThankPage";
+	}
+	
+	
+	@RequestMapping("/payment")
+	public String payment(@RequestParam("paymode") String paymode,@RequestParam("shipping") String shipping,Model m,HttpSession session)
+	{
 		
 		String username=(String) session.getAttribute("username");
+		Orders order=new Orders();
+		order.setPaymode(paymode);
+		order.setShipmentaddress(shipping);
+		order.setUsername(username);
+		order.setStatus("Y");
+		ordersDAO.insertUpdateOrders(order);	
+		
 		
 		List<Cart> cartlist=cartDAO.getCartDetails(username);
 		for(Cart cart:cartlist)
@@ -63,7 +87,14 @@ public class OrderControl {
 		}
 		
 		
-		return "ThankPage";
+		return "redirect:/pay";
+		
 	}
-
+	
+	
+	
+	
+	
+	
+	
 }

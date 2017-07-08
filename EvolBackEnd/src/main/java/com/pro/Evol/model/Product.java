@@ -24,17 +24,17 @@ public class Product<MultipartFile> {
 	private String prodname;
 	@Column (columnDefinition="varchar(80)")
 	private String proddesc;
+	
+	@Transient
+	MultipartFile pimage;
+	
+	
 	public MultipartFile getPimage() {
 		return pimage;
 	}
 	public void setPimage(MultipartFile pimage) {
 		this.pimage = pimage;
 	}
-	@Transient
-	MultipartFile pimage;
-	
-	
-	
 	public String getProddesc() {
 		return proddesc;
 	}

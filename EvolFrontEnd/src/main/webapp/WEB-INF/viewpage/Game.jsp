@@ -19,7 +19,7 @@
 
 
 <a href="ProductDescription/${prodlist.prodid}" class=" thumbnail">
-<img src="<c:url value="/resources/images/${prodlist.prodid}.jpg"/>"></a>
+<img src="<c:url value="/resources/images/${prodlist.prodid}.jpg"/>" height="100" width="100"></a>
 
 </c:if>
 </c:forEach>

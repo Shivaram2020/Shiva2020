@@ -33,6 +33,10 @@ public class PageController {
 		
 		return "Login";
 }
+	
+	
+	
+	
 	@RequestMapping("/LoginError")
 	public String LoginError()
 	{
@@ -47,6 +51,16 @@ public class PageController {
 		
 		return "signuppage";
 	}
+	
+	
+	@RequestMapping("/Warning")
+	public String warning()
+	{
+		
+		
+		return "Warning";
+}
+	
 	
 	@RequestMapping("/Book")
 	public String Book(Model m)

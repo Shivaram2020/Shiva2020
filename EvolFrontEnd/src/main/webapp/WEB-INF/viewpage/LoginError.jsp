@@ -26,8 +26,8 @@
 	<form action="<c:url value="/perform_login"/>" method="post">
 		<h1 class="form-signin-heading text-muted">Sign In</h1>
 		    <small  style=color:red;>  *Username or Password is incorrect </small>
-		<input type="text" class="form-control" placeholder="Username" required="" autofocus="" name="username">
-		<input type="password" class="form-control" placeholder="Password" required="" name="password">
+		<input type="text" class="form-control" placeholder="Username" required autofocus="" name="username">
+		<input type="password" class="form-control" placeholder="Password" required name="password">
 		<input type="submit"value="submit">
 			
 	</form>

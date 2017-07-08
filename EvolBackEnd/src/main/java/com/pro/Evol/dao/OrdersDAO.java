@@ -10,52 +10,52 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.pro.Evol.model.Cart;
+import com.pro.Evol.model.Orders;
 
 
 
 
-@Repository("cartDAO")
+@Repository("ordersDAO")
 
-public class CartDAO {
+public class OrdersDAO {
 
 	
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	public CartDAO(SessionFactory sessionFactory)
+	public OrdersDAO(SessionFactory sessionFactory)
 	{
 		this.sessionFactory=sessionFactory;
 	}
 	
 	@Transactional
-	public void insertUpdateCart(Cart cart)
+	public void insertUpdateOrders(Orders orders)
 	{
 		Session session=sessionFactory.getCurrentSession();
-		session.saveOrUpdate(cart);
+		session.saveOrUpdate(orders);
 	}
 	
-	public Cart getCart(int cartitemid)
+	public Orders getOrders(int id)
 	{
 		Session session=sessionFactory.openSession();
-		Cart cart=(Cart)session.get(Cart.class,cartitemid);
+		Orders orders=(Orders)session.get(Orders.class,id);
 		session.close();
-		return cart;
+		return orders;
 	}
 
 	@Transactional
-	public void deleteCart(Cart cart)
+	public void deleteOrders(Orders orders)
 	{
-		sessionFactory.getCurrentSession().delete(cart);
+		sessionFactory.getCurrentSession().delete(orders);
 	}
 	
-	public List<Cart> getCartDetails(String username)
+	public List<Orders> getOrdersDetails(String username)
 	{
 		Session session=sessionFactory.openSession();
-		Query query=session.createQuery("from Cart where username=:username and status='N'");
+		Query query=session.createQuery("from Orders  where username=:username and status='Y'");
 		query.setParameter("username", username);
 		@SuppressWarnings("unchecked")
-		List<Cart> list=query.list();
+		List<Orders> list=query.list();
 		session.close();
 		return list;
 	}

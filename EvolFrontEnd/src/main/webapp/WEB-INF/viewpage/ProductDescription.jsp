@@ -19,10 +19,11 @@ ${prodinfo.prodname}
 </div>
 
 <form action="<c:url value="/AddCart/${prodinfo.prodid}"/>" method="get">
-Quantity<input type="text" name="quantity"/>
+Quantity<input type="text" name="quantity" onclick="myFunction()" required/>
 
 <input type="submit" name="submit"/>
 </form>
+
 
 </body>
 </html>

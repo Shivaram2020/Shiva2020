@@ -32,41 +32,41 @@ th, td {
 			</c:if>
 			<tr>
 				<td>Product Name</td>
-				<td><form:input path="prodname" /></td>
+				<td><form:input path="prodname" required="required"/></td>
 			</tr>
 			
 			<tr>
 				<td>Category</td>
-				<td><form:select path="catid">
-						<form:option value="0" label="------Select----" />
+				<td><form:select path="catid" >
+						<form:option value="0" label="------Select----"  required="required"/>
 						<form:options items="${catlist}" />
 					</form:select>
 				</td>
 			</tr>		
 			<tr>
 				<td>Supplier</td>
-				<td><form:select path="suppid">
-						<form:option value="0" label="------Select----" />
+				<td><form:select path="suppid" required="required">
+						<form:option value="0" label="------Select----"/>
 						<form:options items="${supplist}" />
 					</form:select>
 				</td>
 			</tr>		
 			<tr>
 				<td>Price</td>
-				<td><form:input path="price" /></td>
+				<td><form:input path="price" required="required" /></td>
 			</tr>
 			<tr>
 				<td>Stock</td>
-				<td><form:input path="quantity" /></td>
+				<td><form:input path="quantity" required="required"/></td>
 			</tr>
 			<tr>
 				<td>Product Desc</td>
-				<td><form:textarea path="proddesc" /></td>
+				<td><form:textarea path="proddesc" required="required" /></td>
 			</tr>
 			
 	<tr>
 			<td>Product Image</td>
-			<td><form:input type="file" path="pimage" /></td>
+			<td><form:input type="file" path="pimage" required="required"/></td>
 	</tr>
 
 

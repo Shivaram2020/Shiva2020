@@ -38,7 +38,13 @@ ${cartlist.productname}
 
 ${grandtotal}
 
+<form action="<c:url value="/payment"/>" method="get">
+paymode<input type="text" name="paymode" required/>
+shipping address<input type="text" name="shipping" required/>
 
-<a href="pay"> payment </a>
+
+
+<input type="submit" value="payment "name="submit"/>
+</form>
 </body>
 </html>

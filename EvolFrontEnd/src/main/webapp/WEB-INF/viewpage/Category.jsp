@@ -29,20 +29,20 @@ tr:nth-child(even){background-color: #f2f2f2}
 	
 	<h1 align="center"> Details</h1>
 	<c:if test="${flag }">
-		<h1 align="center">Category ID: <input type="text" type="hidden" name="catid" value="${category.catid}"/>
+		<h1 align="center">Category ID: <input type="text"  type="hidden" name="catid" value="${category.catid}"/>
 		</c:if>
 		
 	<c:if test="${flag}">
-	<h1 align="center">Category Name: <input type="text" type="hidden" name="catname" value="${category.catname}"/></h1>
+	<h1 align="center">Category Name: <input type="text" required type="hidden" name="catname" value="${category.catname}"/></h1>
 	</c:if>
 	<c:if test="${!flag }">
-	<h1 align="center">Category Name: <input type="text" name="catname"/></h1>
+	<h1 align="center">Category Name: <input type="text" required name="catname"/></h1>
 	</c:if>
 	<c:if test="${flag}">
-	<h1 align="center">Category Description <input type="text" type="hidden" name="catdesc" value="${category.catdesc}"/></h1>
+	<h1 align="center">Category Description <input type="text" required type="hidden" name="catdesc" value="${category.catdesc}"/></h1>
 	</c:if>
 	<c:if test="${!flag }">
-	<h1 align="center">Category Description<input type="text" name="catdesc"/></h1>
+	<h1 align="center">Category Description<input type="text" required name="catdesc"/></h1>
 	</c:if>
 	
 	

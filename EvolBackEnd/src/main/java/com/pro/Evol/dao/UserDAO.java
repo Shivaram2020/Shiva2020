@@ -46,6 +46,7 @@ public class UserDAO {
 	{
 		Session session=sessionFactory.openSession();
 		Query query=session.createQuery("from UserDetails");
+		@SuppressWarnings("unchecked")
 		List<UserDetails> list=query.list();
 		session.close();
 		return list;
