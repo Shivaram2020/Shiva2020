@@ -65,15 +65,13 @@ public class PageController {
 	@RequestMapping("/Book")
 	public String Book(Model m)
 	{
-		String str="Book";
+		
 
 		Product<MultipartFile> product=new Product<MultipartFile>();
 		
 		List<Product> prodlist=productDAO.getProductDetails();
 		m.addAttribute("prodlist",prodlist);
-		m.addAttribute("catlist",this.getCatList());
-		m.addAttribute("catlist1",this. getCateList1());
-		m.addAttribute("Book",str);
+	
 		return "Book";
 	}
 	
@@ -85,8 +83,6 @@ public class PageController {
 		
 		List<Product> prodlist=productDAO.getProductDetails();
 		m.addAttribute("prodlist",prodlist);
-		m.addAttribute("catlist",this.getCatList());
-		m.addAttribute("catlist1",this. getCateList1());
 	
 		return "Music";
 	}
@@ -100,9 +96,7 @@ public class PageController {
 		
 		List<Product> prodlist=productDAO.getProductDetails();
 		m.addAttribute("prodlist",prodlist);
-		m.addAttribute("catlist",this.getCatList());
-		m.addAttribute("catlist1",this. getCateList1());
-		
+	
 		return "Painting";
 	}
 	
@@ -116,8 +110,6 @@ public class PageController {
 		
 		List<Product> prodlist=productDAO.getProductDetails();
 		m.addAttribute("prodlist",prodlist);
-		m.addAttribute("catlist",this.getCatList());
-		m.addAttribute("catlist1",this. getCateList1());
 	
 		return "Photography";
 	}
@@ -133,9 +125,7 @@ public class PageController {
 		
 		List<Product> prodlist=productDAO.getProductDetails();
 		m.addAttribute("prodlist",prodlist);
-		m.addAttribute("catlist",this.getCatList());
-		m.addAttribute("catlist1",this. getCateList1());
-	
+		
 		return "Game";
 	}
 	
@@ -143,32 +133,7 @@ public class PageController {
 	
 	
 	
-	public LinkedHashSet<Integer> getCatList()
-	{
-		List<Category> list=categoryDAO.getCategoryDetails();
-		
-		LinkedHashSet<Integer> catlist=new LinkedHashSet<Integer>();
-		
-		for(Category cat:list)
-		{
-			catlist.add(cat.getCatid());
-		}
-		
-		return catlist;
-	}
-	public LinkedHashSet<String> getCateList1()
-	{
-		List<Category> list=categoryDAO.getCategoryDetails();
-		
-		LinkedHashSet<String> catlist1=new LinkedHashSet<String>();
-		
-		for(Category cat:list)
-		{
-			catlist1.add(cat.getCatname());
-		}
-		
-		return catlist1;
-	}
+	
     }
 
 

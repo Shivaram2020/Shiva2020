@@ -18,7 +18,7 @@
 
 <div class=row>
 <div class="col-sm-6 col-md-3">
-
+<c:if test="${sessionScope.loggedIn }">
 <c:forEach items="${prodlist}" var="product">
 <h1>${product.prodid}</h1>
 
@@ -32,6 +32,25 @@
 </div>
 
 </c:forEach>
+</c:if>
+<c:if test="${!sessionScope.loggedIn }">
+
+
+
+<c:forEach items="${prodlist}" var="product">
+<h1>${product.prodid}</h1>
+
+<a href="Login" class=" thumbnail">
+<img src="<c:url value="/resources/images/${product.prodid}.jpg"/>"></a>
+
+<div class="caption">
+
+<h4>${product.proddesc}</h4>
+<h4>${product.price}</h4>
+</div>
+</c:forEach>
+
+</c:if>
 
 
 </div>

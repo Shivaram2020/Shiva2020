@@ -248,7 +248,7 @@ public class ProductControl
 	}
 	
 	
-	
+
 	@RequestMapping(value="/ProductDescription/{prodid}")
 	public String showProductDescription(@PathVariable("prodid") int prodid,Model m)
 	{

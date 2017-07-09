@@ -9,8 +9,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>product page</title>
 <jsp:include page="header.jsp"/>
- <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
- <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 </head>
 <body>
 
@@ -22,7 +20,7 @@
 <c:forEach items="${prodlist}" var="product">
 <h1>${product.prodid}</h1>
 
-<a href="ProductDescription/${product.prodid}" class=" thumbnail">
+<a href="<c:url value="/ProductDescription/${product.prodid}" />" class=" thumbnail">
 <img src="<c:url value="/resources/images/${product.prodid}.jpg"/>"></a>
 
 <div class="caption">

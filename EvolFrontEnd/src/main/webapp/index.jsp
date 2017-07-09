@@ -32,7 +32,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-       <a href="Music"> <img src="<c:url value="/resources/caurosel/album.jpg"/>" height="315" width="850" alt="music" style="width:100%;"></a>
+       <a href="Login"> <img src="<c:url value="/resources/caurosel/album.jpg"/>" height="315" width="850" alt="music" style="width:100%;"></a>
       <div class="carousel-caption">
         <h3>Evol Music</h3>
         <p>New PoP albums Coming Soon </p>
@@ -41,7 +41,7 @@
       </div>
 
       <div class="item">
-         <a href="Game">  <img src="<c:url value="/resources/caurosel/gam.jpg"/>"  height="315" width="850" alt="book" style="width:100%;"></a>
+         <a href="Login">  <img src="<c:url value="/resources/caurosel/gam.jpg"/>"  height="315" width="850" alt="game" style="width:100%;"></a>
       <div class="carousel-caption">
         <h3>Evol Game</h3>
         <p>50% Offer! for New Arrivals </p>
@@ -51,7 +51,7 @@
       </div>
     
       <div class="item">
-       <a href="Photography">  <img src="<c:url value="/resources/caurosel/cam.jpg"/>" height="315" width="850" alt="photo" style="width:100%;"></a>
+       <a href="Login">  <img src="<c:url value="/resources/caurosel/cam.jpg"/>" height="315" width="850" alt="photo" style="width:100%;"></a>
       <div class="carousel-caption">
         <h3>Evol Photography</h3>
         <p>Good Deal for Lenses Exciting Offer!</p>
@@ -101,9 +101,21 @@
             <img class="img-responsive" src="<c:url value="/resources/card/jb.png"/>" height="100" width="100" alt="music" style="width:100%;">
             <div class="profile-info">
 
-              <img class="profile-pic"  src="<c:url value="/resources/images/Icon.gif"/>" height="50" width="50" alt="music" style="width:100%;">
-              <h2 class="hvr-underline-from-center">Rod<span>Digital / Design Consultant</span></h2>
-              <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+              <img class="profile-pic"  src="<c:url value="/resources/card/jbp.jpg"/>" height="80" width="70" alt="music" style="width:100%;">
+              <h2 class="hvr-underline-from-center">Music<span>Justin Biber</span></h2>
+              <div>Evol launching exclusive music albums,updates of pop music world everyday , orginal albums are selling by Evol music world,you can get music album from around the world with exciting prices  </div>
+                  
+                  <a href="Login" >
+         <i <span  class="glyphicon glyphicon-user"></span>></i>
+        </a>
+                  
+               
+        
+    <a href="signup">
+         <i <span class="glyphicon glyphicon-plus"></span>></i>
+        </a>
+        
+              
                        </div>
 
           </div>
@@ -111,12 +123,27 @@
         <div class="col-md-4">
           <div class="profile-card text-center">
 
-            <img class="img-responsive" src="<c:url value="/resources/card/ga.png"/>" height="100" width="100" alt="music" style="width:100%;">
+            <img class="img-responsive" src="<c:url value="/resources/card/ga.png"/>" height="100" width="100"  style="width:100%;">
             <div class="profile-info">
 
-              <img class="profile-pic"  src="<c:url value="/resources/images/Icon.gif"/>" height="50" width="50" alt="music" style="width:100%;">
-              <h2 class="hvr-underline-from-center">Adam<span>Developer</span></h2>
-              <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+              <img class="profile-pic"  src="<c:url value="/resources/card/ub.jpg"/>" height="80" width="70" style="width:100%;">
+              <h2 class="hvr-underline-from-center">Game<span>Ubisoft</span></h2>
+              <div>Wow new 2017 games are going to rock this year,Gamers have great year to brands going to launch awesome games soon available on Evol with amazing price checkin for top games around the world  </div>
+                       
+     
+                  
+                  <a href="Login" >
+         <i <span  class="glyphicon glyphicon-user"></span>></i>
+        </a>
+                  
+               
+        
+    <a href="signup">
+         <i <span class="glyphicon glyphicon-plus"></span>></i>
+        </a>
+        
+         
+                       
                         </div>
 
           </div>
@@ -124,12 +151,25 @@
         <div class="col-md-4">
           <div class="profile-card text-center">
 
-            <img class="img-responsive"  src="<c:url value="/resources/card/paint.jpg"/>" height="100" width="100" alt="music" style="width:100%;">
+            <img class="img-responsive"  src="<c:url value="/resources/card/ts.jpg"/>" height="100" width="100"  style="width:100%;">
                  <div class="profile-info">
 
-              <img class="profile-pic"  src="<c:url value="/resources/images/Icon.gif"/>" height="50" width="50" alt="music" style="width:100%;">
-              <h2 class="hvr-underline-from-center">Mike Young<span>Web Designer</span></h2>
-              <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+              <img class="profile-pic"  src="<c:url value="/resources/card/tsp.jpg"/>" height="80" width="70"  style="width:100%;">
+              <h2 class="hvr-underline-from-center">Photography<span>Ts tamil</span></h2>
+              <div>Evol photography collection having photos frames poster from around the world ,collections based on top photographer around the world ,Evol make you new vision of photography, Wow leaded company's lenses,body,kit  available check in now </div>
+                  
+               
+                  <a href="Login" >
+         <i <span  class="glyphicon glyphicon-user"></span>></i>
+        </a>
+                  
+               
+        
+    <a href="signup">
+         <i <span class="glyphicon glyphicon-plus"></span>></i>
+        </a>
+        
+    
                   </div>
 
           </div>

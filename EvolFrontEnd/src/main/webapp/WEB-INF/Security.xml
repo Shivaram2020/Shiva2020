@@ -13,16 +13,18 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
         
         
         <security:http auto-config="true" use-expressions="true">
-        <security:intercept-url pattern="/UserHome" access="hasRole('user')"/>
-        <security:intercept-url pattern="/AdminHome" access="hasRole('admin')"/>
+        <security:intercept-url pattern="/UserHome" access="hasRole('ROLE_USER')"/>
+        <security:intercept-url pattern="/AdminHome" access="hasRole('ROLE_ADMIN')"/>
         
         
 <security:form-login login-page="/Login" default-target-url="/"
 login-processing-url="/perform_login" authentication-failure-url="/LoginError"
 authentication-success-forward-url="/login_success"/>
-         <security:csrf disabled="true"/>
-       
-        
+         
+        <security:logout logout-success-url="/index.jsp" 
+     logout-url="/Logout"/>
+    
+        <security:csrf disabled="true"/>
         </security:http>
         
         

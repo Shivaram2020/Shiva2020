@@ -18,7 +18,7 @@
 <nav class="navbar navbar-custom  ">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="index.jsp"><img src="<c:url value="/resources/images/Icon.gif"/>"height="100" width="100"></a>
+      <a class="navbar-brand" href="index.jsp"><img src="<c:url value="/resources/icon/icon.gif"/>"height="100" width="100"></a>
     </div>
     
   

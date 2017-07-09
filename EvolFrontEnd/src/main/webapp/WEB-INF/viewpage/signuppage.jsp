@@ -26,8 +26,7 @@
         <div class="col-md-6">
         
         
-        style=color:white;
-        
+       
         
             <form action="AddUser" method="post">
             
@@ -65,14 +64,7 @@
                         <span id="confirmMessage" class="confirmMessage"></span>
             </div>
                
-         <!-- -     <div> 
-              
-                <label for="password"><span class="req">* </span> Role </label>
-             
-              <input type="radio" name="role" value="user" checked>user
-                 <input type="radio" name="role" value="admin"> admin<br>
-           </div> --> 
-           
+       
            
            
             <div class="form-group">
