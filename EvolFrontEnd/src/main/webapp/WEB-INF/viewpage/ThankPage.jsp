@@ -4,20 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>shipping done</title>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>   
-
-
+<title>ThankYou</title>
 <jsp:include page="header.jsp"/>
 </head>
 <body>
-
-
-<c:forEach items="${orderlist}" var="orderlist">
-<h1>${orderlist.orderid}</h1>
-<h1>${orderlist.paymode}</h1>
-
-</c:forEach>
-thankyou
+ThankYou
 </body>
 </html>

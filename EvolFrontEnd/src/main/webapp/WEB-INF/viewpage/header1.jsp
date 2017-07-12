@@ -9,7 +9,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-
+<link href="<c:url value="/resources/navbar/css/navbar1.css" />" rel="stylesheet">
 </head>
 <body>
 
@@ -31,7 +31,7 @@
      <ul class="nav navbar-nav nav navbar-right">
      
      <a href="#">${sessionScope.username}</a>
-     <a href="index.jsp"> logout</a>
+     <a href="Logout"> logout</a>
      </ul>
   </div>
 </nav>
@@ -44,16 +44,54 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="index.jsp">Evol</a>
     </div>
-    <ul class="nav navbar-nav nav navbar-right">
+    <ul class="nav navbar-nav">
      <li><a href="AdminHome">Adminhome</a></li>
-      <li><a href="Product">product</a></li>
-      <li><a href="Supplier">supplier</a></li>
-     <li><a href="Category">category</a></li>
      
     </ul>
+     <ul class="nav navbar-nav nav navbar-right">
+    <li> <a href="Login" >
+          <span class="glyphicon glyphicon-user"></span> login
+        </a></li>
+        
+      <li><a href="signup">
+          <span class="glyphicon glyphicon-plus"></span> signup 
+        </a></li>
+   
+       </ul>
+    
+    
+    
+    
   </div>
 </nav>
 </c:if>
+<script>
 
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+
+
+
+
+</script>
 </body>
 </html>

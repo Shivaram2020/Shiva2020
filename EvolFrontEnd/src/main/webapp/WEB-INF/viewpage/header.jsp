@@ -80,6 +80,17 @@
       <a href="Game" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-sunglasses"></span>Game
  </a>
  
+      
+    <ul class="nav navbar-nav nav navbar-right">
+    <li> <a href="Login" >
+          <span class="glyphicon glyphicon-user"></span> login
+        </a></li>
+        
+      <li><a href="signup">
+          <span class="glyphicon glyphicon-plus"></span> signup 
+        </a></li>
+   
+       </ul>
     
   </div>
 </nav>

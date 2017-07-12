@@ -32,7 +32,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-       <a href="Login"> <img src="<c:url value="/resources/caurosel/album.jpg"/>" height="315" width="850" alt="music" style="width:100%;"></a>
+       <a href="Music"> <img src="<c:url value="/resources/caurosel/album.jpg"/>" height="315" width="850" alt="music" style="width:100%;"></a>
       <div class="carousel-caption">
         <h3>Evol Music</h3>
         <p>New PoP albums Coming Soon </p>
@@ -41,7 +41,7 @@
       </div>
 
       <div class="item">
-         <a href="Login">  <img src="<c:url value="/resources/caurosel/gam.jpg"/>"  height="315" width="850" alt="game" style="width:100%;"></a>
+         <a href="Game">  <img src="<c:url value="/resources/caurosel/gam.jpg"/>"  height="315" width="850" alt="game" style="width:100%;"></a>
       <div class="carousel-caption">
         <h3>Evol Game</h3>
         <p>50% Offer! for New Arrivals </p>
@@ -51,7 +51,7 @@
       </div>
     
       <div class="item">
-       <a href="Login">  <img src="<c:url value="/resources/caurosel/cam.jpg"/>" height="315" width="850" alt="photo" style="width:100%;"></a>
+       <a href="Photography">  <img src="<c:url value="/resources/caurosel/cam.jpg"/>" height="315" width="850" alt="photo" style="width:100%;"></a>
       <div class="carousel-caption">
         <h3>Evol Photography</h3>
         <p>Good Deal for Lenses Exciting Offer!</p>
@@ -106,13 +106,13 @@
               <div>Evol launching exclusive music albums,updates of pop music world everyday , orginal albums are selling by Evol music world,you can get music album from around the world with exciting prices  </div>
                   
                   <a href="Login" >
-         <i <span  class="glyphicon glyphicon-user"></span>></i>
+         <i   class="glyphicon glyphicon-user"></i>
         </a>
                   
                
         
     <a href="signup">
-         <i <span class="glyphicon glyphicon-plus"></span>></i>
+         <i class="glyphicon glyphicon-plus"></i>
         </a>
         
               
@@ -133,13 +133,13 @@
      
                   
                   <a href="Login" >
-         <i <span  class="glyphicon glyphicon-user"></span>></i>
+         <i  class="glyphicon glyphicon-user"></i>
         </a>
                   
                
         
     <a href="signup">
-         <i <span class="glyphicon glyphicon-plus"></span>></i>
+         <i class="glyphicon glyphicon-plus"></i>
         </a>
         
          
@@ -160,13 +160,13 @@
                   
                
                   <a href="Login" >
-         <i <span  class="glyphicon glyphicon-user"></span>></i>
+         <i class="glyphicon glyphicon-user"></i>
         </a>
                   
                
         
     <a href="signup">
-         <i <span class="glyphicon glyphicon-plus"></span>></i>
+         <i  class="glyphicon glyphicon-plus"></i>
         </a>
         
     
@@ -197,72 +197,7 @@
 	
 </div>
 
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 col-sm-6 footerleft ">
-        <div class="logofooter"> Logo</div>
-        <p>Evol is set for Make your hobby fullfilled ,products are orginal made by respective company,Happy Hobby with Evol</p>
-        <p><i class="fa fa-map-pin"></i> 210, Aggarwal Tower, Rohini sec 9, Chennai -110085, INDIA</p>
-        <p><i class="fa fa-phone"></i> Phone (India) : +91 9999 878 398</p>
-        <p><i class="fa fa-envelope"></i> E-mail : info@Evol.com</p>
-        
-      </div>
-      <div class="col-md-2 col-sm-6 paddingtop-bottom">
-        <h6 class="heading7">GENERAL LINKS</h6>
-        <ul class="footer-ul">
-          <li><a href="#"> Career</a></li>
-          <li><a href="#"> Privacy Policy</a></li>
-          <li><a href="#"> Terms & Conditions</a></li>
-          <li><a href="#"> Client Gateway</a></li>
-          <li><a href="#"> Ranking</a></li>
-          <li><a href="#"> Case Studies</a></li>
-          <li><a href="#"> Frequently Ask Questions</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3 col-sm-6 paddingtop-bottom">
-        <h6 class="heading7">LATEST POST</h6>
-        <div class="post">
-          <p>facebook Ea game fifa 18 arival:Special Offer<span>july 3,2017</span></p>
-          <p>facebook new Power Of Positive Thinking Book: motivational book <span>june 7,2017</span></p>
-          <p>facebook one direction new Album:on August<span>may 3,2017</span></p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 paddingtop-bottom">
-        <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-          <div class="fb-xfbml-parse-ignore">
-            <blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-<!--footer start from here-->
-
-<div class="copyright">
-  <div class="container">
-    <div class="col-md-6">
-      <p>© 2016- All Rights reserved</p>
-    </div>
-    <div class="col-md-6">
-      <ul class="bottom_ul">
-        <li><a href="#">SwS-2020</a></li>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Faq's</a></li>
-        <li><a href="#">Contact us</a></li>
-        <li><a href="#">Site Map</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-
-
-
-</div>
-
+<jsp:include page="Footer.jsp"/>
 
 </body>
 </html>

@@ -82,25 +82,137 @@
       <a href="Game" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-sunglasses"></span>Game
  </a>
  
-     
+          
+    <ul class="nav navbar-nav nav navbar-right">
+    <li> <a href="Login" >
+          <span class="glyphicon glyphicon-user"></span> login
+        </a></li>
+        
+      <li><a href="signup">
+          <span class="glyphicon glyphicon-plus"></span> signup 
+        </a></li>
+   
+       </ul>
     
   </div>
 </nav>
 </c:if>
 
 
+  
+<div class="book">
+
+</div>
 
 
-<c:forEach items="${prodlist}" var="prodlist"  >
-<c:if test="${1==prodlist.catid }">
+
+<c:if test="${sessionScope.loggedIn }">
 
 
 
-<a href="ProductDescription/${prodlist.prodid}" class=" thumbnail">
-<img src="<c:url value="/resources/images/${prodlist.prodid}.jpg"/>"></a>
+<div class="book1">
+
+<div class="container">
+
+<div class="row">
+  <c:forEach items="${prodlist}" var="product">
+  <c:if test="${1==product.catid }">
+  <div class="col-sm-6 col-md-3">
+  
+  
+  
+  
+    <div class="thumbnail">
+      <a href="<c:url value="/ProductDescription/${product.prodid}" />" class=" thumbnail">
+<img src="<c:url value="/resources/images/${product.prodid}.jpg"/>" height="300" width="400" ></a>
+      
+      <div class="caption">
+        <h3>${product.prodname}</h3>
+        <h4>&#8377 ${product.price}</h4>
+        <p><h4>${product.proddesc}</h4></p>
+        <p><a href="<c:url value="/ProductDescription/${product.prodid}" />" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</a></p>
+              </div>
+   
+    </div>
+    </div>
+  
+  
+  
+  </c:if>
+  </c:forEach>
+ </div>
+  </div>
+
+  
+</div>
+ 
+  
+  
+  
+
 
 </c:if>
-</c:forEach>
+<c:if test="${!sessionScope.loggedIn }">
+
+
+
+
+<div class="book1">
+
+<div class="container">
+
+<div class="row">
+  <c:forEach items="${prodlist}" var="product">
+   <c:if test="${1==product.catid }">
+  <div class="col-sm-6 col-md-3">
+  
+  
+  
+  
+    <div class="thumbnail">
+      <a href="<c:url value="/ProductDescription/${product.prodid}" />" class=" thumbnail">
+<img src="<c:url value="/resources/images/${product.prodid}.jpg"/>" height="300" width="400" ></a>
+      
+      <div class="caption">
+        <h3>${product.prodname}</h3>
+        <h4>&#8377 ${product.price}</h4>
+        <p><h4>${product.proddesc}</h4></p>
+        <p><a href="<c:url value="/Login" />" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</a></p>
+              </div>
+   
+    </div>
+    </div>
+  
+  
+  
+  </c:if>
+  </c:forEach>
+ </div>
+  </div>
+
+  
+</div>
+ 
+  
+ 
+
+
+</c:if>
+
+
+
+ 
+  
+<jsp:include page="Footer.jsp"/>
+
+
+   
+ 
+  
+  
+  
+
+
 <script>
 
 /* When the user clicks on the button, 

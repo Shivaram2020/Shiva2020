@@ -19,6 +19,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 </style>
 </head>
 <body>
+<c:if test="${sessionScope.loggedIn }">
 <!-- Category Form Started -->
 <c:if test="${flag}">
 <form action="UpdateCategory" method="post">
@@ -85,5 +86,9 @@ tr:nth-child(even){background-color: #f2f2f2}
 </c:forEach>
 
 </table>
+
+</c:if>
+
+
 </body>
 </html>

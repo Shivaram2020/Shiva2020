@@ -23,10 +23,21 @@ public class Orders {
 	@Column(columnDefinition = "varchar(30)")
 	private String username,paymode,shipmentaddress,status;
 	
+	@Column(columnDefinition = "integer(30)")
+	private int total;
+	
+	
+	
+	public int getTotal() {
+		return total;
+	}
 
-	
-	
-	
+
+	public void setTotal(int total) {
+		this.total = total;
+	}
+
+
 	public String getUsername() {
 		return username;
 	}

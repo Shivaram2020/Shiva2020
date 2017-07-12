@@ -35,10 +35,10 @@ public class OrdersDAO {
 		session.saveOrUpdate(orders);
 	}
 	
-	public Orders getOrders(int id)
+	public Orders getOrders(int orderid)
 	{
 		Session session=sessionFactory.openSession();
-		Orders orders=(Orders)session.get(Orders.class,id);
+		Orders orders=(Orders)session.get(Orders.class,orderid);
 		session.close();
 		return orders;
 	}
@@ -52,7 +52,7 @@ public class OrdersDAO {
 	public List<Orders> getOrdersDetails(String username)
 	{
 		Session session=sessionFactory.openSession();
-		Query query=session.createQuery("from Orders  where username=:username and status='Y'");
+		Query query=session.createQuery("from Orders  where username=:username and status='N'");
 		query.setParameter("username", username);
 		@SuppressWarnings("unchecked")
 		List<Orders> list=query.list();

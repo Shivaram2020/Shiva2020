@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>warning</title>
+<jsp:include page="header.jsp"/>
 </head>
 <body>
 plz enter the Available quantitiy

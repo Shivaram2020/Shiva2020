@@ -14,7 +14,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
         
         <security:http auto-config="true" use-expressions="true">
         <security:intercept-url pattern="/UserHome" access="hasRole('ROLE_USER')"/>
-        <security:intercept-url pattern="/AdminHome" access="hasRole('ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/AdminHome" access="hasRole('admin')"/>
         
         
 <security:form-login login-page="/Login" default-target-url="/"

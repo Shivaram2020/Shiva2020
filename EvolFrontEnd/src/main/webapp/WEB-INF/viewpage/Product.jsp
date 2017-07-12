@@ -18,6 +18,7 @@ th, td {
 </style>
 </head>
 <body>
+<c:if test="${sessionScope.loggedIn }">
 <form:form method="POST" action="InsertProduct" modelAttribute="product" enctype="multipart/form-data">
 
 <table align="center">
@@ -53,15 +54,15 @@ th, td {
 			</tr>		
 			<tr>
 				<td>Price</td>
-				<td><form:input path="price" required="required" /></td>
+				<td><form:input path="price" onkeyup="validatequantity(this);" id="quantity" required="required"  /></td>
 			</tr>
 			<tr>
 				<td>Stock</td>
-				<td><form:input path="quantity" required="required"/></td>
+				<td><form:input path="quantity"  onkeyup="validatequantity(this);" id="quantity" required="required"  /></td>
 			</tr>
 			<tr>
 				<td>Product Desc</td>
-				<td><form:textarea path="proddesc" required="required" /></td>
+				<td><form:textarea path="proddesc" onkeyup="validatequantity(this);" id="quantity"  required="required" /></td>
 			</tr>
 			
 	<tr>
@@ -105,7 +106,28 @@ th, td {
 		</tr>
 	</c:forEach>
 </table>
-<!-- Completed Displaying Table -->
+</c:if>
+
+<script>
+
+function validatequantity(quantity) 
+{
+    var maintainplus = '';
+    var numval = quantity.value
+    if ( numval.charAt(0)=='+' )
+    {
+        var maintainplus = '';
+    }
+    curphonevar = numval.replace(/[\\A-Za-z!"£$%^&\,*+_={};:'@#~0,.Š\/<>?|`¬\]\[]/g,'');
+   
+    quantity.value = maintainplus + curphonevar;
+    var maintainplus = '';
+    quantity.focus;
+}
+
+
+</script>
+
 
 </body>
 </html>

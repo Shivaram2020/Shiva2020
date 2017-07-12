@@ -37,18 +37,18 @@ public class OrdersTestCase
 		System.out.println("Orders Description:"+orders.getPaymode());*/
 		
 		//Deletion TestCase
-		/*Orders orders=OrdersDAO.getOrders(1);
-		OrdersDAO.deleteOrders(orders);
+		/*Orders orders=ordersDAO.getOrders(1);
+		ordersDAO.deleteOrders(orders);
 		System.out.println("The Orders Deleted");*/
 		
 		//Retrieving the Data
 		
-		List<Orders> list=ordersDAO.getOrdersDetails("shiva");
+		//List<Orders> list=ordersDAO.getOrdersDetails("shiva");
 		
-		for(Orders orders:list)
+		/*for(Orders orders:list)
 		{
 			System.out.println(orders.getOrderid()+":"+orders.getUsername());
-		}
+		}*/
 		
 		//Update the Orders
 		/*Orders orders=ordersDAO.getOrders(1);

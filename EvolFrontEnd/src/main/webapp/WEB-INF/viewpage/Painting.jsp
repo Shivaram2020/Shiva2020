@@ -84,20 +84,55 @@
       <a href="Game" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-sunglasses"></span>Game
  </a>
  
+      
+    <ul class="nav navbar-nav nav navbar-right">
+    <li> <a href="Login" >
+          <span class="glyphicon glyphicon-user"></span> login
+        </a></li>
+        
+      <li><a href="signup">
+          <span class="glyphicon glyphicon-plus"></span> signup 
+        </a></li>
+   
+       </ul>
+ 
   </div>
 </nav>
 </c:if>
 
-<c:forEach items="${prodlist}" var="prodlist"  >
-<c:if test="${4==prodlist.catid }">
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+  
+  <c:forEach items="${prodlist}" var="product">
+  <c:if test="${4==product.catid }">
+  
+  <h1>${product.prodid}</h1>
+  
+  
+    <div class="thumbnail">
+      <a href="<c:url value="/ProductDescription/${product.prodid}" />" class=" thumbnail">
+<img src="<c:url value="/resources/images/${product.prodid}.jpg"/>"></a>
+      
+      <div class="caption">
+        <h3>${product.prodname}</h3>
+        <h4>${product.price}</h4>
+        <p><h4>${product.proddesc}</h4></p>
+        <p><a href="<c:url value="/ProductDescription/${product.prodid}" />" class="btn btn-primary" role="button">Add to cart</a></p>
+              </div>
+   
+    </div>
+  </c:if>
+  </c:forEach>
+ 
+  </div>
+</div>
+ 
 
 
 
-<a href="ProductDescription/${prodlist.prodid}" class=" thumbnail">
-<img src="<c:url value="/resources/images/${prodlist.prodid}.jpg"/>" height="100" width="100"></a>
 
-</c:if>
-</c:forEach>
+
 <script>
 
 /* When the user clicks on the button, 
