@@ -118,7 +118,7 @@ function validatequantity(quantity)
     {
         var maintainplus = '';
     }
-    curphonevar = numval.replace(/[\\A-Za-z!"£$%^&\,*+_={};:'@#~0,.Š\/<>?|`¬\]\[]/g,'');
+    curphonevar = numval.replace(/[\\A-Za-z!"£$%^&\,*+_={};:'@#~,.Š\/<>?|`¬\]\[]/g,'');
    
     quantity.value = maintainplus + curphonevar;
     var maintainplus = '';
