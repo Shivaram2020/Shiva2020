@@ -62,7 +62,7 @@ th, td {
 			</tr>
 			<tr>
 				<td>Product Desc</td>
-				<td><form:textarea path="proddesc" onkeyup="validatequantity(this);" id="quantity"  required="required" /></td>
+				<td><form:textarea path="proddesc"  required="required" /></td>
 			</tr>
 			
 	<tr>
