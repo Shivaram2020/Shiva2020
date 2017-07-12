@@ -29,6 +29,7 @@
 					<div class="col-xs-6 col-sm-6 col-md-6 text-right">
 						<div class="receipt-right">
 							<h1>${orderlist.username}</h1>
+							<small>${orderlist.shipmentaddress}</small>
 							<h1>Order ID:${orderlist.orderid}</h1>
 						</div>
 					</div>

@@ -65,10 +65,10 @@
     <div class="col-md-6">
       <ul class="bottom_ul">
         <li><a href="#">SwS-2020</a></li>
-        <li><a href="#">About us</a></li>
+        <li><a href="AboutUs">About us</a></li>
         <li><a href="#">Blog</a></li>
         <li><a href="#">Faq's</a></li>
-        <li><a href="#">Contact us</a></li>
+        <li><a href="ContactUs">Contact us</a></li>
         <li><a href="#">Site Map</a></li>
       </ul>
     </div>

@@ -6,14 +6,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Book</title>
+<title>photography</title>
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-
 <link href="<c:url value="/resources/navbar/css/navbar1.css" />" rel="stylesheet">
+
+
 
 
 </head>
@@ -26,7 +27,7 @@
     <div class="navbar-header">
     
     
-      <a class="navbar-brand active" href="index.jsp"><img class="circle" src="<c:url value="/resources/icon/photo.gif"/>"height="100" width="100"></a>
+      <a class="navbar-brand active" href="#"><img class="circle" src="<c:url value="/resources/icon/ts.jpg"/>"height="100" width="100"></a>
     
     </div>
      
@@ -64,8 +65,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-   
-      <a class="navbar-brand active" href="index.jsp"><img class="circle" src="<c:url value="/resources/icon/photo.gif"/>"height="100" width="100"></a>
+      <a class="navbar-brand active" href="#"><img class="circle" src="<c:url value="/resources/icon/ts.jpg"/>"height="100" width="100"></a>
     
     </div>
      
@@ -81,7 +81,8 @@
  </a>
       <a href="Game" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-sunglasses"></span>Game
  </a>
-      
+ 
+          
     <ul class="nav navbar-nav nav navbar-right">
     <li> <a href="Login" >
           <span class="glyphicon glyphicon-user"></span> login
@@ -92,39 +93,126 @@
         </a></li>
    
        </ul>
-  
+    
   </div>
 </nav>
 </c:if>
 
 
-<div class="row">
-  <div class="col-sm-6 col-md-4">
   
+<div class="photo">
+
+</div>
+
+
+
+<c:if test="${sessionScope.loggedIn }">
+
+
+
+<div class="photo1">
+
+<div class="container">
+
+<div class="row">
   <c:forEach items="${prodlist}" var="product">
   <c:if test="${3==product.catid }">
+  <div class="col-sm-6 col-md-3">
   
-  <h1>${product.prodid}</h1>
+  
   
   
     <div class="thumbnail">
       <a href="<c:url value="/ProductDescription/${product.prodid}" />" class=" thumbnail">
-<img src="<c:url value="/resources/images/${product.prodid}.jpg"/>"></a>
+<img src="<c:url value="/resources/images/${product.prodid}.jpg"/>" height="300" width="400" ></a>
       
       <div class="caption">
         <h3>${product.prodname}</h3>
-        <h4>${product.price}</h4>
+        <h4>&#8377 ${product.price}</h4>
         <p><h4>${product.proddesc}</h4></p>
-        <p><a href="<c:url value="/ProductDescription/${product.prodid}" />" class="btn btn-primary" role="button">Add to cart</a></p>
+        <p><a href="<c:url value="/ProductDescription/${product.prodid}" />" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</a></p>
               </div>
    
     </div>
+    </div>
+  
+  
+  
   </c:if>
   </c:forEach>
- 
+ </div>
   </div>
+
+  
 </div>
  
+  
+  
+  
+
+
+</c:if>
+<c:if test="${!sessionScope.loggedIn }">
+
+
+
+
+<div class="photo1">
+
+<div class="container">
+
+<div class="row">
+  <c:forEach items="${prodlist}" var="product">
+   <c:if test="${3==product.catid }">
+  <div class="col-sm-6 col-md-3">
+  
+  
+  
+  
+    <div class="thumbnail">
+      <a href="<c:url value="/ProductDescription/${product.prodid}" />" class=" thumbnail">
+<img src="<c:url value="/resources/images/${product.prodid}.jpg"/>" height="300" width="400" ></a>
+      
+      <div class="caption">
+        <h3>${product.prodname}</h3>
+        <h4>&#8377 ${product.price}</h4>
+        <p><h4>${product.proddesc}</h4></p>
+        <p><a href="<c:url value="/Login" />" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</a></p>
+              </div>
+   
+    </div>
+    </div>
+  
+  
+  
+  </c:if>
+  </c:forEach>
+ </div>
+  </div>
+
+  
+</div>
+ 
+  
+ 
+
+
+</c:if>
+
+
+
+ 
+  
+<jsp:include page="Footer.jsp"/>
+
+
+   
+ 
+  
+  
+  
+
+
 <script>
 
 /* When the user clicks on the button, 
@@ -153,6 +241,8 @@ window.onclick = function(event) {
 
 
 </script>
+
+
 
 </body>
 </html>

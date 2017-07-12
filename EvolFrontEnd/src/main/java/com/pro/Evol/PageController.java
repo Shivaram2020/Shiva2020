@@ -34,6 +34,20 @@ public class PageController {
 		return "Login";
 }
 	
+	@RequestMapping("/AboutUs")
+	public String AboutUs()
+	{
+		
+		
+		return "AboutUs";
+}
+	@RequestMapping("/ContactUs")
+	public String ContactUs()
+	{
+		
+		
+		return "ContactUs";
+}
 	
 	
 	

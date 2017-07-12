@@ -27,7 +27,7 @@
     <div class="navbar-header">
     
     
-      <a class="navbar-brand active" href="index.jsp"><img class="circle" src="<c:url value="/resources/icon/book.gif"/>"height="100" width="100"></a>
+      <a class="navbar-brand active" href="#"><img class="circle" src="<c:url value="/resources/icon/book.gif"/>"height="100" width="100"></a>
     
     </div>
      
@@ -65,7 +65,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand active" href="index.jsp"><img class="circle" src="<c:url value="/resources/icon/book.gif"/>"height="100" width="100"></a>
+      <a class="navbar-brand active" href="#"><img class="circle" src="<c:url value="/resources/icon/book.gif"/>"height="100" width="100"></a>
     
     </div>
      

@@ -133,6 +133,95 @@
     background-size: cover;
 }
 
+.photo {
+    /* The image used */
+    background-image:url('https://static.pexels.com/photos/28855/pexels-photo-28855.jpg');
+
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover  851px 350px;
+}
+
+
+.photo1 {
+    /* The image used */
+    background-image:url('http://www.zweezle.in/blog/wp-content/uploads/2015/12/Photography.jpeg');
+
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+}
+  
+  
+  .paint {
+    /* The image used */
+    background-image:url('https://www.demilked.com/magazine/wp-content/uploads/2015/10/renaissance-paintings-recreated-auto-mechanics-photography-freddy-fabris-5.jpg');
+
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover  851px 350px;
+}
+
+
+.paint1 {
+    /* The image used */
+    background-image:url('https://www.chinesecoins.com/wp-content/uploads/2014/06/china_74680342.jpg');
+
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+}
+  
+
+ .game {
+    /* The image used */
+    background-image:url('https://images.alphacoders.com/451/thumb-1920-451603.jpg');
+
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover  851px 350px;
+}
+
+
+.game1 {
+    /* The image used */
+    background-image:url('http://www.hdwallpapers.in/walls/world_of_warplanes_game-wide.jpg');
+
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+}
+  
 
 
 

@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//src/main/webapp/WEB-INF/viewpage/CartPage.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/viewpage/ContactUs.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/viewpage/Product.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/viewpage/ProductDescription.jsp=UTF-8
 encoding//src/main/webapp/index.jsp=UTF-8

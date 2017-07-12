@@ -82,7 +82,7 @@ ${cartlist.price}
 							<form action="<c:url value="/update/${cartlist.cartitemid}/${prodinfo.prodid}"/>" method="get" >
 
 
-<input type="text" class="form-control input-sm btn btn-info btn-block" value="${ cartlist.quantity }" name="quantity"/>
+<input type="text" class="form-control input-sm btn btn-info btn-block" value="${ cartlist.quantity }" onkeyup="validatequantity(this);" id="quantity" name="quantity"/>
 
 
 
@@ -138,7 +138,24 @@ ${cartlist.price}
   
 <jsp:include page="Footer.jsp"/>
 
+<script>
 
+function validatequantity(quantity) 
+{
+    var maintainplus = '';
+    var numval = quantity.value
+    if ( numval.charAt(0)=='+' )
+    {
+        var maintainplus = '';
+    }
+    curphonevar = numval.replace(/[\\A-Za-z!"£$%^&\,*+_={};:'@#~0,.Š\/<>?|`¬\]\[]/g,'');
+   
+    quantity.value = maintainplus + curphonevar;
+    var maintainplus = '';
+    quantity.focus;
+}
+
+</script>
   
 </body>
 </html>
