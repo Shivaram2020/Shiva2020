@@ -17,6 +17,7 @@
 
 
 
+
 </head>
 <body>
 
@@ -101,7 +102,19 @@
 
   
 <div class="book">
+<div class="container">
+    	<div class="row">
 
+<div id="menuBall2" class="menuBall">
+	<a href="CartPage" class="ball redball">
+    <div class="menuText">
+     <span class="glyphicon glyphicon-shopping-cart"></span>&#8377 ${grandtotal}
+       
+    </div>
+  </a>
+</div>
+</div>
+</div>
 </div>
 
 

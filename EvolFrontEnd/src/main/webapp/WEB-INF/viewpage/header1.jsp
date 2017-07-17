@@ -30,8 +30,11 @@
     </ul>
      <ul class="nav navbar-nav nav navbar-right">
      
-     <a href="#">${sessionScope.username}</a>
-     <a href="Logout"> logout</a>
+    <button onclick="myFunction()" class="dropbtn btn btn-success btn-lg"><span class="glyphicon glyphicon-user"></span> ${sessionScope.username}</button>
+  <div id="myDropdown" class="dropdown-content">
+  
+   <a href="Logout" class="btn btn-danger btn-lg""><span class="glyphicon glyphicon-log-out"></span>Logout</a>
+    
      </ul>
   </div>
 </nav>

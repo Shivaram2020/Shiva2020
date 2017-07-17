@@ -11,14 +11,27 @@
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+ 
+   
 <jsp:include page="header.jsp"/>
 <link href="<c:url value="/resources/navbar/css/navbar1.css" />" rel="stylesheet">
 </head>
 <body>
 
 <div class="parallax">
+<div class="container">
+  <div class="row">
 
+<div id="menuBall2" class="menuBall">
+	<a href="CartPage" class="ball redball">
+    <div class="menuText">
+       <span class="glyphicon glyphicon-shopping-cart"></span>&#8377 ${grandtotal}
+       
+    </div>
+  </a>
+</div>
+</div>
+</div>
 
 
 </div>
@@ -52,6 +65,7 @@
   
   
   </c:forEach>
+  
  </div>
   </div>
 

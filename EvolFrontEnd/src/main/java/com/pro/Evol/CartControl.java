@@ -63,6 +63,12 @@ public class CartControl {
 			
 			cartDAO.insertUpdateCart(cart);	
 			
+			
+				product.setQuantity(product.getQuantity()-quantity);
+			productDAO.insertUpdateProduct(product);
+			System.out.println("The Product Updated");
+			
+			
 		return "redirect:/CartPage";
 		}
 		else
@@ -101,7 +107,6 @@ String username=(String) session.getAttribute("username");
 	m.addAttribute("cartlist",cartlist);
 	
 	
-	
 	return "redirect:/CartPage";
 	
 	}
@@ -124,11 +129,6 @@ public String deleteCart(@PathVariable("citemid") int citemid,HttpSession sessio
 	Cart cart=(Cart)cartDAO.getCart(citemid);
 	
 	cartDAO.deleteCart(cart);
-	
-String username=(String) session.getAttribute("username");
-	
-	List<Cart> cartlist=cartDAO.getCartDetails(username);
-	m.addAttribute("cartlist",cartlist);
 	
 	
 	

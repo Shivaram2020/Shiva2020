@@ -9,12 +9,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>product page</title>
 <jsp:include page="header.jsp"/>
+<link href="<c:url value="/resources/navbar/css/navbar1.css" />" rel="stylesheet">
+
  <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
  <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 </head>
 <body>
 
 <div class="parallax">
+
+<div class="container">
+    	<div class="row">
+
+<div id="menuBall2" class="menuBall">
+	<a href="CartPage" class="ball redball">
+    <div class="menuText">
+        <span class="glyphicon glyphicon-shopping-cart"></span>&#8377 ${grandtotal}
+     
+    </div>
+  </a>
+</div>
+</div>
+</div>
 
 </div>
 

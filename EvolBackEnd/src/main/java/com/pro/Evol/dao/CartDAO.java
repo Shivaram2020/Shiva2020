@@ -12,9 +12,6 @@ import org.springframework.stereotype.Repository;
 
 import com.pro.Evol.model.Cart;
 
-
-
-
 @Repository("cartDAO")
 
 public class CartDAO {
@@ -60,8 +57,5 @@ public class CartDAO {
 		return list;
 	}
 
-	
-	
-	
 	
 }

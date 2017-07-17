@@ -46,7 +46,7 @@ public class ProductDAO {
 		public List<Product> getProductDetails()
 		{
 			Session session=sessionFactory.openSession();
-			Query query=session.createQuery("from Product");
+			Query query=session.createQuery("from Product where quantity>0");
 			List<Product> list=query.list();
 			session.close();
 			return list;

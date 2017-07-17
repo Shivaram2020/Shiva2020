@@ -51,6 +51,7 @@ public class DBConfig
 	@Bean(name="sessionFactory")
 	public SessionFactory getSessionFactory(DataSource dataSource)
 	{
+		
 		System.out.println("---Hibernate Properties----");
 		Properties prop=new Properties();
 		prop.setProperty("hibernate.hbm2ddl.auto", "update");

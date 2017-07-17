@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.pro.Evol.dao.CartDAO;
 import com.pro.Evol.dao.ProductDAO;
 import com.pro.Evol.dao.UserDAO;
+import com.pro.Evol.model.Cart;
 import com.pro.Evol.model.Product;
 import com.pro.Evol.model.UserDetails;
 
@@ -30,7 +32,8 @@ public class UserControl {
 	@Autowired
 	ProductDAO productDAO;
 	
-	
+	@Autowired
+	CartDAO cartDAO;
 	
 	@RequestMapping(value="/AddUser",method=RequestMethod.POST)
     public String addUser(@RequestParam("username") String username , @RequestParam("password") String password,@RequestParam("email") String email,@RequestParam("phonenumber") Integer mobileno ,@RequestParam("address") String address)
@@ -79,12 +82,29 @@ boolean loggedIn=true;
 	}
 	else
 	{
-		String nav="Home";
+		
 		Product<MultipartFile> product=new Product<MultipartFile>();
 		List<Product> prodlist=productDAO.getProductDetails();
 		m.addAttribute("prodlist",prodlist);
 		
-		m.addAttribute("nav",nav);
+		
+		
+		
+	
+		List<Cart> cartlist=cartDAO.getCartDetails(username);
+		
+		int grandtotal=0;
+		
+	for(Cart cart:cartlist)
+	{
+		grandtotal=grandtotal+(cart.getQuantity()*cart.getPrice());
+	}
+		
+		
+		
+		m.addAttribute("grandtotal",grandtotal);
+		
+		
 		
 	return "UserHome";
 	}
@@ -98,13 +118,28 @@ boolean loggedIn=true;
 	
 	
 	@RequestMapping("/UserHome1")
-	public String UserHome(Model m)
+	public String UserHome(Model m,HttpSession session)
 	{
-		String nav="0";
+		String username=(String) session.getAttribute("username");
+	List<Cart> cartlist=cartDAO.getCartDetails(username);
+		
+		int grandtotal=0;
+		
+	for(Cart cart:cartlist)
+	{
+		grandtotal=grandtotal+(cart.getQuantity()*cart.getPrice());
+	}
+		
+		
+		
+		m.addAttribute("grandtotal",grandtotal);
+		
+		
+
 		Product<MultipartFile> product=new Product<MultipartFile>();
 		List<Product> prodlist=productDAO.getProductDetails();
 		m.addAttribute("prodlist",prodlist);
-		m.addAttribute("nav",nav);
+		
 	return "User";
 	}
 
