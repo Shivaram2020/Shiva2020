@@ -8,11 +8,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>product page</title>
-<jsp:include page="header.jsp"/>
+
 <link href="<c:url value="/resources/navbar/css/navbar1.css" />" rel="stylesheet">
 
  <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
  <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+ <jsp:include page="header.jsp"/>
 </head>
 <body>
 
@@ -100,7 +101,7 @@
   
   
     <div class="thumbnail">
-      <a href="<c:url value="/ProductDescription/${product.prodid}" />" class=" thumbnail">
+      <a href="<c:url value="/Login" />" class=" thumbnail">
 <img src="<c:url value="/resources/images/${product.prodid}.jpg"/>" height="300" width="400" ></a>
       
       <div class="caption">

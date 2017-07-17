@@ -10,6 +10,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-Success
+<c:if test="${sessionScope.loggedIn }">
+<h1> Welcome Admin ${sessionScope.username}</h1>
+</c:if>
+<c:if test="${!sessionScope.loggedIn }">
+plz login..
+</c:if>
 </body>
 </html>

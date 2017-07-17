@@ -42,7 +42,6 @@ public class DBConfig
 		dataSource.setUrl("jdbc:h2:tcp://localhost/~/test");
 		dataSource.setUsername("shiva");
 		dataSource.setPassword("143");
-		System.out.println("Data Source Creation");
 		return dataSource;
 	}
 
@@ -52,50 +51,42 @@ public class DBConfig
 	public SessionFactory getSessionFactory(DataSource dataSource)
 	{
 		
-		System.out.println("---Hibernate Properties----");
+		
 		Properties prop=new Properties();
 		prop.setProperty("hibernate.hbm2ddl.auto", "update");
-		prop.put("hibernate.show_sql", "true"); //optional
+		prop.put("hibernate.show_sql", "true"); 
 		prop.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
-		System.out.println("---Hibernate Properties Created");
-		
-		System.out.println("---Local SessionFactory Builder Object Creation---");
+	
 		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(getH2DataSource());
 		sessionBuilder.addProperties(prop);
-		System.out.println("---Factory Builder Object Created---");
+		
 		sessionBuilder.addAnnotatedClass(Category.class);
 		sessionBuilder.addAnnotatedClass(Supplier.class);
 		sessionBuilder.addAnnotatedClass(UserDetails.class);
 		sessionBuilder.addAnnotatedClass(Product.class);
 		sessionBuilder.addAnnotatedClass(Cart.class);
 		sessionBuilder.addAnnotatedClass(Orders.class);
-		System.out.println("Session Factory Object Creation");
 		SessionFactory sessionFactory=sessionBuilder.buildSessionFactory();
-		System.out.println("Session Factory Object Created");
-		return sessionFactory;
+				return sessionFactory;
 	}
 	
 	@Autowired
 	@Bean(name="transactionManager")
 	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory)
 	{
-		System.out.println("--Transaction manager Object Creation--");
 		HibernateTransactionManager transactionManager=new HibernateTransactionManager(sessionFactory);
-		System.out.println("--Transaction manager Object Created--");
 		return transactionManager;
 	}
 	@Autowired
 	@Bean(name="categoryDAO")
 	public CategoryDAO getCategoryDAO(SessionFactory sessionFactory)
 	{
-		System.out.println("-- CategoryDAO Object Creation--");
 		return new CategoryDAO(sessionFactory);
 	}
 		@Autowired
 	@Bean(name="supplierDAO")
 	public SupplierDAO getSupplierDAO(SessionFactory sessionFactory)
 	{
-		System.out.println("-- SupplierDAO Object Creation--");
 		return new SupplierDAO(sessionFactory);
 	}
 	
@@ -103,7 +94,6 @@ public class DBConfig
 		@Bean(name="userDAO")
 		public UserDAO getUserDAO(SessionFactory sessionFactory)
 		{
-			System.out.println("-- UserDAO Object Creation--");
 			return new UserDAO(sessionFactory);
 		}
 		
@@ -112,7 +102,6 @@ public class DBConfig
 		@Bean(name="productDAO")
 		public ProductDAO getProductDAO(SessionFactory sessionFactory)
 		{
-			System.out.println("-- ProductDAO Object Creation--");
 			return new ProductDAO(sessionFactory);
 		}
 
@@ -120,14 +109,12 @@ public class DBConfig
 		@Bean(name="cartDAO")
 		public CartDAO getCartDAO(SessionFactory sessionFactory)
 		{
-			System.out.println("-- CartDAO Object Creation--");
 			return new CartDAO(sessionFactory);
 		}
 		@Autowired
 		@Bean(name="ordersDAO")
 		public OrdersDAO getOrderDAO(SessionFactory sessionFactory)
 		{
-			System.out.println("-- OrdersDAO Object Creation--");
 			return new OrdersDAO(sessionFactory);
 		}
 

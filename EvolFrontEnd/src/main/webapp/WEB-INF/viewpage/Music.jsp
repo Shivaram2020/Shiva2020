@@ -182,7 +182,7 @@
   
   
     <div class="thumbnail">
-      <a href="<c:url value="/ProductDescription/${product.prodid}" />" class=" thumbnail">
+      <a href="<c:url value="/Login" />" class=" thumbnail">
 <img src="<c:url value="/resources/images/${product.prodid}.jpg"/>" height="300" width="400" ></a>
       
       <div class="caption">

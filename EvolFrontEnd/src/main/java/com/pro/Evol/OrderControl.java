@@ -16,6 +16,7 @@ import com.pro.Evol.dao.OrdersDAO;
 import com.pro.Evol.dao.ProductDAO;
 import com.pro.Evol.model.Cart;
 import com.pro.Evol.model.Orders;
+import com.pro.Evol.model.Product;
 
 
 @Controller
@@ -121,6 +122,7 @@ public class OrderControl {
 			ordersDAO.insertUpdateOrders(orders1);
 			
 		}
+
 		
 		
 		return "ThankPage";
