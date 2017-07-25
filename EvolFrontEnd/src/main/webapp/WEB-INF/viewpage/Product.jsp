@@ -5,19 +5,22 @@
 <head>
 <title>Product</title>
 <jsp:include page="header1.jsp"/>
-<style class="t">
+<style>
 table {
     border-collapse: collapse;
     width: 100%;
 }
-
 th, td {
     text-align: left;
     padding: 8px;
 }
+tr:hover
+{
+background-color: #abebc6
+}
 </style>
 </head>
-<body>
+<body style="background-color:#E6E6FA">
 <c:if test="${sessionScope.loggedIn }">
 <form:form method="POST" action="InsertProduct" modelAttribute="product" enctype="multipart/form-data">
 
@@ -54,11 +57,11 @@ th, td {
 			</tr>		
 			<tr>
 				<td>Price</td>
-				<td><form:input path="price" onkeyup="validatequantity(this);" id="quantity" required="required"  /></td>
+				<td><form:input path="price" onkeyup="validatequantity(this);" id="quantity" required="required"  value="1" /></td>
 			</tr>
 			<tr>
 				<td>Stock</td>
-				<td><form:input path="quantity"  onkeyup="validatequantity(this);" id="quantity" required="required"  /></td>
+				<td><form:input path="quantity"  onkeyup="validatequantity(this);" id="quantity" required="required" value="1" /></td>
 			</tr>
 			<tr>
 				<td>Product Desc</td>

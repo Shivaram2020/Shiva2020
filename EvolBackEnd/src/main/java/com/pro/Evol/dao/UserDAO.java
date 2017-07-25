@@ -15,6 +15,10 @@ import com.pro.Evol.model.UserDetails;
 public class UserDAO {
 	@Autowired
 	SessionFactory sessionFactory;
+	public UserDAO()
+	{
+		
+	}
 	
 	public UserDAO(SessionFactory sessionFactory1)
 	{

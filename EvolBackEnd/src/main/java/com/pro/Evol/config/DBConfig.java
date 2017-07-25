@@ -10,6 +10,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -28,7 +30,7 @@ import com.pro.Evol.model.Supplier;
 import com.pro.Evol.model.UserDetails;
 
 @Configuration
-@ComponentScan("com.mobitel.MobitelBackend")
+@ComponentScan("com.pro.Evol.mail")
 @EnableTransactionManagement
 public class DBConfig 
 {
@@ -43,6 +45,26 @@ public class DBConfig
 		dataSource.setUsername("shiva");
 		dataSource.setPassword("143");
 		return dataSource;
+	}
+	@Bean
+	public JavaMailSender getMailSender()
+	{
+		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+		//Using Gmail SMTP configuration.
+		mailSender.setHost("smtp.gmail.com");
+		mailSender.setPort(587);
+		mailSender.setUsername("shivar.vijay.07@gmail.com");
+		mailSender.setPassword("SwS-2020");
+		
+		Properties javaMailProperties = new Properties();
+		javaMailProperties.put("mail.smtp.starttls.enable", "true");
+		javaMailProperties.put("mail.smtp.auth", "true");
+		javaMailProperties.put("mail.transport.protocol", "smtp");
+		javaMailProperties.put("mail.debug", "true");
+		
+		
+		mailSender.setJavaMailProperties(javaMailProperties);
+		return mailSender;
 	}
 
 	

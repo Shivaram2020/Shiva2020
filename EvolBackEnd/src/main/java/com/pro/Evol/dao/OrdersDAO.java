@@ -22,7 +22,10 @@ public class OrdersDAO {
 	
 	@Autowired
 	SessionFactory sessionFactory;
+	public OrdersDAO()
+	{
 	
+	}
 	public OrdersDAO(SessionFactory sessionFactory)
 	{
 		this.sessionFactory=sessionFactory;
@@ -39,6 +42,13 @@ public class OrdersDAO {
 	{
 		Session session=sessionFactory.openSession();
 		Orders orders=(Orders)session.get(Orders.class,orderid);
+		session.close();
+		return orders;
+	}
+	public Orders getUserOrders(String username)
+	{
+		Session session=sessionFactory.openSession();
+		Orders orders=(Orders)session.get(Orders.class,username);
 		session.close();
 		return orders;
 	}
@@ -60,7 +70,6 @@ public class OrdersDAO {
 		return list;
 	}
 
-	
 	
 	
 	

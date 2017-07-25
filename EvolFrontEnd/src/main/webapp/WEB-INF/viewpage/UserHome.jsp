@@ -12,7 +12,21 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
  
+   <style>
+   <style>
+img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 1500px;
+}
+
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+</style>
    
+   </style>
 <jsp:include page="header.jsp"/>
 <link href="<c:url value="/resources/navbar/css/navbar1.css" />" rel="stylesheet">
 </head>
@@ -53,7 +67,7 @@
       
       <div class="caption">
         <h3>${product.prodname}</h3>
-        <h4>&#8377 ${product.price}</h4>
+        <h4><s>&#8377 ${product.price+500}</s>&#8377 ${product.price}</h4>
         <p><h4>${product.proddesc}</h4></p>
         <p><a href="<c:url value="/ProductDescription/${product.prodid}" />" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</a></p>
               </div>

@@ -3,7 +3,6 @@ package com.pro.Evol;
 import java.util.Collection;
 import java.util.List;
 
-import javax.persistence.metamodel.Metamodel;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +44,7 @@ public class UserControl {
     user.setPassword(password);
     user.setEmail(email);
     user.setMobileno(mobileno);
-    user.setRole("ROLE_USER");
+    user.setRole("user");
     user.setEnabled(true);
     user.setAddress(address);
     userDAO.insertUpdateUser(user);

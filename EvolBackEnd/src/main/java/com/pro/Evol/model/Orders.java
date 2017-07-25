@@ -13,21 +13,36 @@ import javax.persistence.Table;
 public class Orders {
 	
 	
-	
-	
-	
 	@Id
 	@GeneratedValue
 	private int orderid;
 	
+	
+	
 	@Column(columnDefinition = "varchar(30)")
-	private String username,paymode,shipmentaddress,status;
+	private String username;
+	
+	
+
+	@Column(columnDefinition = "varchar(50)")
+	private String paymode,shipmentaddress,status;
 	
 	@Column(columnDefinition = "integer(30)")
 	private int total;
 	
+	@Column(columnDefinition = "varchar(50)")
+	private String Email;
 	
-	
+	public String getEmail() {
+		return Email;
+	}
+
+
+	public void setEmail(String email) {
+		Email = email;
+	}
+
+
 	public int getTotal() {
 		return total;
 	}

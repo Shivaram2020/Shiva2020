@@ -22,7 +22,7 @@ public class Product<MultipartFile> {
 	private int price;
 	@Column (columnDefinition="varchar(30)")
 	private String prodname;
-	@Column (columnDefinition="varchar(80)")
+	@Column (columnDefinition="varchar(500)")
 	private String proddesc;
 	
 	@Transient

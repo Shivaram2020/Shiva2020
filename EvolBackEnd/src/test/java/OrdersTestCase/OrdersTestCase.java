@@ -51,12 +51,14 @@ public class OrdersTestCase
 		}*/
 		
 		//Update the Orders
-		/*Orders orders=ordersDAO.getOrders(1);
+		/*Orders orders=ordersDAO.getUserOrders("Shivaram");
 		orders.setUsername("shivaram");
 		ordersDAO.insertUpdateOrders(orders);
 		System.out.println("The Orders Updated");*/
 		
-	}
+		
+		
+			}
 }
 
 

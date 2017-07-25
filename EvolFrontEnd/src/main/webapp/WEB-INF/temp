@@ -1,24 +1,32 @@
-<div id="fullscreen_bg" class="fullscreen_bg">
 
+	/*public static Orders getDetails()
+	
+	{
+		
+		
+		Orders orderm=new Orders();
+		
+				orderm.setUsername("shiva");
+			orderm.setShipmentaddress("afasdasd");
+			orderm.setEmail("shivar.vijay.07@gmail.com");
+			orderm.setTotal(1000);
+			orderm.setPaymode("mastercard");
+			orderm.setOrderid(22);
+			return orderm;
+		
+		}
+	
+	
+	@RequestMapping("/mail")
+	
+	public static String main(String arg[])
+	{
+	AbstractApplicationContext context = new AnnotationConfigApplicationContext(DBConfig.class);
 
-<div class="container">
-
-	<form action="<c:url value="/perform_login"/>" method="post">
-		<h1 class="form-signin-heading text-muted">Sign In</h1>
-		<input type="text" class="form-control" placeholder="Username" required="" autofocus="" name="username">
-		<input type="password" class="form-control" placeholder="Password" required="" name="password">
-		<input type="submit"value="submit">
-			
-	</form>
-
-</div>
-
-</div>
-
-///card
-
-
- <a href="http://www.twitter.com/mike_youngg"><i class="fa fa-twitter fa-2x"></i></a>
-              <a href="mailto:michael_y@live.co.uk"><i class="fa fa-envelope-o fa-2x"></i></a>
-              <a href="http://www.linkedin.com"><i class="fa fa-linkedin fa-2x"></i></a>
-        
+	OrderService orderService = (OrderService) context.getBean("mailControl1");
+	orderService.sendOrderConfirmation1(getDetails());
+	((AbstractApplicationContext) context).close();
+	
+	return "ThankPage";
+	}*/
+	

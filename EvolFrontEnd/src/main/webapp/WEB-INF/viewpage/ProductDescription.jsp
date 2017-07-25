@@ -54,7 +54,7 @@
 					
 						<div class="action">
 							<form action="<c:url value="/AddCart/${prodinfo.prodid}"/>" method="get">
-Quantity<input type="text"  name="quantity" onkeyup="validatequantity(this);" id="quantity" required/>
+Quantity<input type="text"  name="quantity" onkeyup="validatequantity(this);" id="quantity" value="1" required/>
 
 <input type="submit" name="submit"  class="add-to-cart" value="Add to cart"/>
 </form>

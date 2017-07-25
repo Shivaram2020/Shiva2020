@@ -18,7 +18,7 @@ th, td {
 tr:nth-child(even){background-color: #f2f2f2}
 </style>
 </head>
-<body>
+<body style="background-color:#E6E6FA">
 
 <c:if test="${sessionScope.loggedIn }">
 <!-- Category Form Started -->
