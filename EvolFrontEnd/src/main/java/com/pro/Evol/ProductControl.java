@@ -19,9 +19,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.pro.Evol.dao.CategoryDAO;
+import com.pro.Evol.dao.OfferDAO;
 import com.pro.Evol.dao.ProductDAO;
 import com.pro.Evol.dao.SupplierDAO;
 import com.pro.Evol.model.Category;
+import com.pro.Evol.model.Offer;
 import com.pro.Evol.model.Product;
 import com.pro.Evol.model.Supplier;
 
@@ -36,6 +38,9 @@ public class ProductControl
 	
 	
 	@Autowired
+	OfferDAO offerDAO;
+	
+	@Autowired
 	ProductDAO productDAO;
 	
 	//show page
@@ -48,6 +53,7 @@ public class ProductControl
 		
 		m.addAttribute("catlist",this.getCatList());
 		m.addAttribute("supplist",this.getSuppList());
+		m.addAttribute("offlist",this.getOffList());
 		m.addAttribute("product",product);
 		
 		List<Product> prodlist=productDAO.getProductDetails();
@@ -118,6 +124,7 @@ public class ProductControl
 		m.addAttribute("product",product);
 		m.addAttribute("catlist",this.getCatList());
 		m.addAttribute("supplist",this.getSuppList());
+		m.addAttribute("offlist",this.getOffList());
 		List<Product> prodlist=productDAO.getProductDetails();
 		m.addAttribute("prodlist",prodlist);
 		boolean flag=true;
@@ -189,6 +196,7 @@ public class ProductControl
 		m.addAttribute("product",product1);
 		m.addAttribute("catlist",this.getCatList());
 		m.addAttribute("supplist",this.getSuppList());
+		m.addAttribute("offlist",this.getOffList());
 		List<Product> prodlist=productDAO.getProductDetails();
 		m.addAttribute("prodlist",prodlist);
 		
@@ -208,6 +216,7 @@ public class ProductControl
 			m.addAttribute("product",product1);
 			m.addAttribute("catlist",this.getCatList());
 			m.addAttribute("supplist",this.getSuppList());
+			m.addAttribute("offlist",this.getOffList());
 			List<Product> prodlist=productDAO.getProductDetails();
 			m.addAttribute("prodlist",prodlist);
 			
@@ -228,6 +237,20 @@ public class ProductControl
 		}
 		
 		return catlist;
+	}
+	
+	public LinkedHashMap<Integer,String> getOffList()
+	{
+		List<Offer> list=offerDAO.getOfferDetails();
+		
+		LinkedHashMap<Integer,String> offlist=new LinkedHashMap<Integer,String>();
+		
+		for(Offer off:list)
+		{
+			offlist.put(off.getOffid(),off.getOffname());
+		}
+		
+		return offlist;
 	}
 	
 	

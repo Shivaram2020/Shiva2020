@@ -24,15 +24,26 @@ img {
 img:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
+
+
+.menu {
+    width: 25%;
+    float: left;
+    padding: 15px;
+    border: 1px solid red;
+}
+
 </style>
    
-   </style>
+   
 <jsp:include page="header.jsp"/>
 <link href="<c:url value="/resources/navbar/css/navbar1.css" />" rel="stylesheet">
 </head>
 <body>
 
 <div class="parallax">
+
+
 <div class="container">
   <div class="row">
 
@@ -54,14 +65,14 @@ img:hover {
 <div class="container">
 
 <div class="row">
-  <c:forEach items="${prodlist}" var="product">
+   <c:forEach items="${prodlist}" var="product">
   
   <div class="col-sm-6 col-md-3">
   
   
+ 
   
-  
-    <div class="thumbnail">
+    <div class="thumbnail con">
       <a href="<c:url value="/ProductDescription/${product.prodid}" />" class=" thumbnail">
 <img src="<c:url value="/resources/images/${product.prodid}.jpg"/>" height="300" width="400" ></a>
       
@@ -69,16 +80,17 @@ img:hover {
         <h3>${product.prodname}</h3>
         <h4><s>&#8377 ${product.price+500}</s>&#8377 ${product.price}</h4>
         <p><h4>${product.proddesc}</h4></p>
-        <p><a href="<c:url value="/ProductDescription/${product.prodid}" />" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</a></p>
+        <p><a href="<c:url value="/ProductDescription/${product.prodid}" />" class="btn btn-success fix  btn-circle btn-lg" role="button"><i class="glyphicon glyphicon-shopping-cart"></i></a></p>
               </div>
    
     </div>
+    
     </div>
   
+ 
+   </c:forEach>
   
-  
-  
-  </c:forEach>
+ 
   
  </div>
   </div>

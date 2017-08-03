@@ -135,7 +135,7 @@
 
 .photo {
     /* The image used */
-    background-image:url('https://static.pexels.com/photos/28855/pexels-photo-28855.jpg');
+    background-image:url('https://scontent.fmaa2-1.fna.fbcdn.net/v/t1.0-9/18342694_1897959040449134_3212668137284523170_n.jpg?oh=62538fbacad2490934784094be3c074b&oe=59F237DE');
 
     /* Set a specific height */
     min-height: 500px; 
@@ -195,7 +195,7 @@
 
  .game {
     /* The image used */
-    background-image:url('https://images.alphacoders.com/451/thumb-1920-451603.jpg');
+    background-image:url('http://thisgengaming.com/wp-content/uploads/2016/03/original.jpg');
 
     /* Set a specific height */
     min-height: 500px; 
@@ -570,5 +570,26 @@ div#partyInfo {
 
 #darkMe.showMe, #partyInfo.showMe{
     visibility:visible;
+}
+
+
+
+.con {
+    width: 280px;
+    height: 680px;
+}
+.btn-circle.btn-lg {
+ width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+
+.fix {
+     position: absolute;
+    right: 10px;
+    bottom: 10px;
 }
 

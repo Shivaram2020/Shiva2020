@@ -18,12 +18,14 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.pro.Evol.dao.CartDAO;
 import com.pro.Evol.dao.CategoryDAO;
+import com.pro.Evol.dao.OfferDAO;
 import com.pro.Evol.dao.OrdersDAO;
 import com.pro.Evol.dao.ProductDAO;
 import com.pro.Evol.dao.SupplierDAO;
 import com.pro.Evol.dao.UserDAO;
 import com.pro.Evol.model.Cart;
 import com.pro.Evol.model.Category;
+import com.pro.Evol.model.Offer;
 import com.pro.Evol.model.Orders;
 import com.pro.Evol.model.Product;
 import com.pro.Evol.model.Supplier;
@@ -88,6 +90,7 @@ public class DBConfig
 		sessionBuilder.addAnnotatedClass(Product.class);
 		sessionBuilder.addAnnotatedClass(Cart.class);
 		sessionBuilder.addAnnotatedClass(Orders.class);
+		sessionBuilder.addAnnotatedClass(Offer.class);
 		SessionFactory sessionFactory=sessionBuilder.buildSessionFactory();
 				return sessionFactory;
 	}
@@ -139,7 +142,12 @@ public class DBConfig
 		{
 			return new OrdersDAO(sessionFactory);
 		}
-
+		@Autowired
+		@Bean(name="offerDAO")
+		public OfferDAO getOfferDAO(SessionFactory sessionFactory)
+		{
+			return new OfferDAO(sessionFactory);
+		}
 }
 
 

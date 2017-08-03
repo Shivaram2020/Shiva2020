@@ -17,7 +17,7 @@ public class Product<MultipartFile> {
 	@Column (columnDefinition="integer(10)")
 	private int prodid;
 	@Column (columnDefinition="integer(5)")
-	private int catid,suppid,quantity;
+	private int catid,suppid,quantity,offid;
 	@Column (columnDefinition="integer(10)")
 	private int price;
 	@Column (columnDefinition="varchar(30)")
@@ -28,6 +28,12 @@ public class Product<MultipartFile> {
 	@Transient
 	MultipartFile pimage;
 	
+	public int getOffid() {
+		return offid;
+	}
+	public void setOffid(int offid) {
+		this.offid = offid;
+	}
 	
 	public MultipartFile getPimage() {
 		return pimage;

@@ -56,6 +56,14 @@ background-color: #abebc6
 				</td>
 			</tr>		
 			<tr>
+				<td>Offer</td>
+				<td><form:select path="offid" required="required">
+						<form:option value="0" label="------Select----"/>
+						<form:options items="${offlist}" />
+					</form:select>
+				</td>
+			</tr>	
+			<tr>
 				<td>Price</td>
 				<td><form:input path="price" onkeyup="validatequantity(this);" id="quantity" required="required"  value="1" /></td>
 			</tr>
@@ -91,6 +99,7 @@ background-color: #abebc6
 		<td>Quantity</td>
 		<td>Category Id</td>
 		<td>Supplier Id</td>
+			<td>Offer Id</td>
 		<td>Description</td>
 		<td>Operation</td>
 	</tr>
@@ -102,6 +111,7 @@ background-color: #abebc6
 			<td>${product.quantity}</td>
 			<td>${product.catid}</td>
 			<td>${product.suppid}</td>
+			<td>${product.offid}</td>
 			<td>${product.proddesc}</td>
 			<td><a href="<c:url value="deleteProduct/${product.prodid}"/>">Delete</a>
 				<a href="<c:url value="updateProduct/${product.prodid}"/>">Update</a>

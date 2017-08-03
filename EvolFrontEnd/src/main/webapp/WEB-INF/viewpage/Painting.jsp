@@ -134,7 +134,7 @@
   
   
   
-    <div class="thumbnail">
+    <div class="thumbnail con">
       <a href="<c:url value="/ProductDescription/${product.prodid}" />" class=" thumbnail">
 <img src="<c:url value="/resources/images/${product.prodid}.jpg"/>" height="300" width="400" ></a>
       
@@ -142,8 +142,8 @@
         <h3>${product.prodname}</h3>
         <h4>&#8377 ${product.price}</h4>
         <p><h4>${product.proddesc}</h4></p>
-        <p><a href="<c:url value="/ProductDescription/${product.prodid}" />" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</a></p>
-              </div>
+         <p><a href="<c:url value="/ProductDescription/${product.prodid}" />" class="btn btn-success fix  btn-circle btn-lg" role="button"><span class="glyphicon glyphicon-shopping-cart"></span></a></p>
+                  </div>
    
     </div>
     </div>
@@ -181,7 +181,7 @@
   
   
   
-    <div class="thumbnail">
+    <div class="thumbnail con">
       <a href="<c:url value="/Login" />" class=" thumbnail">
 <img src="<c:url value="/resources/images/${product.prodid}.jpg"/>" height="300" width="400" ></a>
       
@@ -189,8 +189,8 @@
         <h3>${product.prodname}</h3>
         <h4>&#8377 ${product.price}</h4>
         <p><h4>${product.proddesc}</h4></p>
-        <p><a href="<c:url value="/Login" />" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</a></p>
-              </div>
+       <p><a href="<c:url value="/Login" />" class="btn btn-primary fix  btn-circle btn-lg" role="button"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</a></p>
+               </div>
    
     </div>
     </div>

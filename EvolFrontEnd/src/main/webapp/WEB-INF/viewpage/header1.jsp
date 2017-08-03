@@ -26,7 +26,7 @@
       <li><a href="Product">product</a></li>
       <li><a href="Supplier">supplier</a></li>
      <li><a href="Category">category</a></li>
-     
+      <li><a href="Offer">offer</a></li>
     </ul>
      <ul class="nav navbar-nav nav navbar-right">
      
