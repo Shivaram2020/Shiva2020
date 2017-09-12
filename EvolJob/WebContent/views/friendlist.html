@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>Friend List</title>
+
+</head>
+<body>
+<div class="a">
+
+<div ng-repeat="friend in friendslist">
+<div ng-hide="friend.fromid==currentUser.username"><h4>{{friend.fromid}}</h4></div>
+<div ng-hide="friend.to==currentUser.username"><h4>{{friend.to}}</h4></div>
+
+</div>
+ </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Pending Request</title>
+</head>
+<body>
+<div class="container">
+<table class="table table-striped">
+<tr ng-repeat="f in follow">
+<td>
+{{f.to}}
+</td>
+
+<td>
+<a href="" ng-click="deleteFriendRequest(f.id,'X')">cancel friend request</a></td>
+
+
+
+</tr>
+</table>
+</div>
+</body>
+</html>

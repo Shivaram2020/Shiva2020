@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Pending Request</title>
+</head>
+<body>
+<div class="container">
+<table class="table table-striped">
+<tr ng-repeat="p in pendingLists">
+<td>
+{{p.fromid}}
+</td>
+<td>
+<a href=""  ng-click="updatependingrequest(p.fromid,'A')" class="w3-button w3-purple">Accept</a>
+
+</td>
+<td>
+<a href="" ng-click="deleteFriendRequest(p.id,'X')">cancel friend request</a></td>
+
+</td>
+<td>
+<a href="" ng-click="updatependingrequest(p.from,'D')" class="w3-button w3-purple">Block</a>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

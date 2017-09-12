@@ -1,0 +1,30 @@
+body {
+  
+   content:url(http://www.v80.me//assets/img/slider2.jpg);
+   
+ 
+}
+body:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  background: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  height: 100%;
+}
+alt {
+	
+	 font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+	text-align: center;
+}
+
+div.image {
+   content:url(http://www.v80.me//assets/img/slider2.jpg);
+}​
+==============================================
+
+

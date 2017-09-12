@@ -1,0 +1,58 @@
+<html>
+
+
+<head>
+
+  
+	  <!-- Login -->
+	  
+    <script src="_login/login.js"></script>
+	   <link rel="stylesheet" href="_login/login.css">
+	
+	 <style type="text/css">
+	
+   body {
+   
+    background: #1B1B1B;
+    background-blend-mode: multiply;
+}
+   
+	 
+.bgimg {
+    background-image: url('http://wasl-amg.com/images/wallpaper/10.jpg');
+}
+</style>
+	
+
+</head>
+
+
+
+<body  >
+
+<div class="bgimg">
+
+<div class="container ">
+  <div class="info">
+    <h1>Login</h1>
+  </div>
+</div>
+<div class="form">
+
+  <img src="https://www.sharphealthplanpayment.com/SHARPHEALTHPLAN/images/images/login.svg"  ng-hide="user.username"  width="200px" height="200px" class="img-circle"/>
+  <a href="" ng-show="user.username"> <img src="http://localhost:8083/EvolJobB/getimage/{{user.username}}" alt="loading"   width="200px" height="200px" class="img-circle" /></a>
+     
+     <span style="color:red">{{error.message}}</span>
+{{logoutSuccess}}
+{{mess}}
+  <form class="login-form">
+    <input type="text" ng-model="user.username"  placeholder="username"/>
+    <input type="password" ng-model="user.password" placeholder="password"/>
+    <button  ng-click="validateUser()">login</button>
+    <p class="message">Not registered? <a href="#/register">Create an account</a></p>
+  </form>
+</div>
+</div>
+</body>
+
+</html>
