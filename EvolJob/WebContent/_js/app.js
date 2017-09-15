@@ -37,6 +37,16 @@ app.config(function($routeProvider){
 		controller:'JobController',
 		templateUrl:'views/job.html'
 	})
+	.when('/editjob/:id',{
+		templateUrl:'views/jobeditform.html',
+		controller:'JobController'
+		
+	})
+	.when('/confirm/:id',{
+		templateUrl:'views/jobapplyconfirm.html',
+		controller:'JobController'
+		
+	})
 	.when('/saveblogpost',{
 		templateUrl:'views/blogpostform.html',
 		controller:'BlogPostController'

@@ -21,6 +21,15 @@ private String salary;
 private String companyname;
 private String location;
 private Date postedOn;
+private String applieduser;
+
+
+public String getApplieduser() {
+	return applieduser;
+}
+public void setApplieduser(String applieduser) {
+	this.applieduser = applieduser;
+}
 public int getId() {
 	return id;
 }

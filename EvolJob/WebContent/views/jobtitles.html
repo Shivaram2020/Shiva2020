@@ -8,6 +8,10 @@
 <tr ng-repeat="job in jobs">
 <td>
 <a href="#/getjobbyid/{{job.id}}" >{{job.jobTitle}}--------</a></td><td>--------{{job.postedOn | date : 'yyyy-MM-dd'}}</td>
+<td>
+<td><div ng-if="currentUser.role=='admin'"><a href="#/editjob/{{job.id}}">edit</a></div>
+
+</td>
 </tr>
 </tbody>
 </table>

@@ -31,6 +31,9 @@ app.controller('BlogPostDetailController',function($scope,$location,$routeParams
 		$scope.showcomments=true;
 	}
 	getBlogComments()
+	
+	
+	
 	$scope.updateBlogPost=function(){
 		console.log($scope.blogPost)
 		BlogPostService.updateBlogPost($scope.blogPost).then(function(response){

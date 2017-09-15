@@ -10,6 +10,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.EvolJob.pro.model.BlogPost;
 import com.EvolJob.pro.model.Job;
 
 
@@ -33,4 +34,30 @@ private SessionFactory sessionFactory;
 		return job;
 	}
 
+	
+	@Override
+	public void updateJob(Job job) {
+
+		Session session=sessionFactory.getCurrentSession();
+		
+
+		session.update(job);
+		
+		
+
+		
+	}
+	@Override
+	public void deleteJob(Job job)
+	{
+		Session session=sessionFactory.getCurrentSession();
+		
+
+		session.delete(job);
+
+}
+	
+	
+	
+	
 }
