@@ -16,6 +16,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import com.EvolJob.pro.model.ProfilePicture;
 import com.EvolJob.pro.model.User;
 import com.EvolJob.pro.dao.ProfilePictureDao;
+import com.EvolJob.pro.model.CoverPicture;
 import com.EvolJob.pro.model.Error;
 @Controller
 public class ProfilePictureController {
@@ -60,6 +61,47 @@ public ResponseEntity<?> uploadProfilePicture(@RequestParam CommonsMultipartFile
 		
 		
 }
+	
+	@RequestMapping(value="/uploadcoverpic",method=RequestMethod.POST)
+	public ResponseEntity<?> uploadCoverPicture(@RequestParam CommonsMultipartFile image,HttpSession session){
+			if(session.getAttribute("username")==null)		{
+			    Error error=new Error(3,"UnAuthorized user");
+				return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);
+		} 
+			String username=(String)session.getAttribute("username");
+		CoverPicture profilePicture=new CoverPicture();
+		profilePicture.setUsername(username);
+		profilePicture.setImage(image.getBytes());
+		try
+		{
+		profilePictureDao.saveCover(profilePicture);
+		return new ResponseEntity<CoverPicture>(profilePicture,HttpStatus.OK);
+		}
+		
+		catch(Exception e)
+		{
+			Error error=new Error(7,"Unable to insert job details " + e.getMessage());
+			return new ResponseEntity<Error>(error,HttpStatus.INTERNAL_SERVER_ERROR);
+		
+		}
+	}
+		
+	@RequestMapping(value="/getcover/{username}", method=RequestMethod.GET)
+	public @ResponseBody byte[] getCoverPic(@PathVariable String username){
+		
+		
+		
+			CoverPicture profilePic=profilePictureDao.getCoverPic(username);
+			if(profilePic==null)
+				return null;
+			
+		
+				return profilePic.getImage();
+		
+		
+}
+	
+	
 }
 
 

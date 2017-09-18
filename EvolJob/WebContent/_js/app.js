@@ -10,8 +10,21 @@ app.config(function($routeProvider){
 	.when('/aboutus',{
 		templateUrl:'views/aboutUs.html'
 	})
+	.when('/profile',{
+		templateUrl:'views/profile.html',
+			controller:'BlogPostController'
+			
+	})
+	
 	.when('/profilepic',{
 		templateUrl:'views/profilepic.html'
+	})
+	.when('/coverpic',{
+		templateUrl:'views/coverpic.html'
+	})
+	.when('/aboutme',{
+		templateUrl:'views/about.html',
+		controller:'UserController'
 	})
 	.when('/register',{
 		templateUrl:'views/registrationform.html',
@@ -95,6 +108,12 @@ app.config(function($routeProvider){
 		templateUrl:'views/followinglist.html',
 		controller:'FriendController'
 	})	
+	
+	.when('/chat',{
+		templateUrl:'views/chat.html',
+		controller:'ChatController'
+	})
+
 	
 	.otherwise({
 		templateUrl:'views/home.html'

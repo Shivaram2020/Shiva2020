@@ -24,143 +24,173 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.js"></script>
 	  
 	  
-   
+    <script src="_js/sockjs/sockjs.js"></script>
+    <script src="_js/stomp/dist/stomp.js"></script>
 	<link href="_css/sample.css"/>
 	<link href="_navbar/navbar.css"/>
-	
+	<link href="_index/index.css"/>
 	<script type="text/javascript" src="_js/app.js"></script>
 	<script type="text/javascript" src="_js/_controller/usercontroller.js"></script>
 	<script type="text/javascript" src="_js/_controller/jobcontroller.js"></script>
 	<script type="text/javascript" src="_js/_controller/blogpostcontroller.js"></script>
 	<script type="text/javascript" src="_js/_controller/blogpostdetailcontroller.js"></script>
 	<script type="text/javascript" src="_js/_controller/friendcontroller.js"></script>
-	
-	
+	<script type="text/javascript" src="_js/_controller/chatcontroller.js"></script>
+
+<script type="text/javascript" src="_js/_service/chatservice.js"></script>
 	<script type="text/javascript" src="_js/_service/UserService.js"></script>
 	<script type="text/javascript" src="_js/_service/jobservice.js"></script>
      <script type="text/javascript" src="_js/_service/blogpostservice.js"></script>
      <script type="text/javascript" src="_js/_service/friendservice.js"></script>
-  <style> 
-body {
+  <style>
+  body {
     
     background-size: 1450px 800px;
     background-repeat: no-repeat;
     
 }
+
+    
+    
+.navbar, .dropdown-menu{
+background:rgba(150,45,255,0.20);
+border: none;
+
+}
+
+.nav>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover, .dropdown-menu>li>a, .dropdown-menu>li{
+  border-bottom: 3px solid transparent;
+}
+.nav>li>a:focus, .nav>li>a:hover,.nav .open>a, .nav .open>a:focus, .nav .open>a:hover, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+  border-bottom: 3px solid transparent;
+  background: none;
+}
+.navbar a, .dropdown-menu>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover, .navbar-toggle{
+ color: #fff;
+}
+.dropdown-menu{
+      -webkit-box-shadow: none;
+    box-shadow:none;
+}
+
+.nav li:hover:nth-child(8n+1), .nav li.active:nth-child(8n+1){
+  border-bottom: #C4E17F 3px solid;
+}
+.nav li:hover:nth-child(8n+2), .nav li.active:nth-child(8n+2){
+  border-bottom: #F7FDCA 3px solid;
+}
+.nav li:hover:nth-child(8n+3), .nav li.active:nth-child(8n+3){
+  border-bottom: #FECF71 3px solid;
+}
+.nav li:hover:nth-child(8n+4), .nav li.active:nth-child(8n+4){
+  border-bottom: #F0776C 3px solid;
+}
+.nav li:hover:nth-child(8n+5), .nav li.active:nth-child(8n+5){
+  border-bottom: #DB9DBE 3px solid;
+}
+.nav li:hover:nth-child(8n+6), .nav li.active:nth-child(8n+6){
+  border-bottom: #C49CDE 3px solid;
+}
+.nav li:hover:nth-child(8n+7), .nav li.active:nth-child(8n+7){
+  border-bottom: #669AE1 3px solid;
+}
+.nav li:hover:nth-child(8n+8), .nav li.active:nth-child(8n+8){
+  border-bottom: #62C2E4 3px solid;
+}
+
+.navbar-toggle .icon-bar{
+    color: #fff;
+    background: #fff;
+}
+   
+
 </style>
 	
 <meta charset="ISO-8859-1">
 <title>job</title>
 </head>
-<body ng-app="app"  background="_image/homebg.jpg">
+<body ng-app="app" background="_image/homebg.jpg">
 
-            <nav class="navbar navbar-inverse">
-            
-           <div class="container">
-	         <div class="navbar-header">
-                    <a class="navbar-brand" href="#/home">EvolJob</a>
-                </div>
-
-                <ul class="nav navbar-nav ">
-                <li><a href="#/home">Home</a></li>
-                <li><a href="#/aboutus">About Us</a></li>
-                 
-                   <div ng-show="currentUser.username" class="btn-group">
-                    <button type="button"  class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                        Job <span class="caret"></span>
+        
+ 
+    <div class="container-fluid ">
+        <nav class="navbar navbar-wrapper   ">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                     </button>
-                     <ul class="dropdown-menu" role="menu">
-                        <li class="dropdown-plus-title">
-                            Job
-                            <b class="pull-right glyphicon glyphicon-chevron-up"></b>
-                        </li>
-                        <li><a href="#/getAllJobs" ng-show="currentUser.username" class="w3-bar-item w3-button"> View Job</a></li>
-						<li><a href="#/addJob" class="w3-bar-item w3-button" ng-show="currentUser.role=='admin'">Post Job</a></li>
-                               </ul>
+                    <a class="navbar-brand" href="#">EvolJob</a>
                 </div>
-		
-               <div ng-show="currentUser.username" class="btn-group">
-                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-                        BlogPost <span class="caret"></span>
-                    </button>
-                     <ul class="dropdown-menu" role="menu">
-                        <li class="dropdown-plus-title">
-                            BlogPost
-                            <b class="pull-right glyphicon glyphicon-chevron-up"></b>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#/home" class="">Home</a></li>
+                        <li><a href="#/aboutus">About Us</a></li>
+              
+                        <li class=" dropdown">
+                            <a href="#home" class="dropdown-toggle " data-toggle="dropdown" ng-show="currentUser.username" role="button" aria-haspopup="true" aria-expanded="false">job<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class=" dropdown">
+                                    <a href="#/getAllJobs" ng-show="currentUser.username" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">View Jobs</a>
+                                </li>
+                                <li><a href="#/addJobs" ng-show="currentUser.username">Add Job</a></li>
+                            </ul>
                         </li>
-                         <li><a href="#/saveblogpost" ng-show="currentUser.username">Add Blog Post</a></li>
-               <li><a href="#/getallblogs" ng-show="currentUser.username">view Blog Post</a></li>               
-                                    </ul>
-                </div>
-  
-               
-                <div ng-show="currentUser.username" class="btn-group">
-                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
-                        Friends<span class="caret"></span>
-                    </button>
-                     <ul class="dropdown-menu" role="menu">
-                        <li class="dropdown-plus-title">
-                            Friends
-                            <b class="pull-right glyphicon glyphicon-chevron-up"></b>
+                       
+                        <li class=" dropdown"><a href="#home" class="dropdown-toggle " data-toggle="dropdown" ng-show="currentUser.username" role="button" aria-haspopup="true" aria-expanded="false">Blog Post<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                              <li><a href="#/saveblogpost" ng-show="currentUser.username">Add Blog Post</a></li>
+                              <li><a href="#/getallblogs" ng-show="currentUser.username">view Blog Post</a></li>               
+       
+                                 </ul>
                         </li>
-                        
-                        <li>	<a href="#/getAllUsers" ng-show="currentUser.username" class="w3-bar-item w3-button"> View Users</a> </li>
+                        <li class=" dropdown"><a href="#home" class="dropdown-toggle active" ng-show="currentUser.username" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Friend <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                               <li>	<a href="#/getAllUsers" ng-show="currentUser.username" class="w3-bar-item w3-button"> View Users</a> </li>
 						 <li>	<a href="#/pendingRequests" ng-show="currentUser.username" class="w3-bar-item w3-button">Pending Request</a> </li>
 						 <li>	<a href="#/friendlist"  ng-show="currentUser.username" class="w3-bar-item w3-button">Buddies</a> </li>
 						  <li>   <a href="#/blocklist" ng-show="currentUser.username" class="w3-bar-item w3-button">blocklist</a> </li>
 						 <li>	<a href="#/following" ng-show="currentUser.username" class="w3-bar-item w3-button">following</a> </li>
-                              </ul>
-                </div>
-               
-            
-                    
-               
-                    </ul>
-                    
-                    
-                    <ul class="nav navbar-nav nav navbar-right">
-                    
-                  
-                 <li><a href="#/login" ng-hide="currentUser.username"><span class="glyphicon glyphicon-user"></span> Login</a></li>
-                 
-                 <li><a href="#/register" ng-hide="currentUser.username"><span class="glyphicon glyphicon-plus"></span> Sign Up</a></li>
-              
-                 
-                 
-                  <div ng-show="currentUser.username" class="btn-group">
-                    <button type="button"  class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
-                       <img src="http://localhost:8083/EvolJobB/getimage/{{currentUser.username}}"  width="30px" height="30px" class="img-rounded">
-                
-                       <a href="#profilepic" ng-show="currentUser.username">Welcome {{currentUser.username}}
-                     </a> <span class="caret"></span>
-                    </button>
-                     <ul class="dropdown-menu" role="menu">
-                        <li class="dropdown-plus-title">
-                            Dropdown
-                            <b class="pull-right glyphicon glyphicon-chevron-up"></b>
+                </ul>
                         </li>
-                      <li><a href="" ng-click="logout()" ng-show="currentUser.username">logout</a>
-                  <li><a href="#/edit"  ng-show="currentUser.username">edit</a>
-                
-                      
-                                  </ul>
-                </div>
+                        <li class=" down"><a href="#home" class="dropdown-toggle active" ng-show="currentUser.username" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chat <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                               <li><a href="#chat" ng-show="currentUser.username">chat Room </a></li>    </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav pull-right">
+                   <li>  <a href="#/login" ng-hide="currentUser.username"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+                 
+                <li> <a href="#/register" ng-hide="currentUser.username"><span class="glyphicon glyphicon-plus"></span> Sign Up</a></li>
               
-                    
-                    
-                    
-                  
-                    
-
-</div>
-  
+                        <li class=" dropdown"><a href="#home" class="dropdown-toggle active" data-toggle="dropdown" ng-show="currentUser.username" role="button" aria-haspopup="true" aria-expanded="false"><img src="http://localhost:8084/EvolJobB/getimage/{{currentUser.username}}"  width="30px" height="30px" class="img-circle">
+{{currentUser.username}}<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                
+                                <li><a href="#profile">My Profile</a></li>
+                            </ul>
+                        </li>
+                        <li class=""> <a href="" ng-click="logout()" ng-show="currentUser.username">logout</a>
+                </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
    
                 
-               
+     </div>          
   
-            </nav>
+            
       
 <div ng-view ></div>
+
+
+
+
 </body>
 
 </html>

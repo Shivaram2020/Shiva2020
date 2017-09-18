@@ -1,43 +1,73 @@
-<!DOCTYPE html>
-<html >
-<head>
-  <meta charset="UTF-8">
-  <title>Flat Login Form</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-
-  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'>
-<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
-<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-
-      <link rel="stylesheet" href="css/style.css">
-
-  
-</head>
-
-<body>
-  
-<div class="container">
-  <div class="info">
-    <h1>Flat Login Form</h1><span>Made with <i class="fa fa-heart"></i> by <a href="http://andytran.me">Andy Tran</a></span>
+  <div class="container">
+  <div class="navbar-wrapper na">
+    <div class="container-fluid">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">EvolJob</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#/home" class="">Home</a></li>
+                        <li><a href="#/aboutus">About Us</a></li>
+              
+                        <li class=" dropdown">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" ng-show="currentUser.username" role="button" aria-haspopup="true" aria-expanded="false">job<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class=" dropdown">
+                                    <a href="#/getAllJobs" ng-show="currentUser.username" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">View Jobs</a>
+                                </li>
+                                <li><a href="#/addJobs" ng-show="currentUser.username">Add Job</a></li>
+                            </ul>
+                        </li>
+                       
+                        <li class=" dropdown"><a href="#" class="dropdown-toggle " data-toggle="dropdown" ng-show="currentUser.username" role="button" aria-haspopup="true" aria-expanded="false">Blog Post<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                              <li><a href="#/saveblogpost" ng-show="currentUser.username">Add Blog Post</a></li>
+                              <li><a href="#/getallblogs" ng-show="currentUser.username">view Blog Post</a></li>               
+       
+                                 </ul>
+                        </li>
+                        <li class=" dropdown"><a href="#" class="dropdown-toggle active" ng-show="currentUser.username" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Friend <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                               <li>	<a href="#/getAllUsers" ng-show="currentUser.username" class="w3-bar-item w3-button"> View Users</a> </li>
+						 <li>	<a href="#/pendingRequests" ng-show="currentUser.username" class="w3-bar-item w3-button">Pending Request</a> </li>
+						 <li>	<a href="#/friendlist"  ng-show="currentUser.username" class="w3-bar-item w3-button">Buddies</a> </li>
+						  <li>   <a href="#/blocklist" ng-show="currentUser.username" class="w3-bar-item w3-button">blocklist</a> </li>
+						 <li>	<a href="#/following" ng-show="currentUser.username" class="w3-bar-item w3-button">following</a> </li>
+                </ul>
+                        </li>
+                        <li class=" down"><a href="#" class="dropdown-toggle active" ng-show="currentUser.username" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chat <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                               <li><a href="#chat" ng-show="currentUser.username">chat Room </a></li>    </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav pull-right">
+                   <li>  <a href="#/login" ng-hide="currentUser.username"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+                 
+                <li> <a href="#/register" ng-hide="currentUser.username"><span class="glyphicon glyphicon-plus"></span> Sign Up</a></li>
+              
+                        <li class=" dropdown"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" ng-show="currentUser.username" role="button" aria-haspopup="true" aria-expanded="false"><img src="http://localhost:8084/EvolJobB/getimage/{{currentUser.username}}"  width="30px" height="30px" class="img-circle">
+{{currentUser.username}}<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                
+                                <li><a href="#profile">My Profile</a></li>
+                            </ul>
+                        </li>
+                        <li class=""> <a href="" ng-click="logout()" ng-show="currentUser.username">logout</a>
+                </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+   
+                
+     </div>          
   </div>
-</div>
-<div class="form">
-  <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/></div>
-  
-  <form class="login-form">
-    <input type="text" placeholder="username"/>
-    <input type="password" placeholder="password"/>
-    <button>login</button>
-    <p class="message">Not registered? <a href="#">Create an account</a></p>
-  </form>
-</div>
-<video id="video" autoplay="autoplay" loop="loop" poster="polina.jpg">
-  <source src="http://andytran.me/A%20peaceful%20nature%20timelapse%20video.mp4" type="video/mp4"/>
-</video>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-    <script src="js/index.js"></script>
-
-</body>
-</html>

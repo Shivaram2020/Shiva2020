@@ -14,7 +14,7 @@
    body {
    
     background: #1B1B1B;
-    background-blend-mode: multiply;
+    
 }
    
 	 
@@ -32,7 +32,7 @@
 
 <div class="bgimg">
 
-<div class="container ">
+<div class="container1 ">
   <div class="info">
     <h1>Login</h1>
   </div>
@@ -40,7 +40,7 @@
 <div class="form">
 
   <img src="https://www.sharphealthplanpayment.com/SHARPHEALTHPLAN/images/images/login.svg"  ng-hide="user.username"  width="200px" height="200px" class="img-circle"/>
-  <a href="" ng-show="user.username"> <img src="http://localhost:8083/EvolJobB/getimage/{{user.username}}" alt="loading"   width="200px" height="200px" class="img-circle" /></a>
+  <a href="" ng-show="user.username"> <img src="http://localhost:8084/EvolJobB/getimage/{{user.username}}" alt="loading"   width="200px" height="200px" class="img-circle" /></a>
      
      <span style="color:red">{{error.message}}</span>
 {{logoutSuccess}}

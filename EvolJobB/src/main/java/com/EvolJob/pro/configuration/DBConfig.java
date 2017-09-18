@@ -22,6 +22,7 @@ import com.EvolJob.pro.mail.MailControl1;
 import com.EvolJob.pro.model.ApplyJob;
 import com.EvolJob.pro.model.BlogComment;
 import com.EvolJob.pro.model.BlogPost;
+import com.EvolJob.pro.model.CoverPicture;
 import com.EvolJob.pro.model.Friend;
 import com.EvolJob.pro.model.Job;
 import com.EvolJob.pro.model.ProfilePicture;
@@ -44,7 +45,7 @@ public SessionFactory sessionFactory(){
 	hibernateProperties.setProperty("hibernate.hbm2ddl.auto","update");
 	hibernateProperties.setProperty("hibernate.show_sql","true");
 	lsf.addProperties(hibernateProperties);
-	Class classes[]=new Class[]{User.class,Job.class,BlogPost.class,BlogComment.class,ProfilePicture.class,Friend.class,ApplyJob.class};
+	Class classes[]=new Class[]{User.class,Job.class,BlogPost.class,BlogComment.class,ProfilePicture.class,Friend.class,ApplyJob.class,CoverPicture.class};
 	return lsf.addAnnotatedClasses(classes).buildSessionFactory();
 }
 

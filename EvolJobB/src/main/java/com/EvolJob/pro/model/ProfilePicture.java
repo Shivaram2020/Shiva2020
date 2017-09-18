@@ -16,9 +16,9 @@ private String username;
 @Lob
 private byte[] image;
 	
-									/*Generating Getters and Setters Method*/
+								/*Generating Getters and Setters Method*/
 	
-	public String getUsername() {
+		public String getUsername() {
 		return username;
 	}
 	public void setUsername(String username) {
@@ -30,5 +30,6 @@ private byte[] image;
 	public void setImage(byte[] image) {
 		this.image = image;
 	}
+	
 	
 }
