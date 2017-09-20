@@ -1,17 +1,196 @@
-<table>
-<thead>
-<tr>
-<th>Title</th><th>Posted On</th>
-</tr>
-</thead>
-<tbody>
-<tr ng-repeat="job in jobs">
-<td>
-<a href="#/getjobbyid/{{job.id}}" >{{job.jobTitle}}--------</a></td><td>--------{{job.postedOn | date : 'yyyy-MM-dd'}}</td>
-<td>
-<td><div ng-if="currentUser.role=='admin'"><a href="#/editjob/{{job.id}}">edit</a></div>
+<html>
 
-</td>
-</tr>
-</tbody>
-</table>
+<head>
+
+<style>
+#features {
+    margin-top:500px;
+    
+}
+.feature, .feature i, .feature h3, .feature .title_border {
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;    
+     
+}
+.feature {
+    background:#FFFFFF;
+    text-align:center;
+    padding:20px;
+    border: solid 1px #cccccc;
+    height:400px;
+    width:400px;
+}
+.feature p {
+    margin-top:20px;   
+    margin-bottom:30px;   
+}
+.feature .ii{
+    font-size:80px;
+    color:#FFFFFF;
+    background:#1E825F;
+    padding:30px;
+    border-radius:50%;
+    border: solid 3px #1E825F;
+}
+.feature h3 {
+    color:#1E825F;  
+}
+.feature:hover {
+    background:#F5F5F5;
+    -webkit-transform: translate(0,1em);
+    -moz-transform: translate(0,1em);
+    -o-transform: translate(0,1em);
+    -ms-transform: translate(0,1em);
+    transform: translate(0,1em);    
+}
+.feature:hover i{
+    color:#1E825F;
+    border-color:#1E825F;
+    background:#FFFFFF;
+}
+.feature:hover .title_border {
+    background-color:#1E825F;
+    width:50%;
+}
+.feature .title_border {
+    width: 0%;
+    height: 3px;
+    background:linear-gradient(#f6f7fc 0%, #d5e1e8 40%);
+    margin: 0 auto;
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Rubik:400,900);
+
+*{box-sizing: border-box;}
+body, html { height: 100%; min-height: 100%; }
+body {
+   background: linear-gradient(#f6f7fc 0%, #d5e1e8 40%);
+   transform-style: preserve-3d;
+   transform: perspective(800px);
+   font-family: 'Lato', sans-serif;
+}
+
+#card-container{
+   width: 1280px;
+   height: 350px;
+   position:absolute;
+   top: 55%; left: 40%;
+   margin: -180px 0 0 -450px;
+}
+#card{
+   animation: backAn 60s infinite;
+   color:#fff;
+   padding:30px;
+   width:100%;
+   height:100%;
+   position:absolute;
+   z-index:1;
+ background:url(http://www.capdigital.com/en/files/2013/03/HD_Wallpaper_New_York_028.jpg) 100% bottom;
+   box-shadow: 
+     0px 45px 100px rgba(0, .4, 0, 0),
+     inset 0 0 0 1000px rgba(156,27,27,.6);
+}
+
+#card .text-block{position:relative;z-index:2;text-shadow: 0px 3px 10px rgba(0, 0, 0, .7)}
+#card .text-block h1{font-family: 'Rubik', sans-serif; font-size:3em; margin:0; text-transform:uppercase; font-weight:700;}
+#card .text-block h1 small{font-size:.4em;color:#ccc;position:relative;bottom:10px}
+#card .text-block h3{margin:0;font-weight:700;}
+#card .text-block p{font-weight:300; width:60%}
+#card .text-block button{transition: all .35s cubic-bezier(.37,.26,.35,1);border:4px solid #fff; padding:10px; background:transparent;font-family: 'Rubik', sans-serif;text-transform:uppercase; font-weight:700; cursor:pointer;}
+#card .text-block button:hover{background:#B51D2A}
+
+#card-container .pg{position:absolute;height:450px; width:40%; right:-10px;bottom:0px;z-index:2}
+#card-container .pg > img{height:450px;}
+
+.shine {
+position: absolute;
+top: 0; left: 0; right: 0; bottom: 0;
+background: linear-gradient(90deg, rgba(0,0,0,.4) 0%,rgba(0,0,0,.2) 60%);
+z-index: 1;
+}
+button{color:#fff;}
+
+@keyframes backAn {
+  0%   { background-size:100% }
+  50%   { background-size:250% }
+  100%   { background-size:100% }
+}
+ 
+
+
+</style>
+
+	
+
+</head>
+
+<body>
+<section>
+
+<div id="card-container" data-offset="2">
+   <div class="pg">
+      <img src="_image/job.png">
+   </div>
+   <div id="card">
+      <div class="shine"></div>
+      <div class="text-block">
+         <h1>EvolJob <small>(2017)</small></h1>
+         <h3>Dream, career, Goal</h3>
+         <p>
+            EvolJob database of about 49.5 million registered job seekers and an average of about 11,000 resumes were added daily while about 130,000 resumes were modified daily,51,000 corporate customers (including hiring consultants/firms).
+         </p>
+         <button>Apply Now</button>
+      </div>
+   </div>
+   
+</div>
+</section>
+<div class="container-fluid"><div class="container" id="features" >
+	<div class="row">
+		<div class="col-md-4 feature" ng-repeat="job in jobs">
+		<div align="right" ng-if="currentUser.role=='admin'"><a href="#/editjob/{{job.id}}"><i class="glyphicon glyphicon-edit"></i></a></div>
+          <a href="#/getjobbyid/{{job.id}}" >  <i class="glyphicon glyphicon-briefcase ii"></i>
+            <h3>{{job.jobTitle}}--------</h3></a>
+            <div class="title_border"></div>
+            <p>{{job.jobDescription}}
+            <p>{{job.postedOn | date : 'yyyy-MM-dd'}}</p>
+            
+            
+		</div>
+	</div>
+</div>
+</div>
+
+<script>
+    var $poster = $('#card-container'),
+  $shine = $('.shine'),
+  w = $(window).width(),
+  h = $(window).height();
+
+$(window).on('mousemove', function(e) {
+  var offsetX = 0.5 - e.pageX / w,
+    offsetY = 0.5 - e.pageY / h,
+    dy = e.pageY - h / 2,
+    dx = e.pageX - w / 2,
+    theta = Math.atan2(dy, dx),
+    angle = theta * 180 / Math.PI - 90,
+    offsetPoster = $poster.data('offset'),
+    transformPoster = 'translateY(' + -offsetX * offsetPoster + 'px) rotateX(' + (-offsetY * offsetPoster) + 'deg) rotateY(' + (offsetX * (offsetPoster * 2)) + 'deg)';
+
+  if (angle < 0) {
+    angle = angle + 360;
+  }
+  $shine.css('background', 'linear-gradient(' + angle + 'deg, rgba(0,0,0,' + (e.pageY / h /5)  + ') 0%,rgba(0,0,0,.25) 80%)');
+
+  $poster.css('transform', transformPoster);
+});
+</script>
+
+
+</body>
+</html>

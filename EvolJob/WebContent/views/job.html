@@ -1,6 +1,355 @@
-<b>title{{job.jobTitle}}</b><br>
-<b>salary{{job.salary}}</b><br>
+<html>
+
+<head>
+<style>
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+html,
+.html {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  line-height: inherit;
+}
+
+.location-card {
+ margin-top:100px;
+    
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  color: #777f87;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  height: 100%;
+  left: 50%;
+  height: 700px;
+  mac-height:1000px;
+  max-width: 800px;
+  overflow: hidden;
+  position: absolute;
+  padding: 0 0 0 40px;
+  top: 50%;
+  width: 100%;
+}
+.location-card::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.location-card__view {
+  float: left;
+  width: 470px;
+}
+.location-card__panel {
+  background-color: #fff;
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 400px;
+}
+.location-card__slides {
+  margin-top: 50px;
+}
+.location-card__slide {
+  padding: 0 45px;
+}
+.location-card__thumbnails {
+  background-color: #32004b;
+  height: 80px;
+  min-width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.location-card__thumbnails::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.location-card__thumbnails li {
+  cursor: pointer;
+  float: left;
+  height: 80px;
+  width: 80px;
+}
+.location-card__thumbnails li img {
+  -webkit-transition: opacity 350ms ease-in-out;
+  -moz-transition: opacity 350ms ease-in-out;
+  transition: opacity 350ms ease-in-out;
+  display: block;
+  opacity: 0.2;
+}
+.location-card__thumbnails li:hover img {
+  opacity: 1;
+}
+.location-card__thumbnails .location-card__thumbnails-more {
+  -webkit-transition: all 350ms ease-in-out;
+  -moz-transition: all 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+  background-color: #222629;
+  bottom: 0;
+  color: #4e5154;
+  content: "+" attr(data-more);
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  height: 80px;
+  line-height: 80px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 1000px;
+  z-index: 10;
+}
+.location-card__thumbnails .location-card__thumbnails-more:hover {
+  color: #fff;
+}
+.location-card__fake-controls {
+  bottom: 80px;
+  
+  position: absolute;
+  width: 100%;
+}
+.location-card__city-name {
+  bottom: 140px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 110px;
+  font-weight: 700;
+  position: absolute;
+  line-height: 0.9;
+}
+.location-card__hashtags {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  bottom: 0;
+  color: #fff;
+  left: 40px;
+  line-height: 79px;
+  position: absolute;
+  right: 320px;
+}
+.location-card__hashtags::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.location-card__hashtags:before {
+  box-shadow: 0px 0px 20px 3px rgba(9, 180, 236, 0.6);
+  position: absolute;
+  top: -1px;
+  right: 0;
+  width: 30%;
+  content: '';
+  height: 1px;
+}
+.location-card__hashtags li {
+  float: left;
+  margin-right: 10px;
+}
+.location-card__hashtags a:link,
+.location-card__hashtags a:active,
+.location-card__hashtags a:visited {
+  -webkit-transition: all 350ms ease-in-out;
+  -moz-transition: all 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  text-decoration: none;
+}
+.location-card__hashtags a:hover {
+  color: #09b4ec;
+}
+
+.active-location-card {
+  background-position: center;
+  background-size: cover;
+  
+}
+.active-location-card--new-york {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/43525/location-card-background-new-york1.jpg");
+}
+.active-location-card--new-york .location-card {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/43525/location-card-skyline-new-york1.jpg");
+}
+
+.point-of-interest__name {
+  color: #2a2727;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  
+}
+.point-of-interest__likes {
+  color: #09b4ec;
+  font-size: 14px;
+  margin-top: 20px;
+}
+.point-of-interest__description {
+  line-height: 1.5;
+  margin-top: 50px;
+}
+
+lable {
+    font-family: "Georgia";
+     color: red;
+  font-size: 20px;
+  margin-top: 20px;
+}
+ 
+
+*:before,
+*:after {
+  z-index: -1;
+}
 
 
 
-<a href="" ng-click="applyJob(job.id)">apply now</a>
+a {
+ text-align: center;
+  text-decoration: none;
+  line-height: 80px;
+  color: red;
+}
+
+
+[class^="btn-"] {
+  position: relative;
+  display: block;
+  margin: 20px auto;
+  width: 100%;
+  height: 80px;
+  max-width: 250px;
+  text-transform: uppercase;
+  overflow: hidden;
+  border: 1px solid currentColor;
+}
+
+.btn-2 {
+  color: #8040a7;
+}
+.btn-2:before {
+  content: '';
+  width: 0;
+  height: 0;
+  -webkit-transform: rotate(360deg);
+  border-style: solid;
+  border-width: 0 0 0 0;
+  border-color: transparent transparent transparent #3f125b;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.btn-2:after {
+  content: '';
+  width: 0;
+  height: 0;
+  -webkit-transform: rotate(360deg);
+  border-style: solid;
+  border-width: 0 0 0 0;
+  border-color: transparent #3f125b transparent transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.btn-2:hover {
+  color: #dac7e5;
+}
+.btn-2:hover:before {
+  border-width: 165px 0 0 165px;
+}
+.btn-2:hover:after {
+  border-width: 0 165px 165px 0;
+}
+.btn-2:active {
+  background: #691e98;
+}
+
+</style>
+
+
+</head>
+<body>
+<div class="html active-location-card active-location-card--new-york">
+
+<article class="location-card location-card--new-york">
+    
+    <div class="location-card__city-name">EVOL<br>JOB</div>
+
+    <ul class="location-card__hashtags">
+        <li><a href="">#dream</a></li>
+        <li><a href="">#carrer</a></li>
+        <li><a href="">#goal</a></li>
+        <li><a href="">#startpoint</a></li>
+    </ul>
+    <!-- /.location-card__hashtags -->
+
+    <div class="location-card__panel">
+
+        <div class="location-card__slides">
+            
+            <div class="location-card__slide  point-of-interest">
+                
+                <div class="point-of-interest__name"><h5><lable>Title:</lable>{{job.jobTitle}}</h5></div>
+                
+                <div class="point-of-interest__name"><h5><lable>SkillRequire:</lable>{{job.skillRequired}}</h5></div>
+                
+                <div class="point-of-interest__name"><h5><lable>Salary:</lable>{{job.salary}}</h5></div>
+                
+                <div class="point-of-interest__name"><h5><lable>Location:</lable>{{job.location}}</h5></div>
+                
+                <div class="point-of-interest__name"><h5><lable>Company Name:</lable>{{job.companyname}}</h5></div>
+                
+                
+                
+                
+        
+                <div class="point-of-interest__likes"><lable>Years of experience:</lable>{{job.yrsOfExp}}</div>
+
+                <div class="point-of-interest__description"><lablel>Description:</lablel>{{job.jobDescription}}</div>
+
+            </div>
+            <!-- /.location-card__slide -->
+
+        </div>
+        <!-- /.location-card__slides -->
+
+
+
+   
+            <a class="btn-2" href="" ng-click="applyJob(job.id)">Apply Now</a>
+ 
+                
+       
+   
+        <img  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/43525/controls-new-york.png">
+
+        
+    </div>
+    <!-- /.location-card__panel -->
+
+</article>
+<!-- /.location-card -->
+  
+</div>
+
+
+
+
+
+
+</body>
+</html>

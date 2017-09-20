@@ -32,16 +32,5 @@ app.controller('BlogPostController',function(BlogPostService,$scope,$location,$r
 	}
 	
 	
-	$rootScope.logout=function(){
-        userservice.logout().then(function(response){
-        	$rootScope.logoutSuccess="Loggedout Successfully.."
-        		delete $rootScope.currentUser
-        		$cookieStore.remove("currentUser")
-        		$location.path('/login');
-        },function(response){
-        	$scope.error=response.data
-        	$location.path('/login')
-        })		
-	}
 	
 })
