@@ -71,6 +71,8 @@ private UserDao userDao;
 		}
 		
 		try{
+			
+			
 		blogPostDao.updateBlogPost(blogPost);
 		return new ResponseEntity<BlogPost>(blogPost,HttpStatus.OK);//200 - 1st call back function will be called
 		}catch(Exception e){
@@ -78,6 +80,26 @@ private UserDao userDao;
 			return new ResponseEntity<Error>(error,HttpStatus.INTERNAL_SERVER_ERROR);//500 - 2nd call back func will be executed
 		}
 	}
+	
+	
+	@RequestMapping(value="/realupdateblogpost",method=RequestMethod.PUT)
+	public ResponseEntity<?> realupdateBlogPost(@RequestBody BlogPost blogPost,HttpSession session){
+		if(session.getAttribute("username")==null){
+			Error error=new Error(5,"UnAuthorized User");
+			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);//401 - 2nd call back func will be executed
+		}
+		
+		try{
+			
+			blogPost.setApproved(false);
+		blogPostDao.updateBlogPost(blogPost);
+		return new ResponseEntity<BlogPost>(blogPost,HttpStatus.OK);//200 - 1st call back function will be called
+		}catch(Exception e){
+			Error error=new Error(6,"Unable to insert blog post details " + e.getMessage());
+			return new ResponseEntity<Error>(error,HttpStatus.INTERNAL_SERVER_ERROR);//500 - 2nd call back func will be executed
+		}
+	}
+	
 	@RequestMapping(value="/delete/{id}",method=RequestMethod.DELETE)
 	public ResponseEntity<?> deleteBlogPost(@PathVariable int id,HttpSession session){
 		if(session.getAttribute("username")==null){

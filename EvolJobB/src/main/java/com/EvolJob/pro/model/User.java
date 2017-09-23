@@ -20,12 +20,21 @@ public class User {
 	@Column(columnDefinition = "varchar(100)")
 	private String address;
 	
+	@Column(columnDefinition = "varchar(100)")
+	private String currentstatus;
+	
 	@Column(name="status")
 	private boolean online;
 
 	
 	
-
+	public String getCurrentstatus() {
+		return currentstatus;
+	}
+	public void setCurrentstatus(String currentstatus) {
+		this.currentstatus = currentstatus;
+	}
+	
 	public String getAddress() {
 		return address;
 	}

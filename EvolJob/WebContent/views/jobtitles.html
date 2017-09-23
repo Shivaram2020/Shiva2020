@@ -19,8 +19,8 @@
     text-align:center;
     padding:20px;
     border: solid 1px #cccccc;
-    height:400px;
-    width:400px;
+    height:300px;
+    width:1200px;
 }
 .feature p {
     margin-top:20px;   
@@ -152,13 +152,13 @@ button{color:#fff;}
 </section>
 <div class="container-fluid"><div class="container" id="features" >
 	<div class="row">
-		<div class="col-md-4 feature" ng-repeat="job in jobs">
+		<div class="col-md-2 feature" ng-repeat="job in jobs">
 		<div align="right" ng-if="currentUser.role=='admin'"><a href="#/editjob/{{job.id}}"><i class="glyphicon glyphicon-edit"></i></a></div>
           <a href="#/getjobbyid/{{job.id}}" >  <i class="glyphicon glyphicon-briefcase ii"></i>
             <h3>{{job.jobTitle}}--------</h3></a>
             <div class="title_border"></div>
             <p>{{job.jobDescription}}
-            <p>{{job.postedOn | date : 'yyyy-MM-dd'}}</p>
+            --{{job.postedOn | date : 'yyyy-MM-dd'}}</p>
             
             
 		</div>

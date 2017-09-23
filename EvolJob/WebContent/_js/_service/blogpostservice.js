@@ -27,6 +27,9 @@ app.factory('BlogPostService',function($http){
 	blogPostService.updateBlogPost=function(blogPost){
 		return $http.put("http://localhost:8084/EvolJobB/updateblogpost",blogPost)
 	}
+	blogPostService.realupdateBlogPost=function(blogPost){
+		return $http.put("http://localhost:8084/EvolJobB/realupdateblogpost",blogPost)
+	}
 	
 	blogPostService.addComment=function(blogComment){
 		console.log(blogComment)

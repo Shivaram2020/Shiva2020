@@ -136,7 +136,7 @@ border: none;
                                 <li class=" dropdown">
                                     <a href="#/getAllJobs" ng-show="currentUser.username" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">View Jobs</a>
                                 </li>
-                                <li><a href="#/addJobs" ng-show="currentUser.username">Add Job</a></li>
+                                <li><a href="#/addJob" ng-show="currentUser.role=='admin'">Add Job</a></li>
                             </ul>
                         </li>
                        

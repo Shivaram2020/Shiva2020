@@ -1,38 +1,91 @@
 
-<div class="container">
-<span style="color:red">{{error.message}}</span>
-<form>
-<div class="form-group">
-Enter Job Title : <input type="text" ng-model="job.jobTitle" class="form-control">
+
+<html>
+<head>
+
+   
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+   
+   
+   <style>
+   
+   body {
+   
+    background:  	#FFFFFF ;
+    
+}
+input[type=submit] {
+    padding:5px 15px; 
+    background: 	#F08080; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+      font-family: "Georgia";
+}
+
+lable {
+    font-family: "Georgia";
+}
+   </style>
+   
+</head>
+<body>
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="title" id="first_name" ng-model="job.jobTitle" type="text" class="validate">
+          <label for="first_name">Job title</label>
+        </div>
+          <div class="input-field col s6">
+          <input id="last_name" type="text" ng-model="job.skillRequired"  class="validate">
+          <label for="last_name">SkillRequired</label>
+        </div>
+      </div>
+     
+      
+      <div class="row">
+    <div class="input-field col s6">
+ <input  id="last" type="text"  ng-model="job.yrsOfExp" class="validate">
+<label for="last"> Years of Experience:</label>
+</div>
+<div class="input-field col s6">
+<input type="text" id="last_nae" class="validate" ng-model="job.salary" >
+<label for="last_nae">Salary</label>
+</div>
 </div>
 
-<div class="form-group">
-Enter Job Description: <textarea rows="4" cols="15" ng-model="job.jobDescription" class="form-control"></textarea>
+<div class="row">
+<div class="input-field col s6">
+ <input type="text" id="last_name" class="validate"  ng-model="job.location">
+<label for="last_name">Location</label>
 </div>
 
-<div class="form-group">
-Enter Skills Required: <input type="text" ng-model="job.skillRequired" class="form-control">
-</div>
 
-<div class="form-group">
-Enter Years of Experience: <input type="text" ng-model="job.yrsOfExp" class="form-control">
+<div class="input-field col s6">
+ <input type="text" id="last_name" class="validate" ng-model="job.companyname" >
+<label for="last_name">Companyname</label>
 </div>
+</div>
+    
+  <div class="row">
+        <div class="input-field col s6">
+          <textarea id="text_area"  ng-model="job.jobDescription"  class="validate"></textarea>
+          <label for="last_name">Description</label>
+        </div>
+     
+      
+<input type="submit" ng-click="saveJob()"  value="Save Job">
 
-<div class="form-group">
-Enter Salary:<input type="text" ng-model="job.salary" class="form-control">
-</div>
+     </div>
+     </form>
+  </div>
+  
 
-<div class="form-group">
-Enter Location :<input type="text" ng-model="job.location" class="form-control">
-</div>
+</body>
+</html>
 
-<div class="form-group">
-Enter Company Name: <input type="text" ng-model="job.companyname" class="form-control">
-</div>
-
-<div class="form-group">
-<input type="submit" ng-click="saveJob()" class="form-control">
-</div>
-
-</form>
-</div>

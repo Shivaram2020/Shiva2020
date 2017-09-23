@@ -42,7 +42,7 @@ private SessionFactory sessionFactory;
 	public void friendRequest(String from, String to){
 		Session session=sessionFactory.openSession();
 		Friend friend =new Friend();
-		friend.setFromId(from);
+		friend.setFromuser(from);
 		friend.setTo(to);
 		friend.setStatus('P');
 		session.save(friend);
@@ -118,7 +118,7 @@ private SessionFactory sessionFactory;
 
 	public List<Friend> following(String toUsername) {
 		Session session=sessionFactory.openSession();
-		Query query=session.createQuery("from Friend where fromid=? and status=?");
+		Query query=session.createQuery("from Friend where fromuser=? and status=?");
 		
 		query.setString(0, toUsername);
 		query.setCharacter(1, 'P');

@@ -31,7 +31,7 @@ app.factory('FriendService',function($http){
 	}
 	
 	friendService.deleteFriendRequest=function(id,status){
-		return $http.delete("http://localhost:8083/EvolJobB/deleteFriend/"+id)
+		return $http.delete("http://localhost:8084/EvolJobB/deleteFriend/"+id+"/"+status)
 	}
 	return friendService;
 })

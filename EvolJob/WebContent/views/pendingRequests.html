@@ -7,10 +7,10 @@
 <table class="table table-striped">
 <tr ng-repeat="p in pendingLists">
 <td>
-{{p.fromid}}
+{{p.fromuser}}{{p.id}}
 </td>
 <td>
-<a href=""  ng-click="updatependingrequest(p.fromid,'A')" class="w3-button w3-purple">Accept</a>
+<a href=""  ng-click="updatependingrequest(p.fromuser,'A')" class="w3-button w3-purple">Accept</a>
 
 </td>
 <td>
@@ -18,7 +18,7 @@
 
 </td>
 <td>
-<a href="" ng-click="updatependingrequest(p.from,'D')" class="w3-button w3-purple">Block</a>
+<a href="" ng-click="updatependingrequest(p.fromuser,'D')" class="w3-button w3-purple">Block</a>
 </td>
 </tr>
 </table>

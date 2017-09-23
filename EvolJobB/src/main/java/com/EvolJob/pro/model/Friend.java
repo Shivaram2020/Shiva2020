@@ -16,7 +16,8 @@ public class Friend {
 private int id;
 
 @Column(name="from_id")
-private String fromid;
+private String fromuser;
+
 
 @Column(name="to_id")
 private String to;
@@ -30,12 +31,13 @@ public int getId() {
 public void setId(int id) {
 	this.id = id;
 }
-public String getFrom() {
-	return fromid;
+public String getFromuser() {
+	return fromuser;
 }
-public void setFromId(String from) {
-	this.fromid = from;
+public void setFromuser(String fromuser) {
+	this.fromuser = fromuser;
 }
+
 public String getTo() {
 	return to;
 }

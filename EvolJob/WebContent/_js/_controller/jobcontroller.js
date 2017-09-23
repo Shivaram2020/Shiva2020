@@ -97,6 +97,18 @@ $scope.updateJob=function(){
 		})
 		
 	}
+	$scope.updateApplyJob=function(){
+		console.log($scope.applyjob)
+		JobService.updateApplyJob($scope.applyjob).then(function(response){
+			console.log(response.status)
+			alert("updated successfully")
+			
+		},function(response){
+			if(response.status==401)
+				$location.path('/login')
+		})
+	}
+	
 	
 	$scope.confirm=function(){
 		console.log($scope.applyjob.id)

@@ -17,8 +17,8 @@ app.controller('FriendController',function($scope,$location,FriendService){
 		console.log(response.status)
 	})
 	
-	$scope.updatependingrequest=function(from,status){
-		FriendService.updatependingrequest(from,status)
+	$scope.updatependingrequest=function(fromuser,status){
+		FriendService.updatependingrequest(fromuser,status)
 		.then(function(response){
 			if(status=='A')
 				{
@@ -26,7 +26,7 @@ app.controller('FriendController',function($scope,$location,FriendService){
 				$location.path("/friendlist")
 				}
 			else if(status=='P')
-			alert('You have unblock'+from)
+			alert('You have unblock'+fromuser)
 			
 			else
 				alert('You have denied the friend request')
@@ -66,6 +66,7 @@ app.controller('FriendController',function($scope,$location,FriendService){
 	
 	
 	$scope.deleteFriendRequest=function(id,status){
+		console.log(id,status)
 		FriendService.deleteFriendRequest(id,status)
 		.then(function(response){
 			if(status=='X'){

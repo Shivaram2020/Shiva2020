@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class BlogPost {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-private int id;
+	public int id;
 	@NotEmpty
 private String blogTitle;
 @Lob  //Large Object

@@ -36,6 +36,9 @@ app.factory('JobService',function($http){
 	jobService.updateJob=function(job){
 		return $http.put("http://localhost:8084/EvolJobB/updatejob",job)
 	}
+	jobService.updateApplyJob=function(applyJob){
+		return $http.put("http://localhost:8084/EvolJobB/updateapplyjob",applyJob)
+	}
 	
 	return jobService;
 })

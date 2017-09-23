@@ -134,14 +134,15 @@ public ResponseEntity<?> blockRequests(HttpSession session){
 		
 }
 
-@RequestMapping(value="/deleteFriend/{id}",method=RequestMethod.DELETE)
-public ResponseEntity<?> deleteFriendRequest(@PathVariable int id,HttpSession session){
+@RequestMapping(value="/deleteFriend/{id}/{status}",method=RequestMethod.DELETE)
+public ResponseEntity<?> deleteFriendRequest(@PathVariable int id,@PathVariable char status,HttpSession session){
+	System.out.println(id+status);
 	if(session.getAttribute("username")==null){
 		Error error=new Error(5,"UnAuthorized User");
 		return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);//401 - 2nd call back func will be executed
 	}
 	Friend friend=friendDao.getFriendById(id);
-	System.out.println(friend.getFrom());
+	System.out.println(friend.getFromuser());
 	friendDao.deleteFriendRequest(friend);
 	return new ResponseEntity<Friend>(friend,HttpStatus.OK);
 }

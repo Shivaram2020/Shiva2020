@@ -202,6 +202,21 @@ public static ResponseEntity<?> main(String[] args,HttpSession session,@PathVari
 	
 }
 
+	@RequestMapping(value="/updateapplyjob",method=RequestMethod.PUT)
+	public ResponseEntity<?> updateApplyJob(@RequestBody ApplyJob applyJob,HttpSession session){
+		if(session.getAttribute("username")==null){
+			Error error=new Error(5,"UnAuthorized User");
+			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);//401 - 2nd call back func will be executed
+		}
+		
+		try{
+		applyJobDao.updateJob(applyJob);
+		return new ResponseEntity<ApplyJob>(applyJob,HttpStatus.OK);//200 - 1st call back function will be called
+		}catch(Exception e){
+			Error error=new Error(6,"Unable to insert job details " + e.getMessage());
+			return new ResponseEntity<Error>(error,HttpStatus.INTERNAL_SERVER_ERROR);//500 - 2nd call back func will be executed
+		}
+	}
 	
 }
 

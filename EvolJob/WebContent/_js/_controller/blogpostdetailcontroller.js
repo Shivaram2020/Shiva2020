@@ -45,6 +45,17 @@ app.controller('BlogPostDetailController',function($scope,$location,$routeParams
 		})
 	}
 	
+	$scope.realupdateBlogPost=function(){
+		console.log($scope.blogPost)
+		BlogPostService.realupdateBlogPost($scope.blogPost).then(function(response){
+			console.log(response.status)
+			$location.path('/getallblogs')
+		},function(response){
+			if(response.status==401)
+				$location.path('/login')
+		})
+	}
+	
 	
 	$scope.deleteBlogPost=function(){
 		console.log($scope.blogPost.id)

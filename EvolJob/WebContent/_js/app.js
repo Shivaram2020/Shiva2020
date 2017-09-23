@@ -124,7 +124,7 @@ app.run(function($rootScope,$cookieStore,userservice,$location){
 		$rootScope.currentUser=$cookieStore.get("currentUser")
 		
 		$rootScope.logout=function(){
-        UserService.logout().then(function(response){
+        userservice.logout().then(function(response){
         	$rootScope.logoutSuccess="Loggedout Successfully.."
         		delete $rootScope.currentUser
         		$cookieStore.remove("currentUser")

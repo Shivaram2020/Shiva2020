@@ -72,6 +72,21 @@ app.controller('UserController',function(userservice,$scope,$location,$rootScope
 		})
 	}
 	
+	$scope.updateUserJob=function(){
+		userservice.updateUserJob($scope.user).then(function(response){
+			alert("updated successfully")
+			
+		},function(response){
+			console.log(response.data)
+			/*
+			 * For unauthorized access, 401 -> redirect the user to login page
+			 * For Exception , 500  -> redirect the user to updateprofile page
+			 */
+			if(response.status==401)
+				$location.path('/login')
+			$location.path('/editprofile')
+		})
+	}
 })
 
 
