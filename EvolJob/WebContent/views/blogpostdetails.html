@@ -1,38 +1,491 @@
-<div calss="row">
-<div>
-<div class="panel panel-default">
-<div class="panel-heading">
-<div>{{blogPost.blogTitle}}</div>
-<span><strong>Created By:</strong>{{blogPost.postedBy.username}}</span>
-<span><strong>On:</strong>{{blogPost.postedOn | date:'medium'}}</span>
-</div>
-<div class="panel-body"> {{blogPost.description}}</div>
-</div>
-</div>
-</div>
 
 
 
-<div ng-show="currentUser.role=='admin'">
+<html>
+<head>
+
+<style>
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
+
+body
+{
+  width: 100%;
+  height: 800px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.panel-google-plus {
+   display: block;
+    background-color: rgba(255,255,255,.8);
+     background-image: url("https://commoncore.hku.hk/wp-content/uploads/2015/07/cc-abstract.png");
+   
+    box-shadow: 0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
+    border-radius: 2px;
+    transition: all .2s ease-in-out;
+   
+    position: relative;
+    border-radius: 0px;
+    border: 1px solid rgb(216, 216, 216);
+    font-family: 'Roboto', sans-serif;
+       margin-top:100px;
+    height:300px;
+    width:950px;
+}
+.panel-google-plus > .panel-heading,
+.panel-google-plus > .panel-footer {
+    background:rgba(255,255,255,0.4);
+    box-shadow: 0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
+    border-radius: 2px;
+    transition: all .2s ease-in-out;
+   
+    display: block;
+    border-width: 6px; 
+}
+.panel-google-plus > .panel-heading {
+    margin-top: 20px;    
+    padding-bottom: 5px; 
+}
+.panel-google-plus > .panel-heading > img { 
+    margin-right: 15px;
+}
+.panel-google-plus > .panel-heading > h3 {
+    margin: 0px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.panel-google-plus > .panel-heading > h5 {
+    color: rgb(153, 153, 153);
+    font-size: 12px;
+    font-weight: 400;
+}
+.panel-google-plus > .panel-body {
+    padding-top: 5px;
+    font-size: 13px;
+}
+.panel-google-plus > .panel-body > .panel-google-plus-image {
+    display: block;
+    text-align: center;
+    background-color: rgb(245, 245, 245);
+    border: 1px solid rgb(217, 217, 217);
+}
+.panel-google-plus > .panel-body > .panel-google-plus-image > img {
+    max-width: 100%;
+}
+
+.panel-google-plus > .panel-footer {
+display: block;
+    font-size: 14px;
+    font-weight: 700;
+    min-height: 54px;
+}
+.panel-google-plus > .panel-footer > .btn {
+    float: left;
+    margin-right: 8px;
+}
+.panel-google-plus > .panel-footer > .input-placeholder {
+    display: block;
+    margin-left: 98px;
+    color: rgb(153, 153, 153);
+    font-size: 12px;
+    font-weight: 400;
+    padding: 8px 6px 7px;
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 0px 0px;
+}
+.panel-google-plus.panel-google-plus-show-comment > .panel-footer > .input-placeholder {
+    display: none;   
+}
+.panel-google-plus > .panel-google-plus-comment {
+    display: none;
+    padding: 10px 20px 15px;
+    border-top: 1px solid rgb(229, 229, 229);
+    background-color: rgb(245, 245, 245);
+}
+.panel-google-plus.panel-google-plus-show-comment > .panel-google-plus-comment {
+    display: block;
+}
+/*.panel-google-plus > .panel-google-plus-comment > img {
+    float: left;   
+}*/
+.panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea {
+    float: right;
+    width: calc(100% - 56px);
+}
+.panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea > textarea {
+    display: block;
+    /*margin-left: 60px;
+    width: calc(100% - 56px);*/
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(217, 217, 217);
+    box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 0px 0px;
+    resize: vertical;
+}
+.panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea > .btn {
+    margin-top: 10px;
+    margin-right: 8px;
+    width: 100%;
+}
+@media (min-width: 992px) {
+    .panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea > .btn {
+        width: auto;
+    }    
+}
+
+
+.panel-google-plus .btn {
+    border-radius: 3px;   
+}
+.panel-google-plus .btn-default {
+    border: 1px solid rgb(217, 217, 217);
+    box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 0px 0px;
+}
+.panel-google-plus .btn-default:hover, 
+.panel-google-plus .btn-default:focus, 
+.panel-google-plus .btn-default:active {
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(0, 0, 0);    
+}
+
+
+
+
+
+
+
+
+
+background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+-ms-box-shadow: none;
+-o-box-shadow: none;
+box-shadow: none;
+}
+body .no-padding {
+padding: 0;
+}
+.widget-area {
+background-color: #fff;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+-ms-border-radius: 4px;
+-o-border-radius: 4px;
+border-radius: 10px;
+-webkit-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+-moz-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+-ms-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+-o-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+ display: block;
+    background-color: rgba(255,255,255,.8);
+   
+    box-shadow: 0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
+    border-radius: 2px;
+    transition: all .2s ease-in-out;
+   
+float: left;
+margin-top: 30px;
+margin-right:30px;
+padding: 25px 30px;
+
+position: relative;
+
+width: 800px;
+}
+.status-upload {
+background: none repeat scroll 0 0 #f5f5f5;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+-ms-border-radius: 4px;
+-o-border-radius: 4px;
+border-radius: 4px;
+float: left;
+width: 100%;
+}
+.status-upload form {
+float: left;
+width: 100%;
+}
+.status-upload form textarea {
+background: none repeat scroll 0 0 #fff;
+border: medium none;
+-webkit-border-radius: 4px 4px 0 0;
+-moz-border-radius: 4px 4px 0 0;
+-ms-border-radius: 4px 4px 0 0;
+-o-border-radius: 4px 4px 0 0;
+border-radius: 4px 4px 0 0;
+color: #777777;
+float: left;
+font-family: Lato;
+font-size: 14px;
+height: 142px;
+letter-spacing: 0.3px;
+padding: 20px;
+width: 100%;
+resize:vertical;
+outline:none;
+border: 1px solid #F2F2F2;
+}
+
+.status-upload ul {
+float: left;
+list-style: none outside none;
+margin: 0;
+padding: 0 0 0 15px;
+width: auto;
+}
+.status-upload ul > li {
+float: left;
+}
+.status-upload ul > li > a {
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+-ms-border-radius: 4px;
+-o-border-radius: 4px;
+border-radius: 4px;
+color: #777777;
+float: left;
+font-size: 14px;
+height: 30px;
+line-height: 30px;
+margin: 10px 0 10px 10px;
+text-align: center;
+-webkit-transition: all 0.4s ease 0s;
+-moz-transition: all 0.4s ease 0s;
+-ms-transition: all 0.4s ease 0s;
+-o-transition: all 0.4s ease 0s;
+transition: all 0.4s ease 0s;
+width: 30px;
+cursor: pointer;
+}
+.status-upload ul > li > a:hover {
+background: none repeat scroll 0 0 #606060;
+color: #fff;
+}
+.status-upload form button {
+border: medium none;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+-ms-border-radius: 4px;
+-o-border-radius: 4px;
+border-radius: 4px;
+color: #fff;
+float: right;
+font-family: Lato;
+font-size: 14px;
+letter-spacing: 0.3px;
+margin-right: 9px;
+margin-top: 9px;
+padding: 6px 15px;
+}
+.dropdown > a > span.green:before {
+border-left-color: #2dcb73;
+}
+.status-upload form button > i {
+margin-right: 7px;
+}
+
+
+.new {
+   display: block;
+    background-color: rgba(255,255,255,.8);
+     background-image: url("http://www.freepngimg.com/download/abstract/2-2-abstract-download-png.png");
+   
+    box-shadow: 0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
+    border-radius: 2px;
+    transition: all .2s ease-in-out;
+   
+width:900px;
+
+}
+
+
+
+.thumbnail {
+    padding:0px;
+    
+}
+.panel {
+	position:relative;
+	
+	
+}
+.panel>.panel-heading:after,.panel>.panel-heading:before{
+	position:absolute;
+	top:11px;left:-16px;
+	right:100%;
+	
+	display:block;
+	content:" ";
+	border-color:transparent;
+	border-style:solid solid outset;
+	pointer-events:none;
+}
+.panel>.panel-heading:after{
+	border-width:7px;
+	border-right-color:#f7f7f7;
+	margin-top:1px;
+	margin-left:2px;
+}
+.panel>.panel-heading:before{
+	border-right-color:#ddd;
+	border-width:8px;
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+
+</head>
+<body >
+
+
+<div class="container ">
+    <div class="well new"> 
+        <div class="row">
+             <div class="col-md-12">
+                 <div class="row hidden-md hidden-lg"><h1 class="text-center" >{{blogPost.blogTitle}}</h1></div>
+                     
+                 <div class="pull-left col-md-4 col-xs-12 thumb-contenido"><img class="center-block img-responsive" src='http://localhost:8084/EvolJobB/getimage/{{blogPost.postedBy.username}}' height="500" width="500" /></div>
+                 <div class="">
+                     <h1  class="hidden-xs hidden-sm">{{blogPost.blogTitle}}</h1>
+                     <hr>
+                     <small>{{blogPost.postedOn | date:'medium'}}</small><br>
+                     <small><strong>Posted By:{{blogPost.postedBy.username}}</strong></small>
+                     <hr>
+                     <p class="text-justify"> <h1>Description:</h1>{{blogPost.description}}.<br><br></p></div>
+                     <div class="row">
+	<div ng-show="currentUser.role=='admin'">
 
 <input type="radio" ng-model="blogPost.approved" value="false">Reject
 
-<input type="submit" ng-click="updateBlogPost()">
+<input type="submit" ng-click="updateBlogPost()"  class="btn btn-warning green" value="update">
 
 </div>
-<form>
-{{error.message}}
-<textarea rows="4" cols="15" ng-model="blogComment.commentText"></textarea>
-<input type="submit" ng-click="addComment()">
-</form>
-<a ng-click="getComments()">Show Comments</a><br>
-<ul ng-show="showcomments">
-<li ng-repeat="blogComment in blogComments" style="list-style : none">
-<span>{{blogComment.commentText}}</span>
-<span><strong>Commented By</strong>{{blogComment.commentedBy.username}}</span>
-<span><strong>Commented On</strong>{{blogComment.commentedOn | date : 'MM/dd/yyyy'}}</span>
-</li>
-</ul>
+	</div>
+    
+    <div class="row">
+    
+    <div class="col-md-6">
+    						<div class="widget-area no-padding blank">
+								<div class="status-upload">
+									<form>
+									{{error.message}}
+										<textarea placeholder="What are you doing right now?" ng-model="blogComment.commentText" ></textarea>
+										
+										<i class="fa fa-share"><input type="submit" class="btn btn-success green" ng-click="addComment()" value="share"></i> 		
+										
+										<a href="" ng-click="getComments()">Show Comments</a><br>
+													</form>
+
+								</div><!-- Status Upload  -->
+<div class="row" ng-show="showcomments">
+<div class="col-sm-12">
+<h3> Comments</h3>
+</div><!-- /col-sm-12 -->
+</div><!-- /row -->
+<div class="row" ng-repeat="blogComment in blogComments">
+<div class="col-sm-1">
+<div class="thumbnail">
+<img class="img-responsive user-photo" src="http://localhost:8084/EvolJobB/getimage/{{blogComment.commentedBy.username}}" width="50" height="50">
+</div><!-- /thumbnail -->
+</div><!-- /col-sm-1 -->
+
+<div class="col-sm-5">
+<div class="panel panel-default">
+<div class="panel-heading">
+<strong>{{blogComment.commentedBy.username}}</strong> <span class="text-muted">{{blogComment.commentedOn | date : 'MM/dd/yyyy'}}</span>
+</div>
+<div class="panel-body">
+{{blogComment.commentText}}
+</div><!-- /panel-body -->
+</div><!-- /panel panel-default -->
+</div><!-- /col-sm-5 -->
+
+</div><!-- /row -->
 
 
+								
+								
+							</div><!-- Widget Area -->
+							
+						</div>
+        
+    </div>
+                     
+             </div>
+        </div>
+    </div>
+</div>
 
+<script>
+
+var colors = new Array(
+		  [62,35,255],
+		  [60,255,60],
+		  [255,35,98],
+		  [45,175,230],
+		  [255,0,255],
+		  [255,128,0]);
+
+		var step = 0;
+		//color table indices for: 
+		// current color left
+		// next color left
+		// current color right
+		// next color right
+		var colorIndices = [0,1,2,3];
+
+		//transition speed
+		var gradientSpeed = 0.002;
+
+		function updateGradient()
+		{
+		  
+		  if ( $===undefined ) return;
+		  
+		var c0_0 = colors[colorIndices[0]];
+		var c0_1 = colors[colorIndices[1]];
+		var c1_0 = colors[colorIndices[2]];
+		var c1_1 = colors[colorIndices[3]];
+
+		var istep = 1 - step;
+		var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+		var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+		var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+		var color1 = "rgb("+r1+","+g1+","+b1+")";
+
+		var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+		var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+		var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+		var color2 = "rgb("+r2+","+g2+","+b2+")";
+
+		 $('body').css({
+		   background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
+		    background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
+		  
+		  step += gradientSpeed;
+		  if ( step >= 1 )
+		  {
+		    step %= 1;
+		    colorIndices[0] = colorIndices[1];
+		    colorIndices[2] = colorIndices[3];
+		    
+		    //pick two new target color indices
+		    //do not pick the same as the current one
+		    colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+		    colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+		    
+		  }
+		}
+
+		setInterval(updateGradient,10);
+
+</script>
+</body>
+
+</html>

@@ -1,12 +1,64 @@
-<div class="container">
-<form>
-<div class="form-group">
-Enter Blog Title: <input type="text" ng-model="blogPost.blogTitle" class="form-control">
-</div>
-<div class="form-group">
-Enter Description: <textarea rows="5" cols="20" ng-model="blogPost.description" class="form-control">
-</textarea>
-</div>
+
+
+<html>
+<head>
+
+   
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+   
+   
+   <style>
+   
+   body {
+   
+    background:  	#F5FFFA ;
+    
+}
+input[type=submit] {
+    padding:5px 15px; 
+    background: 	#F08080; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+      font-family: "Georgia";
+}
+
+lable {
+    font-family: "Georgia";
+}
+   </style>
+   
+</head>
+<body>
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="title" id="first_name" ng-model="blogPost.blogTitle" type="text" class="validate">
+          <label for="first_name">Enter Blog Title:</label>
+        </div>
+      </div>
+     
+
+    
+  <div class="row">
+        <div class="input-field col s6">
+          <textarea id="text_area"  ng-model="blogPost.description"  class="validate"></textarea>
+          <label for="last_name">Description</label>
+        </div>
+     
+
 <input type="submit" ng-click="addBlogPost()" value="Add Blog Post">
-</form>
-</div>
+
+
+     </div>
+     </form>
+  </div>
+  
+
+</body>
+</html>

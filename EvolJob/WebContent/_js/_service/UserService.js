@@ -22,6 +22,13 @@ app.factory('userservice',function($http){
 	userservice.updateUser=function(user){
 		return $http.put(BASE_URL + "/updateuser",user)
 	}
+	
+	
+	
+	userservice.getJobByIdd=function(username){
+		return $http.get("http://localhost:8084/EvolJobB/getuserbyid/"+username)
+	}
+	
 	return userservice; //returning the instance
 })
 

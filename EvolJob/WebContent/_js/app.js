@@ -1,5 +1,5 @@
 /**
- * Angular JS module and routeprovider configuration 
+* Angular JS module and routeprovider configuration 
  */
 var app=angular.module("app",['ngRoute','ngCookies'])
 app.config(function($routeProvider){
@@ -22,7 +22,7 @@ app.config(function($routeProvider){
 	.when('/coverpic',{
 		templateUrl:'views/coverpic.html'
 	})
-	.when('/aboutme',{
+	.when('/aboutme/:username',{
 		templateUrl:'views/about.html',
 		controller:'UserController'
 	})

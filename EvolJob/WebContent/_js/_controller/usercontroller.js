@@ -6,8 +6,18 @@ app.controller('UserController',function(userservice,$scope,$location,$rootScope
 	$scope.user={}
 
 	
-	
+	var username=$routeParams.username;
 		
+	
+	
+	
+	userservice.getJobByIdd(username).then(function(response){
+		$scope.job=response.data;
+		console.log(response.data);
+	},function(response){
+		console.log(response.status)
+	})
+	
 		
 	if($rootScope.currentUser!=undefined){
 		userservice.getUser().then(function(response){
