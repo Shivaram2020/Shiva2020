@@ -4,6 +4,7 @@
 
 <style>
 #features {
+
     margin-top:500px;
     
 }
@@ -15,7 +16,11 @@
      
 }
 .feature {
-    background:#FFFFFF;
+ display: block;
+    background-color: rgba(255,255,255,.8);
+     background-image: url("http://bnbnation.com/assects/img/focus_job.png");
+   
+
     text-align:center;
     padding:20px;
     border: solid 1px #cccccc;
@@ -155,7 +160,7 @@ button{color:#fff;}
 		<div class="col-md-2 feature" ng-repeat="job in jobs">
 		<div align="right" ng-if="currentUser.role=='admin'"><a href="#/editjob/{{job.id}}"><i class="glyphicon glyphicon-edit"></i></a></div>
           <a href="#/getjobbyid/{{job.id}}" >  <i class="glyphicon glyphicon-briefcase ii"></i>
-            <h3>{{job.jobTitle}}--------</h3></a>
+            <h3>{{job.jobTitle}}</h3></a>
             <div class="title_border"></div>
             <p>{{job.jobDescription}}
             --{{job.postedOn | date : 'yyyy-MM-dd'}}</p>

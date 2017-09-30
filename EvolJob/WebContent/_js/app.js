@@ -24,7 +24,7 @@ app.config(function($routeProvider){
 	})
 	.when('/aboutme/:username',{
 		templateUrl:'views/about.html',
-		controller:'UserController'
+		controller:'BlogPostController'
 	})
 	.when('/register',{
 		templateUrl:'views/registrationform.html',

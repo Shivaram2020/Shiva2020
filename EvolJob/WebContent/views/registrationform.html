@@ -21,7 +21,10 @@
     background: #445E77;
     background-blend-mode: multiply;
 }
+   h3{
    
+   color:red;
+   }
 	
 </style>
 	
@@ -46,7 +49,7 @@
              
            <fieldset class="cl"><legend class="text-center "style=color:red;>Valid information is required to register. <span class="req"><small> required *</small></span></legend> 
   
-     {{error.message}}
+     <h3> {{error.message}}</h3>
   <div class="form-group">
                 <label for="username"   style=color:white;><span class="req">* </span> User name:  <small>This will be your login user name</small> </label> 
                     <input class="form-control" type="text" name="username" id = "txt" ng-model="user.username" onkeyup = "Validate(this)" placeholder="minimum 6 letters" required />  

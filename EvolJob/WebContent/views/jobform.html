@@ -38,11 +38,11 @@ lable {
     <form class="col s12">
       <div class="row">
         <div class="input-field col s6">
-          <input placeholder="title" id="first_name" ng-model="job.jobTitle" type="text" class="validate">
+          <input placeholder="title" id="first_name" ng-model="job.jobTitle" type="text" required class="validate">
           <label for="first_name">Job title</label>
         </div>
           <div class="input-field col s6">
-          <input id="last_name" type="text" ng-model="job.skillRequired"  class="validate">
+          <input id="last_name" type="text" ng-model="job.skillRequired" required class="validate">
           <label for="last_name">SkillRequired</label>
         </div>
       </div>
@@ -50,31 +50,31 @@ lable {
       
       <div class="row">
     <div class="input-field col s6">
- <input  id="last" type="text"  ng-model="job.yrsOfExp" class="validate">
+ <input  id="last" type="text"  ng-model="job.yrsOfExp" required class="validate">
 <label for="last"> Years of Experience:</label>
 </div>
 <div class="input-field col s6">
-<input type="text" id="last_nae" class="validate" ng-model="job.salary" >
+<input type="text" id="last_nae" class="validate" required ng-model="job.salary" >
 <label for="last_nae">Salary</label>
 </div>
 </div>
 
 <div class="row">
 <div class="input-field col s6">
- <input type="text" id="last_name" class="validate"  ng-model="job.location">
+ <input type="text" id="last_name" class="validate" required ng-model="job.location">
 <label for="last_name">Location</label>
 </div>
 
 
 <div class="input-field col s6">
- <input type="text" id="last_name" class="validate" ng-model="job.companyname" >
+ <input type="text" id="last_name" class="validate" required ng-model="job.companyname" >
 <label for="last_name">Companyname</label>
 </div>
 </div>
     
   <div class="row">
         <div class="input-field col s6">
-          <textarea id="text_area"  ng-model="job.jobDescription"  class="validate"></textarea>
+          <textarea id="text_area"  ng-model="job.jobDescription" required class="validate"></textarea>
           <label for="last_name">Description</label>
         </div>
      

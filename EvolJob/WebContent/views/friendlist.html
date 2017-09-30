@@ -9,6 +9,7 @@
 <div ng-repeat="friend in friendslist">
 <div ng-hide="friend.fromid==currentUser.username"><h4>{{friend.fromuser}}</h4></div>
 <div ng-hide="friend.to==currentUser.username"><h4>{{friend.to}}</h4></div>
+<a href="" ng-click="deleteFriendRequest(friend.id,'X')">cancel friend request</a></td>
 
 </div>
  </div>
