@@ -57,7 +57,7 @@ public JavaMailSender getMailSender()
 	mailSender.setHost("smtp.gmail.com");
 	mailSender.setPort(587);
 	mailSender.setUsername("shivar.vijay.07@gmail.com");
-	mailSender.setPassword("SwS-2020");
+	mailSender.setPassword("SHwSE-2020");
 	
 	Properties javaMailProperties = new Properties();
 	javaMailProperties.put("mail.smtp.starttls.enable", "true");
