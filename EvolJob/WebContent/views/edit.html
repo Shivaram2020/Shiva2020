@@ -1,15 +1,91 @@
-<form>
-Enter username <input type="text"  ng-model="user.username" disabled><Br>
-Enter password <input type="password" ng-model="user.password"><br>
-Enter Email <input type="email" ng-model="user.email"><br>
-Enter phonenumber <input type="text" ng-model="user.mobileno"><br>
-Address <input type="text" ng-model="user.address"><br>
 
-Select Role<br>
-<input type="radio" value="STUDENT" ng-model="user.role">Student <br>
-<input type="radio" value="ALUMINI" ng-model="user.role">Alumini<br>
-<input type="radio" value="EMPLOYEE" ng-model="user.role">Employee<br>
 
-<input type="submit" ng-click="updateUser()" value="update">
 
-</form>
+
+
+<html>
+<head>
+
+   
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+   
+   
+   <style>
+   
+   body {
+   
+    background:  	#FFFFFF ;
+    
+}
+input[type=submit] {
+    padding:5px 15px; 
+    background: 	#F08080; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+      font-family: "Georgia";
+}
+
+lable {
+    font-family: "Georgia";
+}
+   </style>
+   
+</head>
+<body>
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="title" id="first_name"  ng-model="user.username" disabled type="text" required class="validate">
+          <label for="first_name">username</label>
+        </div>
+          <div class="input-field col s6">
+          <input id="last_name" type="password" ng-model="user.password" required class="validate">
+          <label for="last_name">password</label>
+        </div>
+      </div>
+     
+      
+      <div class="row">
+    <div class="input-field col s6">
+ <input  id="last" type="email" ng-model="user.email" required class="validate">
+<label for="last">Email</label>
+</div>
+<div class="input-field col s6">
+<input type="text" id="last_nae" class="validate" required ng-model="user.mobileno" >
+<label for="last_nae">contact no</label>
+</div>
+</div>
+
+
+
+
+<div class="row">
+<div class="input-field col s6">
+ <input type="text" id="last_name" class="validate" required ng-model="user.currentstatus" >
+<label for="last_name">status</label>
+</div>
+
+</div>
+    
+  <div class="row">
+        <div class="input-field col s6">
+          <textarea id="text_area" ng-model="user.address" required class="validate"></textarea>
+          <label for="last_name">Address</label>
+        </div>
+     
+ <input type="submit" ng-click="updateUser()" value="update">
+ 
+     </div>
+     </form>
+  </div>
+  
+
+</body>
+</html>
+
